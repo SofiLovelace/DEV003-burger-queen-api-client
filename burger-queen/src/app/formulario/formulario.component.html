@@ -4,13 +4,13 @@
 <div class="card-body">
     <form (ngSubmit)="process()" class="border p-3 form">
 <div class="nb-2">
-    <label class="form-label">
+    <label class="form-group">
      Usuario:
     </label>
-    <input type="text" class="form-control" name="user" placeholder="porfavor ingrese su usuario" [(ngModel)]="credential.user">
+    <input type="email" class="form-control" name="user" placeholder="porfavor ingrese su usuario" [(ngModel)]="credential.user">
 </div>
 <div>
-    <label class="form-label">
+    <label class="form-group">
      Contrasena:
     </label>
     <input type="password" class="form-control" name="password" placeholder="por favor ingrese una contrasena" [(ngModel)]="credential.password">
