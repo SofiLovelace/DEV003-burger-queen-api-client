@@ -1,0 +1,27 @@
+<div class="bg-image">
+<div class="card">
+<h1 class="titulo">BUEGER QUEEN</h1>
+<div class="card-body">
+    <form (ngSubmit)="process()" class="border p-3 form">
+<div class="nb-2">
+    <label class="form-label">
+     Usuario:
+    </label>
+    <input type="text" class="form-control" name="user" placeholder="porfavor ingrese su usuario" [(ngModel)]="credential.user">
+</div>
+<div>
+    <label class="form-label">
+     Contrasena:
+    </label>
+    <input type="password" class="form-control" name="password" placeholder="por favor ingrese una contrasena" [(ngModel)]="credential.password">
+</div>
+<button class="btn btn-primary">
+Enviar
+</button>
+</form>
+</div>
+</div>
+</div>
+
+
+
