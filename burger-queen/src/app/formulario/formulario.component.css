@@ -4,6 +4,7 @@
 
 .titulo{
     font-family: 'Fredoka', sans-serif;
+    color:black;
 }
 
 .bg-image{
@@ -27,7 +28,7 @@ height: 100vh;
 }
 
 .form-label{
-    color: white !important;
+    color: black !important;
     font-family: 'Fredoka', sans-serif !important;
     font-size: x-large;
 
@@ -35,6 +36,7 @@ height: 100vh;
 .underline {
    color: black;
   }
+
   input{
     color: white;
   }
@@ -51,8 +53,13 @@ height: 100vh;
     }
 
     .form-label{
-        color: black;
+        color: rgb(255, 255, 255) !important;
         font-family: 'roboto', sans-serif;
+
+    }
+
+    .col-lg-5{
+        padding-top: 50%;
     }
 
     .form-control{
@@ -63,19 +70,15 @@ height: 100vh;
     .titulo{
         color: white;
         font-size: 80px;
+        padding-top: 50px;
     }
-    
-    .form-label{
-        color: black !important;
-        font-family: 'Fredoka', sans-serif !important;
-        font-size: x-large;
-    
-    }
+
+  
     .underline {
        color: black;
       }
       input{
-        color: white;
+        color:white;
       }
 
     .bg-image{
