@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Roboto+Mono:wght@100;300&display=swap');
+
+@media (max-width: 1580px) {
+
+
+    .titulo {
+        color: rgb(0, 0, 0);
+        font-size: 680%;
+        font-family: 'Fredoka', sans-serif;
+
+    }
+
+    #emailHelp {
+        display: none;
+    }
+
+    .bg-image {
+        background-image: url(./img/fondoBdesk.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+
+
+    .card-body {
+        background: none;
+        border-radius: 20px;
+        width: 35%;
+        height: 30%;
+
+    }
+
+
+    .form-control {
+        background: none;
+        border: none;
+
+    }
+
+    input{
+    color: rgb(0, 0, 0) !important;
+     width: 620px;
+    
+    }
+
+
+    .form-label {
+        color: rgb(0, 0, 0) !important;
+        font-family: 'Fredoka', sans-serif !important;
+        font-size: x-large;
+
+    }
+
+    .underline {
+        color: rgb(0, 0, 0);
+    }
+
+    .btn {
+        background: yellow;
+        font-family: 'Fredoka', sans-serif;
+        padding: 25%;
+        margin-bottom: 10%;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.467);
+    }
+    
+.btn:hover {
+    background-color: black;
+    color: white;
+    border-color: yellow;
+}
+
+}
+
+
+
+
+
+/*tablet*/
+@media (max-width: 960px) {
+    * {
+        margin: 0;
+
+    }
+
+    .form-label {
+        color: white !important;
+        font-family: 'roboto', sans-serif;
+
+    }
+
+
+
+    .card-body {
+        background: rgb(0, 0, 0);
+        border-radius: 20px;
+        margin: 20px;
+        width: 720px;
+        height: 400px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 2px 4px 6px rgba(255, 255, 255, 0.467);
+
+    }
+
+    .form-control::placeholder {
+        color: white !important;
+    }
+
+    .form-control {
+        background: none;
+        border: none;
+    }
+
+    .titulo {
+        color: yellow;
+        font-size: 1000%;
+        margin-top: 10%;
+
+
+    }
+
+
+    .underline {
+        color: rgb(255, 255, 255);
+    }
+
+    input {
+        color: yellow !important;
+    }
+
+    .bg-image {
+        background-image: url(https://images.pexels.com/photos/7764698/pexels-photo-7764698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        opacity: 2;
+    }
+
+    .btn {
+        background: yellow;
+        font-family: 'Fredoka', sans-serif;
+        padding: 2%;
+        margin-top: 1%;
+        box-shadow: 1px 2px 4px rgba(255, 255, 255, 0.467);
+    }
+
+}
+
+.btn:hover {
+    background-color: black;
+    color: white;
+    border-color: yellow;
+}
+
+
+/*
+celular*/
+
+@media (max-width: 660px) {
+
+    .titulo {
+        font-family: 'Fredoka', sans-serif;
+        color: yellow;
+        font-size: 1200%;
+        margin-top: 40%;
+
+    }
+
+    .btn {
+        background: yellow;
+        font-family: 'Fredoka', sans-serif;
+        padding: 2%;
+        margin-top: 3%;
+        box-shadow: 1px 2px 4px rgba(255, 255, 255, 0.467);
+
+    }
+
+    input {
+        color: yellow !important;
+    }
+
+    .btn:hover {
+        background-color: black;
+        color: white;
+        border-color: yellow;
+    }
+
+    .bg-image {
+        background-image: url(https://images.pexels.com/photos/7764698/pexels-photo-7764698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+        background-size: cover;
+        width: 220vw;
+        height: 220vh;
+        position: relative;
+
+    }
+
+    .card-body {
+        background: rgb(0, 0, 0);
+        border-radius: 20px;
+        margin: 1%;
+        width: 98%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 1px 2px 4px white;
+
+    }
+}
