@@ -1,6 +1,6 @@
-<div class="bg-image row">
+   <div class="bg-image row">
     <div class="col-lg-5">
-        <h1 class="titulo p-5">BURGER QUEEN</h1>
+        <h1 class="titulo">BURGER QUEEN</h1>
         <div class="card-body">
             <form  [formGroup]="credential" (ngSubmit)="process()" class="p-5 form">
                 <!--<form >-->
@@ -21,12 +21,13 @@
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">PASSWORD</label>
                     <input type="password" formControlName="password" class="form-control placeholder text-white fs-2 " id="exampleInputPassword1" name="password">
-                    <div class="alert alert-danger mt-1" [hidden]="password.valid || password.untouched" >
-                        Ingresa una contraseña minimo 8 caracteres
-                    </div>
                     <div class="underline">
                         __________________________________________________________________________________________________
                     </div>
+                    <div class="alert alert-danger mt-1" [hidden]="password.valid || password.untouched" >
+                        Ingresa una contraseña minimo 8 caracteres
+                    </div>
+                   
                 </div>
                
                 <button type="submit" class="btn fs-2" [disabled]="credential.invalid">
