@@ -5,7 +5,7 @@
     --second-text-color: #ffffff;
     --second-bg-color: #ffffff;
   }
-  @media (min-width:800px) {  
+  
   .primary-text {
     color: var(--main-text-color);
   }
@@ -84,24 +84,11 @@
     font-weight: bold;
     border: none;
   }
-
-  .navbar{
-    display: none;
-
-  }
-
-}
   
-  @media (min-width: 500px) {
+  @media (min-width: 768px) {
     #sidebar-wrapper {
       margin-left: 0;
       /*display: none;*/
-    }
-
-
-    
-    .navbar{
-        display:block;
     }
   
     #page-content-wrapper {
@@ -109,12 +96,12 @@
       width: 100%;
     }
 
+   
+
 .cart{
     display: flex;
     flex-direction: column;
-width:40%;
-height: 10%;
-    margin-left: 10% ;
+    margin-left: 20% ;
   border-radius: 20px;
   background-color: darkgray;
 
