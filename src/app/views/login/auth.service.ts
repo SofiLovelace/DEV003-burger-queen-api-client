@@ -9,8 +9,8 @@ import { HttpClient } from '@angular/common/http'
 export class AuthService {
   private urlApi = 'http://localhost:8080'
   constructor(private http: HttpClient) { }
-  public get(url: string, body: object){
-    return this.http.post(url, body)
+  public get(path: string, body: object){
+    return this.http.post(this.urlApi + path, body)
   }
   /* getAuthLogin(): Observable<credentialU> {
     return this.http.post(this.urlApi, this.credential.value)

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
-import { min } from 'rxjs'
+// import { min } from 'rxjs'
 import { HttpClient } from '@angular/common/http'
 import { AuthService } from './auth.service'
+import { RouterLink, RouterLinkActive } from '@angular/router'
 
 @Component({
   selector: 'app-login',
@@ -31,9 +32,12 @@ export class loginComponent {
   }
 
   public login(){
-    this.AuthService.get('http://localhost:8080/login', this.credential.value)
+    this.AuthService.get('/login', this.credential.value)
     .subscribe(result => {
       console.log(result)
+      if (result) {
+        RouterLink
+      }
     })
   }
 
