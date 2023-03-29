@@ -1,8 +1,10 @@
-//import { Injectable } from '@angular/core'
-//import { HttpClient, HttpClientModule } from '@angular/common/http'
-//import { Observable } from "rxjs/Observable"
-//@Injectable({
-//  providedIn: 'root'
-//})
-//export class ApiService {  
-//}
+import { Injectable } from '@angular/core'
+import { HttpClient, HttpClientModule } from '@angular/common/http'
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ApiService {
+  
+  
+}

@@ -2,19 +2,19 @@
     <div class="col-lg-5">
         <h1 class="titulo">BURGER QUEEN</h1>
         <div class="card-body">
-            <form  [formGroup]="credential" (ngSubmit)="process()" class="p-5 form">
+            <form  [formGroup]="credential" (ngSubmit)="login()" class="p-5 form">
                 <!--<form >-->
                 <div class="mb-3">
                     <label for="exampleInputUser" class="form-label">USUARIO</label>
-                    <input type="email" formControlName="user" class="form-control placeholder text-white fs-2 " id="exampleInputEmail1" aria-describedby="emailHelp"
+                    <input type="email" formControlName="email" class="form-control placeholder text-white fs-2 " id="exampleInputEmail1" aria-describedby="emailHelp"
                         name="user">
                     <div class="underline">
                         __________________________________________________________________________________________________
                     </div>
 
-                    <div class="alert alert-danger mt-1" [hidden]="user.valid || user.untouched" >
-                        <Span *ngIf="user.errors?.['required']">El campo usuario es obligatorio</Span>
-                        <Span *ngIf="user.errors?.['email']">Ingresa un correo valido</Span>
+                    <div class="alert alert-danger mt-1" [hidden]="email.valid || email.untouched" >
+                        <Span *ngIf="email.errors?.['required']">El campo usuario es obligatorio</Span>
+                        <Span *ngIf="email.errors?.['email']">Ingresa un correo valido</Span>
                     </div>
                     <div id="emailHelp" class="form-text text-white fs-4">No compartas tu correo con nadie mas!.</div>
                 </div>
@@ -30,29 +30,12 @@
                    
                 </div>
                
-                <button type="submit" class="btn fs-2" [disabled]="credential.invalid">
+                <button type="submit" class="btn fs-2" [disabled]="credential.invalid"> <!-- [routerLink]="['/waiter']" -->
                     Ingresar
                 </button>
             </form>
         </div>
         <div class="col-lg-7">
-
-            <!--</form>
-<div class="nb-2">
-    <label class="form-group">
-     Usuario:
-    </label>
-    <input type="email" class="form-control" name="user" placeholder="porfavor ingrese su usuario" [(ngModel)]="credential.user">
-</div>
-<div>
-    <label class="form-group">
-     Contrasena:
-    </label>
-    <input type="password" class="form-control" name="password" placeholder="por favor ingrese una contrasena" [(ngModel)]="credential.password">
-</div>
-<button class="btn btn-primary">
-Enviar
-</button>-->
         </div>
     </div>
 </div>
