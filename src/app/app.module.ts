@@ -6,6 +6,7 @@ import { loginComponent } from './views/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WaiterComponent } from './views/waiter/waiter.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
+import { HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule, 
     ReactiveFormsModule
