@@ -6,6 +6,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { AuthService } from './auth.service'
 import { RouterLink, RouterLinkActive } from '@angular/router'
 import { AppRoutingModule } from 'src/app/app-routing.module'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-login',
@@ -30,7 +31,7 @@ export class loginComponent {
 
     constructor(
       private AuthService:AuthService,
-      private AppRoutingModule:AppRoutingModule
+      private router:Router
       ) { }
 
   public login(){
@@ -38,8 +39,11 @@ export class loginComponent {
     .subscribe(result => {
       console.log(result)
       if (result) {
-        //this.routh.navigate ('/waiter')
+        this.router.navigate (['/waiter'])
       }
+    },
+    error => {
+     console.log(error)
     })
   }
 
