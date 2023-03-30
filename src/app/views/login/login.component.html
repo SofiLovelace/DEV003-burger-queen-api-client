@@ -27,7 +27,9 @@
                     <div class="alert alert-danger mt-1" [hidden]="password.valid || password.untouched" >
                         Ingresa una contraseña minimo 8 caracteres
                     </div>
-                   
+                    <div class="alert alert-danger mt-1" [hidden]="errorHttp.length === 0" >
+                        {{errorHttp}}
+                    </div>
                 </div>
                
                 <button type="submit" class="btn fs-2" [disabled]="credential.invalid"> <!-- [routerLink]="['/waiter']" -->
