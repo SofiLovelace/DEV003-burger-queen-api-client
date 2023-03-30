@@ -7,6 +7,8 @@ import { AuthService } from './auth.service'
 import { RouterLink, RouterLinkActive } from '@angular/router'
 import { AppRoutingModule } from 'src/app/app-routing.module'
 import { Router } from '@angular/router'
+import { HttpResponseBase, HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-login',
@@ -31,20 +33,49 @@ export class loginComponent {
 
     constructor(
       private AuthService:AuthService,
-      private router:Router
-      ) { }
+      private router:Router) { }
 
   public login(){
-    this.AuthService.get('/login', this.credential.value)
-    .subscribe(result => {
-      console.log(result)
-      if (result) {
+    this.AuthService.get('/login', this.credential.value)//esto restorna un observable
+    .subscribe({  // Nos subscribimos al observable
+      next: (data: any)=> { // codigo correcto
+        if (data.user.role === 'admin' || data.user.rol === 'waiter') {
+          this.router.navigate(['/waiter'])} // navegacion 
+      },
+      error: (err: any)=>console.log('error',err), // gestion de errores
+      complete:()=>console.log('complete')  // codigo que se ejecuta al finalizar la subscripción
+    })
+  }
+}
+    /*new Observable (observer => {
+      this.AuthService.get('/login', this.credential.value)
+       .subscribe(HttpResponseBase => {
+        console.log('1er =========', HttpResponseBase)
+        console.log('STRINGIFY =========', (HttpResponseBase) )
+        if (HttpResponseBase) {
+          this.router.navigate (['/waiter'])
+        }
+      },
+      error => {
+       console.log(error)
+      }) */
+      //fetch('https://pokeapi.co/api/v2/pokemon/pikachu') 
+    /* this.AuthService.get('/login', this.credential.value)
+      .subscribe(HttpResponseBase => {
+      console.log('1er =========', HttpResponseBase.accessToken)
+      console.log('STRINGIFY =========', (HttpResponseBase) )
+      if (HttpResponseBase) {
         this.router.navigate (['/waiter'])
       }
     },
     error => {
      console.log(error)
-    })
-  }
+    }) */
+ 
 
-}
+
+/* .subscribe({
+  next: (data)=>console.log('data', data),
+  error: (err)=>console.log('error',err),
+  complete:()=>console.log('complete')
+}) */
