@@ -31,6 +31,8 @@ export class loginComponent {
     'password': new FormControl('', [Validators.required, Validators.minLength(6)]),
   })
 
+  errorHttp = ''  
+
     constructor(
       private AuthService:AuthService,
       private router:Router) { }
@@ -39,43 +41,23 @@ export class loginComponent {
     this.AuthService.get('/login', this.credential.value)//esto restorna un observable
     .subscribe({  // Nos subscribimos al observable
       next: (data: any)=> { // codigo correcto
-        if (data.user.role === 'admin' || data.user.rol === 'waiter') {
+        sessionStorage.setItem('userToken', data.accessToken)
+        sessionStorage.setItem('userRole', data.user.role)
+        sessionStorage.setItem('userMail', data.user.email)   
+        if (data.user.role === 'admin' || data.user.role === 'waiter') {
           this.router.navigate(['/waiter'])} // navegacion 
+          console.log(data)
       },
-      error: (err: any)=>console.log('error',err), // gestion de errores
+      error: (err: any)=> {
+        console.log('error',err) // gestion de errores
+        err.error === 'Cannot find user'?
+        this.errorHttp = 'Usuario no autorizado, contacta al administrador':
+          err.error === 'Incorrect password'?
+          this.errorHttp = 'Contraseña incorrecta, verifica tus credenciales':
+          this.errorHttp = 'Error desconocido, vuelve a intentar o contacta al administrador'
+          console.error(err)
+      },
       complete:()=>console.log('complete')  // codigo que se ejecuta al finalizar la subscripción
     })
   }
 }
-    /*new Observable (observer => {
-      this.AuthService.get('/login', this.credential.value)
-       .subscribe(HttpResponseBase => {
-        console.log('1er =========', HttpResponseBase)
-        console.log('STRINGIFY =========', (HttpResponseBase) )
-        if (HttpResponseBase) {
-          this.router.navigate (['/waiter'])
-        }
-      },
-      error => {
-       console.log(error)
-      }) */
-      //fetch('https://pokeapi.co/api/v2/pokemon/pikachu') 
-    /* this.AuthService.get('/login', this.credential.value)
-      .subscribe(HttpResponseBase => {
-      console.log('1er =========', HttpResponseBase.accessToken)
-      console.log('STRINGIFY =========', (HttpResponseBase) )
-      if (HttpResponseBase) {
-        this.router.navigate (['/waiter'])
-      }
-    },
-    error => {
-     console.log(error)
-    }) */
- 
-
-
-/* .subscribe({
-  next: (data)=>console.log('data', data),
-  error: (err)=>console.log('error',err),
-  complete:()=>console.log('complete')
-}) */
