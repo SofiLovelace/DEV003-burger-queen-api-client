@@ -7,10 +7,11 @@ import { HttpClient } from '@angular/common/http'
 })
 
 export class AuthService {
-  private urlApi = 'http://localhost:8080'
+  private urlApiLocalHost = 'http://localhost:8080'
+  private urlApiWeb = 'https://burguerqueen-service.onrender.com'
   constructor(private http: HttpClient) { }
   public get(path: string, body: object): any { // es importante typar lo que retornara una función
-    return this.http.post(this.urlApi + path, body) // el metodo http ya devuelve un observable
+    return this.http.post(this.urlApiWeb + path, body) // el metodo http ya devuelve un observable
   }
   
 }
