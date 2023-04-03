@@ -41,8 +41,12 @@ export class loginComponent {
     this.AuthService.get('/login', this.credential.value)//esto restorna un observable
     .subscribe({  // Nos subscribimos al observable
       next: (data: any)=> { // codigo correcto
-        if (data.user.role === 'admin' || data.user.rol === 'waiter') {
+        sessionStorage.setItem('userToken', data.accessToken)
+        sessionStorage.setItem('userRole', data.user.role)
+        sessionStorage.setItem('userMail', data.user.email)
+        if (data.user.role === 'admin' || data.user.role === 'waiter') {
           this.router.navigate(['/waiter'])} // navegacion 
+          console.log(data)
       },
       error: (err: any)=> {
         console.log('error',err) // gestion de errores
