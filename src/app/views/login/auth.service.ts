@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core'
 import { credentialU } from 'src/app/models/login/login.inferface'
-import { Observable, Observer } from 'rxjs'
 import { HttpClient } from '@angular/common/http'
 
 @Injectable({
