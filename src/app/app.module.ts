@@ -7,13 +7,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WaiterComponent } from './views/waiter/waiter.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { HttpClientModule} from '@angular/common/http'
+import { CartComponent } from './views/waiter/cart/cart.component';
+import { NavComponent } from './views/waiter/nav/nav.component';
+import { ProductosComponent } from './views/waiter/productos/productos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     loginComponent,
     WaiterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CartComponent,
+    NavComponent,
+    ProductosComponent
+
   ],
   imports: [
     BrowserModule,
