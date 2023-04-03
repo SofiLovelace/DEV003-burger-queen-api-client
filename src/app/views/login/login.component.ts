@@ -43,7 +43,7 @@ export class loginComponent {
       next: (data: any)=> { // codigo correcto
         sessionStorage.setItem('userToken', data.accessToken)
         sessionStorage.setItem('userRole', data.user.role)
-        sessionStorage.setItem('userMail', data.user.email)
+        sessionStorage.setItem('userMail', data.user.email)   
         if (data.user.role === 'admin' || data.user.role === 'waiter') {
           this.router.navigate(['/waiter'])} // navegacion 
           console.log(data)
