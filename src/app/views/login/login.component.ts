@@ -1,14 +1,10 @@
 import { Component } from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
-// import { min } from 'rxjs'
-// import { HttpClient } from '@angular/common/http'
 import { AuthService } from './auth.service'
-import { RouterLink, RouterLinkActive } from '@angular/router'
-import { AppRoutingModule } from 'src/app/app-routing.module'
 import { Router } from '@angular/router'
-import { HttpResponseBase, HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs'
+import { IResponseAuth, IErrorAuth } from 'src/app/models/login/login.inferface'
+
 
 @Component({
   selector: 'app-login',
@@ -40,7 +36,7 @@ export class loginComponent {
   public login(){
     this.AuthService.get('/login', this.credential.value)//esto restorna un observable
     .subscribe({  // Nos subscribimos al observable
-      next: (data: any)=> { // codigo correcto
+      next: (data: IResponseAuth)=> { // codigo correcto
         sessionStorage.setItem('userToken', data.accessToken)
         sessionStorage.setItem('userRole', data.user.role)
         sessionStorage.setItem('userMail', data.user.email)   
@@ -48,7 +44,7 @@ export class loginComponent {
           this.router.navigate(['/waiter'])} // navegacion 
           console.log(data)
       },
-      error: (err: any)=> {
+      error: (err: IErrorAuth)=> {
         console.log('error',err) // gestion de errores
         err.error === 'Cannot find user'?
         this.errorHttp = 'Usuario no autorizado, contacta al administrador':
@@ -57,7 +53,7 @@ export class loginComponent {
           this.errorHttp = 'Error desconocido, vuelve a intentar o contacta al administrador'
           console.error(err)
       },
-      complete:()=>console.log('complete')  // codigo que se ejecuta al finalizar la subscripción
+      complete:()=> console.log('complete')  // codigo que se ejecuta al finalizar la subscripción
     })
   }
 }

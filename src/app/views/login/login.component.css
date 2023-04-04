@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Roboto+Mono:wght@100;300&display=swap');
 
 @media (max-width: 1580px) {
-
-
     .titulo {
         color: rgb(0, 0, 0);
         font-size:580%;
         font-family: 'Fredoka', sans-serif;
-       padding-left: 10%;    
-       padding-top: 5%;    
+        padding-left: 10%;    
+        padding-top: 5%;    
 
     }
 
@@ -25,24 +23,17 @@
         
     }
 
-
-
     .card-body {
         background: none;
         border-radius: 20px;
         width: 100%;
         height: 70%;
-    
-
     }
+
     col-lg-5{
         width: 100%;
         width: 100%;
     }
-
-
-
-  
 
     .form-control {
         background: none;
@@ -51,10 +42,10 @@
     }
 
     input{
-    color: rgb(0, 0, 0) !important;
-     width: 420px;
-     height: 50px;
-    
+        color: rgb(0, 0, 0) !important;
+        width: 420px;
+        height: 50px;
+        cursor: text;
     }
 
 
@@ -77,12 +68,11 @@
         box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.467);
     }
     
-.btn:hover {
-    background-color: black;
-    color: white;
-    border-color: yellow;
-}
-
+    .btn:hover {
+        background-color: black;
+        color: white;
+        border-color: yellow;
+    }
 }
 
 
@@ -99,10 +89,7 @@
     .form-label {
         color: white !important;
         font-family: 'roboto', sans-serif;
-
     }
-
-
 
     .card-body {
         background: rgb(0, 0, 0);
@@ -113,9 +100,8 @@
         justify-content: center;
         align-items: center;
         box-shadow: 2px 4px 6px rgba(255, 255, 255, 0.467);
-
     }
-
+    
     .form-control::placeholder {
         color: white !important;
     }
@@ -132,7 +118,6 @@
 
 
     }
-
 
     .underline {
         color: rgb(255, 255, 255);
@@ -171,13 +156,11 @@
 celular*/
 
 @media (max-width: 660px) {
-
     .titulo {
         font-family: 'Fredoka', sans-serif;
         color: yellow;
         font-size: 1200%;
         margin-top: 40%;
-
     }
 
     .btn {
@@ -186,7 +169,6 @@ celular*/
         padding: 2%;
         margin-top: 3%;
         box-shadow: 1px 2px 4px rgba(255, 255, 255, 0.467);
-
     }
 
     input {
@@ -205,7 +187,6 @@ celular*/
         width: 220vw;
         height: 220vh;
         position: relative;
-
     }
 
     .card-body {
@@ -218,6 +199,5 @@ celular*/
         justify-content: center;
         align-items: center;
         box-shadow: 1px 2px 4px white;
-
     }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
-import { credentialU } from 'src/app/models/login/login.inferface'
 import { HttpClient } from '@angular/common/http'
+
 
 @Injectable({
   providedIn: 'root'
