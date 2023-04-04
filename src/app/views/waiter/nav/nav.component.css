@@ -1,29 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Roboto+Mono:wght@100;300&display=swap');
 :root {
-    --main-bg-color: #ffffff;
-    --main-text-color: #ffffff;
-    --second-text-color: #ffffff;
-    --second-bg-color: #ffffff;
+    --color-principal: yellow;
   }
-  
-  .primary-text {
-    color: var(--main-text-color);
-  }
-  
-  .second-text {
-    color: var(--second-text-color);
-  }
-  
-  .primary-bg {
-    background-color: var(--main-bg-color);
-  }
-  
-  .secondary-bg {
-    background-color: var(--second-bg-color);
-  }
+
   
   .rounded-full {
     border-radius: 100%;
+    
   }
   
 #wrapper {
@@ -34,9 +17,11 @@
     );
   }
 
+
+
 #sidebar-wrapper {
     min-height: 100vh;
-    margin-left: -15rem;
+    margin-left: 0rem;
     -webkit-transition: margin 0.25s ease-out;
     -moz-transition: margin 0.25s ease-out;
     -o-transition: margin 0.25s ease-out;
@@ -49,12 +34,14 @@
   }
 
   .sidebar-heading{
+    display: flex;
+    flex-direction: column !important;
     font-family: 'Fredoka', sans-serif !important;
-    font-size: 3.2rem !important;
+    font-size: 1.2rem !important;
   }
   
   #sidebar-wrapper .list-group {
-    width: 15rem;
+    width: 5rem;
   }
   
   #page-content-wrapper {
