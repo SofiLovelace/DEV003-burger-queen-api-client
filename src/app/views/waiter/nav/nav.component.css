@@ -9,13 +9,13 @@
     
   }
   
-#wrapper {
+/* #wrapper {
     overflow-x: hidden;
     background-image: linear-gradient(
       to right,
       #ffffff
     );
-  }
+  } */
 
 
 
@@ -41,7 +41,7 @@
   }
   
   #sidebar-wrapper .list-group {
-    width: 5rem;
+    width: 10rem;
   }
   
   #page-content-wrapper {
