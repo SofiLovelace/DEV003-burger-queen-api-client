@@ -112,7 +112,7 @@
     }
 
     .titulo {
-        color: yellow;
+        color:rgb(255, 255, 255);
         font-size: 1000%;
         margin-top: 2%;
 
@@ -124,11 +124,11 @@
     }
 
     input {
-        color: yellow !important;
+        color: rgb(255, 255, 255) !important;
     }
 
     .bg-image {
-        background-image: url(https://images.pexels.com/photos/7764698/pexels-photo-7764698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+        background-image: url(../../../assets/img/bgLOGIN.png);
         background-size: cover;
         width: 100vw;
         height: 110vh;
@@ -136,7 +136,7 @@
     }
 
     .btn {
-        background: yellow;
+        background: rgb(255, 255, 255);
         font-family: 'Fredoka', sans-serif;
         padding: 2%;
         margin-top: 1%;
@@ -148,7 +148,7 @@
 .btn:hover {
     background-color: black;
     color: white;
-    border-color: yellow;
+    border-color: rgb(255, 255, 255);
 }
 
 
@@ -158,13 +158,13 @@ celular*/
 @media (max-width: 660px) {
     .titulo {
         font-family: 'Fredoka', sans-serif;
-        color: yellow;
+        color: rgb(255, 255, 255);
         font-size: 1200%;
         margin-top: 40%;
     }
 
     .btn {
-        background: yellow;
+        background: rgb(255, 255, 255);
         font-family: 'Fredoka', sans-serif;
         padding: 2%;
         margin-top: 3%;
@@ -172,22 +172,24 @@ celular*/
     }
 
     input {
-        color: yellow !important;
+        color: rgb(255, 255, 255) !important;
     }
 
     .btn:hover {
         background-color: black;
         color: white;
-        border-color: yellow;
+        border-color: rgb(254, 254, 254);
     }
 
     .bg-image {
-        background-image: url(https://images.pexels.com/photos/7764698/pexels-photo-7764698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+        background-image: url(../../../assets/img/bgLOGIN.png);
         background-size: cover;
         width: 220vw;
         height: 220vh;
-        position: relative;
+    
     }
+
+   
 
     .card-body {
         background: rgb(0, 0, 0);
