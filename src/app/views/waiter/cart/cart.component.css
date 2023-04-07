@@ -22,96 +22,84 @@
     background-color: var(--second-bg-color);
   }
   
-  .rounded-full {
-    border-radius: 100%;
-  }
-  
   .cart {
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
     background-color: darkgray;
     height: 100%;
   }
-  
-/*   #wrapper {
-    overflow-x: hidden;
-    background-image: linear-gradient(
-      to right,
-      #ffffff
-    );
-  }
-  
-  #sidebar-wrapper {
-    min-height: 100vh;
-    margin-left: -15rem;
-    -webkit-transition: margin 0.25s ease-out;
-    -moz-transition: margin 0.25s ease-out;
-    -o-transition: margin 0.25s ease-out;
-    transition: margin 0.25s ease-out;
-  }
-  
-  #sidebar-wrapper .sidebar-heading {
-    padding: 0.875rem 1.25rem;
-    font-size: 1.2rem;
-  }
 
-  .sidebar-heading{
-    font-family: 'Fredoka', sans-serif !important;
-    font-size: 3.2rem !important;
+  .name-client {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bolder;
+    font-size: 0.8rem;
   }
-  
-  #sidebar-wrapper .list-group {
-    width: 15rem;
-  }
-  
-  #page-content-wrapper {
-    min-width: 100vw;
-  }
-  
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: 0;
-  }
-  
-  #menu-toggle {
-    cursor: pointer;
-  }
-  
-  .fs-5{
-    color:white ; 
-  }
-
-  .list-group-item {
-    border: none;
-    padding: 20px 30px;
-  }
-  
-  .list-group-item.active {
-    background-color: transparent;
-    color: var(--main-text-color);
+  .title-item {
+    font-family: 'Roboto Mono', monospace;
     font-weight: bold;
-    border: none;
+    font-size: 0.7rem;
   }
-  */
-  @media (min-width: 768px) {
+  .card-items {
+    max-height: 450px;
+  }
+
+  .card-item-order {
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 20px ;
+    background: rgba(233, 207, 77, 1);
+  }
+
+  .more-less {
+    width: 113px;
+  }
+
+  .fas {
+    font-size: 35px;
+    margin-top: 3px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.55);
+    border-radius: 100%;
+  }
+
+  .checkout {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+  }
+
+  .input-amount {
+   border-style: none;
+  }
+
+  .input-amount:focus {
+    border-style: none;
+    outline: none;
+   }
+
+   .details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   }
+   .total {
+    border-top-style:dashed;
+    width: 100%;
+   }
+
+   .checkout-btn {
+    width: 90%;
+    height: 40px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    background: rgba(38, 154, 28, 1);
+    box-shadow: 0px 4px 4px rgba(15, 43, 26, 0.55);
+   }
+
+/*   @media (min-width: 768px) {
     #sidebar-wrapper {
       margin-left: 0;
       display: none;
     }
-  /*
-    #page-content-wrapper {
-      min-width: 0;
-      width: 100%;
-    }
-
-  */  
-
-    /*.navbar{
-        background-color: black !important;
-
-    }*/
   
     #wrapper.toggled #sidebar-wrapper {
       margin-left: -15rem;
     }
-  }
+  } */

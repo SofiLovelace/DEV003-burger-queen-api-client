@@ -3,35 +3,15 @@
     --color-principal: yellow;
   }
 
-  
-  .rounded-full {
-    border-radius: 100%;
-    
-  }
-
   #sidebar-wrapper {
-    min-height: 100vh;
+    min-height: 1000vh;
   }
 
   .sidebar-heading{
-    display: flex;
-    flex-direction: column !important;
     font-family: 'Fredoka', sans-serif !important;
     font-size: 2.2rem !important;
     font-weight: 900;
     margin-top: 100% !important;
-  }
-  
-  #page-content-wrapper {
-    min-width: 100vw;
-  }
-  
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: 0;
-  }
-  
-  #menu-toggle {
-    cursor: pointer;
   }
   
   .sup-orders{
@@ -49,7 +29,6 @@
     background-color: transparent;
     color: var(--main-text-color);
     font-weight: bold;
-    border: none;
   }
   
   @media (min-width: 768px) {

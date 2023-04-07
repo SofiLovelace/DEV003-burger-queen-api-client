@@ -1,53 +1,40 @@
 
-<section class="py-5 gy-5 cart container">
+<section class="py-5 cart">
   <form action="">
-    <div class="row mt-5 mx-1 p-2 bg-dark text-white name-client">
+    <div class="row mt-3 mx-2 p-2 bg-dark text-white name-client">
       Nombre del cliente:
       <input type="text" name="" id="">
     </div>
-    <div class="mt-5 card-item-order">
-      <h4>Jugo natural</h4>
-      <div class="d-inline-flex container">
-        <br>
-        <div class="col-md-5 bg-light ">
-          <button class="col">-</button>
-          <input type="text" name="" id="" class="col-sm-4" value="1">
-          <button class="col">+</button>
+    <div class="card-items">
+      <div class="mt-4 mx-2 card-item-order">
+        <h4 class="m-2 pt-2 title-item">Jugo natural</h4>
+        <div class="d-inline-flex container">
+          <br>
+          <div class="bg-light rounded-pill mb-2 more-less">
+            <i class="fas fa-minus-circle ms-1 icons"></i>
+            <input type="number" name="" id="" class="col-sm-3 ms-2 fs-2 input-amount" value="1">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+          <div class="col text-end fw-bolder fs-2 me-3 price-item-order">$10</div>
         </div>
-        <div class="col ms-5 price-item-order">$10</div>
       </div>
     </div>
-    <div class="mt-5 card checkout">
-      <div class="details">
+    <div class="text-white bg-dark my-3 py-3 mx-2 card checkout">
+      <div class="container details">
         <span>Subtotal:</span>
-        <span>$47.99</span>
-        <br>
+        <span class="">$47.99</span>
+      </div>
+      <div class="container details">  
         <span>Impuestos:</span>
-        <span>$13.01</span>
+        <span class="">$13.01</span>
       </div>
-      <div class="">
-        <label class="total">Total: $60.00</label>
-        <br>
-        <button class="checkout-btn">Finalizar pedido</button>
+      <div class="container">
+        <label class=" details total">
+          <span>Total</span> 
+          <span>$60.00</span> 
+        </label>
       </div>
     </div>
+    <button class="mx-2 rounded-pill text-white fw-bold checkout-btn">Finalizar pedido</button>
   </form>
-    <!-- <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div> -->
 </section>
