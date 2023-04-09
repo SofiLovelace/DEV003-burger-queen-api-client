@@ -34,15 +34,13 @@ export class loginComponent {
       private router:Router) { }
 
   public login(){
-    this.AuthService.get('/login', this.credential.value)//esto restorna un observable
+    this.AuthService.auth('/login', this.credential.value)//esto restorna un observable
     .subscribe({  // Nos subscribimos al observable
       next: (data: IResponseAuth)=> { // codigo correcto
         sessionStorage.setItem('userToken', data.accessToken)
         sessionStorage.setItem('userRole', data.user.role)
         sessionStorage.setItem('userMail', data.user.email)   
-        if (data.user.role === 'admin' || data.user.role === 'waiter') {
-          this.router.navigate(['/waiter'])} // navegacion 
-          console.log(data)
+        console.log(data)
       },
       error: (err: IErrorAuth)=> {
         console.log('error',err) // gestion de errores
@@ -53,7 +51,11 @@ export class loginComponent {
           this.errorHttp = 'Error desconocido, vuelve a intentar o contacta al administrador'
           console.error(err)
       },
-      complete:()=> console.log('complete')  // codigo que se ejecuta al finalizar la subscripción
+      complete:()=> {
+        if (sessionStorage.getItem('userRole') === 'admin' || sessionStorage.getItem('userRole') === 'waiter') {
+          console.log('navegación', sessionStorage.getItem('userToken'))
+          this.router.navigate(['/waiter'])} // navegacion 
+      }
     })
   }
 }

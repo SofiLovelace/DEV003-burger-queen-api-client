@@ -1,4 +1,4 @@
-import { EmailValidator } from "@angular/forms"
+//import { EmailValidator } from "@angular/forms"
 
 interface IUser {
     email: string

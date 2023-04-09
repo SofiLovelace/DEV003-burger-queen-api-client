@@ -1,22 +1,22 @@
 <main class="mt-5 main-products">
     <div class="btns-container">
-        <button class="btn">Almuerzo</button>
-        <button class="btn" >Desayuno</button>
+        <button class="btn" (click)="filterProducts('Almuerzo')">Almuerzo</button>
+        <button class="btn" (click)="filterProducts('Desayuno')">Desayuno</button>
     </div>
     <section class="container-products">
-        <div class="card">
+        <div class="card" [id]="'product'+data.id" *ngFor ='let data of dataProducts'>
             <div class="card-info">
-                <p class="fw-bolder h5text-title">
-                    Cafe americano con leche
-                    <img src="../../../../assets/img/cafeAmericano.png" alt="imagen de cafe" align="right">
+                <p class="fw-bolder title-card">
+                    {{data.name}}
+                    <img [src]="data.image" [alt]="data.name" align="right">
                 </p>
-                <h2 class="text-titlePrice">$5</h2>
+                <h2 class="text-titlePrice">${{data.price}} </h2>
             </div>
             <div class="container-button">
-                <button class="btnAgregar">
+                <button class="btnAgregar" [id]="'btnId'+data.id" (click)="getProduct(data)">
                     <span class="text">Agregar</span>
                 </button>
             </div>
-        </div>        
+        </div>
     </section>
 </main>
