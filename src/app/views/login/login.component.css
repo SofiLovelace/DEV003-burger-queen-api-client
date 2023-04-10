@@ -31,6 +31,10 @@
         cursor: text;
     }
 
+    .placeholder {
+        background-color: white !important;
+    }
+    
     .form-label {
         color: rgb(0, 0, 0) !important;
         font-family: 'Fredoka', sans-serif !important;

@@ -22,16 +22,16 @@
     <div class="text-white bg-dark my-3 py-3 mx-2 card checkout">
       <div class="container details">
         <span>Subtotal:</span>
-        <span class="">${{total-(total*.10)}} </span>
+        <span class="">{{total-(total*.10) | currency}} </span>
       </div>
       <div class="container details">  
         <span>Impuestos 10%:</span>
-        <span class="">${{total*.10}} </span>
+        <span class="">{{total*.10 | currency}} </span>
       </div>
       <div class="container">
         <label class=" details total">
           <span>Total</span> 
-          <span>${{total}}</span> 
+          <span>{{total | currency}}</span> 
         </label>
       </div>
     </div>
