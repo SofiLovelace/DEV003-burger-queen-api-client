@@ -78,7 +78,7 @@
     }
 
     .titulo {
-        color: yellow;
+        color: white;
         font-size: 1000%;
         margin-top: 2%;
 
@@ -86,7 +86,7 @@
     }
 
     .bg-image {
-        background-image: url(https://images.pexels.com/photos/7764698/pexels-photo-7764698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+        background-image: url(../../../assets/img/bgLOGIN.png);
         background-size: cover;
         width: 100vw;
         height: 110vh;
@@ -94,7 +94,7 @@
     }
 
     .btn {
-        background: yellow;
+        background: white;
         font-family: 'Fredoka', sans-serif;
         padding: 2%;
         margin-top: 1%;

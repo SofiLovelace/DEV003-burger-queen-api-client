@@ -27,7 +27,7 @@ export class ProductsComponent{
         :type === 'Desayuno'
         ?this.dataProducts = data.filter((product: IResponseProduct)=> product.type === 'Desayuno')
           :this.dataProducts = data.filter((product: IResponseProduct)=> product.type === 'Almuerzo')
-      },
+        },
       error: (err: object) => {
         console.log('error',err) // gestion de errores
         },
@@ -35,14 +35,14 @@ export class ProductsComponent{
     })    
   }
 
-  public addProduct(paragm:IResponseProduct){
+  public addProduct(productData:IResponseProduct){
     const toCart:IProductToCar = {
-      dateEntry: paragm.dateEntry,
-      id: paragm.id,
-      image: paragm.image,
-      name: paragm.name,
-      price: paragm.price,
-      type: paragm.type,
+      dateEntry: productData.dateEntry,
+      id: productData.id,
+      image: productData.image,
+      name: productData.name,
+      price: productData.price,
+      type: productData.type,
       totalQuantity: 1
     }
     console.log('delivering data =====>', toCart)

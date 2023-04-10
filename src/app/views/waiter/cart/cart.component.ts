@@ -12,7 +12,7 @@ import { HttpsAddOrderService } from 'src/app/services/https-add-order.service';
 
 export class CartComponent {
   public productsCart: IProductToCar[] = []
-  public total: any = 0
+  public total:number = 0
 
   /** Declaramos un objeto en forma de formGroup **/
   client = new FormGroup({
@@ -44,7 +44,7 @@ export class CartComponent {
     ? this.total = 0
     : this.productsCart.length === 1
       ? this.total = this.productsCart[0].totalQuantity * this.productsCart[0].price
-      :this.total = this.productsCart.reduce((accumulator, currentValue):any => accumulator + currentValue.price * currentValue.totalQuantity, 0)
+      : this.total = this.productsCart.reduce((accumulator, currentValue):any => accumulator + currentValue.price * currentValue.totalQuantity, 0)
   }
   
   public sendOrder () {
@@ -73,8 +73,6 @@ export class CartComponent {
         if (this.addToCart(data)) { //si es true podemos hacer push
           this.productsCart.push(data)
         }
-        console.log('receiving data =======>', data)
-        console.log(this.productsCart)
         this.sumTotal()
       })
   }
