@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IResponseProduct } from '../models/views/waiter.interface';
 
 @Injectable({
@@ -10,9 +10,7 @@ export class HttpsService {
   public urlApiWebNico = 'https://burgermock-api.onrender.com'
   // public urlApiWebSofi = 'https://burguerqueen-service.onrender.com'
 
-  constructor(private http: HttpClient) {
-    console.log('HttpsServices')
-   }
+  constructor(private http: HttpClient) {   }
 
   public get (category: string): any {
     const httpOptions = {

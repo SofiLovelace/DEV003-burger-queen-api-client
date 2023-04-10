@@ -3,7 +3,6 @@
         <h1 class="titulo">BURGER QUEEN</h1>
         <div class="card-body">
             <form  [formGroup]="credential" (ngSubmit)="login()" class="p-5 form">
-                <!--<form >-->
                 <div class="mb-3">
                     <label for="exampleInputUser" class="form-label">USUARIO &nbsp; &nbsp; &nbsp;</label>
                     <input type="email" formControlName="email" class="form-control  placeholder fs-2 mb-4" id="exampleInputEmail1">
@@ -25,7 +24,7 @@
                     </div>
                 </div>
                
-                <button type="submit" class="btn fs-2" [disabled]="credential.invalid"> <!-- [routerLink]="['/waiter']" -->
+                <button type="submit" class="btn fs-2" [disabled]="credential.invalid">
                     Ingresar
                 </button>
             </form>
@@ -34,4 +33,3 @@
         </div>
     </div>
 </div>
-<!--  -->

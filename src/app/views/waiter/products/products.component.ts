@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpsService } from 'src/app/services/https-waiter.service';
-import { IResponseProduct } from 'src/app/models/views/waiter.interface';
+import { IResponseProduct, IProductToCar } from 'src/app/models/views/waiter.interface';
+import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.service';
 
 @Component({
   selector: 'app-products',
@@ -12,7 +13,10 @@ export class ProductsComponent{
   
   public dataProducts: IResponseProduct[] = [] // generamos un array que modificaremos, en función de esto se generaran los elementos html
   
-  constructor (private HttpsService: HttpsService) { }
+  constructor (
+    private HttpsService: HttpsService,
+    private ServiceAdd: ServiceAddToCarService
+    ) { }
 
   public filterProducts(type: 'Desayuno' | 'Almuerzo' | void): void {
     this.HttpsService.get('products')
@@ -31,13 +35,18 @@ export class ProductsComponent{
     })    
   }
 
-  public getProduct(paragm:IResponseProduct){
-    console.log({
+  public addProduct(paragm:IResponseProduct){
+    const toCart:IProductToCar = {
+      dateEntry: paragm.dateEntry,
       id: paragm.id,
+      image: paragm.image,
       name: paragm.name,
       price: paragm.price,
+      type: paragm.type,
       totalQuantity: 1
-    })
+    }
+    console.log('delivering data =====>', toCart)
+    this.ServiceAdd.activatorAddToCart.emit(toCart)
   }
 
   ngOnInit():void {
