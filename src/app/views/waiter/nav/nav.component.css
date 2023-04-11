@@ -7,9 +7,9 @@
     min-height: 1000vh;
   }
 
-  .sidebar-heading{
-    font-family: 'Fredoka', sans-serif !important;
-    font-size: 2.2rem !important;
+  .title-nav{
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2.2rem;
     font-weight: 900;
     margin-top: 100% !important;
   }

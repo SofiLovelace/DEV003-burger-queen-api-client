@@ -3,7 +3,7 @@ import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.serv
 import { IProductToCar } from 'src/app/models/views/waiter.interface';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { HttpsAddOrderService } from 'src/app/services/https-add-order.service';
-
+import { HttpsService } from 'src/app/services/https-waiter.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -20,7 +20,7 @@ export class CartComponent {
   })
 
   /**Definimos geters **/
-  get email(){
+  get name(){
     return this.client.get('name') as FormControl
   }
 
@@ -48,6 +48,11 @@ export class CartComponent {
   }
   
   public sendOrder () {
+    const bodyHttp = {
+      userId: 1, 
+      client: this.name,
+      porducts: this.productsCart
+    }
     this.HttpsAddOrder.postOrder(this.productsCart)
     .subscribe({  // Nos subscribimos al observable
       next: (data: any)=> { // codigo correcto
@@ -64,8 +69,26 @@ export class CartComponent {
   
   constructor (
     private ServiceAdd: ServiceAddToCarService,
-    private HttpsAddOrder: HttpsAddOrderService
-    ) {}
+    private HttpsAddOrder: HttpsAddOrderService,
+    private HttpsService: HttpsService
+  ) {}
+
+  public prueba () {
+    console.log("probando")
+    this.HttpsService.post('orders', {hola: 'hola'})
+    .subscribe({  // Nos subscribimos al observable
+      next: (data: any)=> { // codigo correcto
+        console.log(data)
+      },
+      error: (err: any)=> {
+        console.log('error',err) // gestion de errores
+      },
+      complete:()=> {
+        console.log('complete') // codigo correcto
+      }
+    })
+
+  }
 
   ngOnInit():void {
     this.ServiceAdd.activatorAddToCart

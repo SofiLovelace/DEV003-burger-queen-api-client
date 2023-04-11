@@ -34,12 +34,14 @@ export class loginComponent {
       private router:Router) { }
 
   public login(){
+    console.log(this.credential.value)
     this.AuthService.auth('/login', this.credential.value)//esto restorna un observable
     .subscribe({  // Nos subscribimos al observable
       next: (data: IResponseAuth)=> { // codigo correcto
         sessionStorage.setItem('userToken', data.accessToken)
         sessionStorage.setItem('userRole', data.user.role)
         sessionStorage.setItem('userMail', data.user.email)   
+        sessionStorage.setItem('userId', data.user.id.toString())
         console.log(data)
       },
       error: (err: IErrorAuth)=> {

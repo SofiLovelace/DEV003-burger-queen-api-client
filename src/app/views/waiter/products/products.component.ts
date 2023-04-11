@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { HttpsService } from 'src/app/services/https-waiter.service';
 import { IResponseProduct, IProductToCar } from 'src/app/models/views/waiter.interface';
 import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.service';
@@ -10,12 +10,16 @@ import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.serv
 })
 
 export class ProductsComponent{
+
+  @ViewChild('btnLunch')btnLunch!:ElementRef;
+  @ViewChild('btnBreakfast')btnBreakfast!:ElementRef;
   
   public dataProducts: IResponseProduct[] = [] // generamos un array que modificaremos, en función de esto se generaran los elementos html
   
   constructor (
     private HttpsService: HttpsService,
-    private ServiceAdd: ServiceAddToCarService
+    private ServiceAdd: ServiceAddToCarService,
+    private renderer2: Renderer2
     ) { }
 
   public filterProducts(type: 'Desayuno' | 'Almuerzo' | void): void {
@@ -49,10 +53,20 @@ export class ProductsComponent{
     this.ServiceAdd.activatorAddToCart.emit(toCart)
   }
 
+  public changeColor(button: string) {
+    const btnLunch= this.btnLunch.nativeElement;
+    const btnBreakfast= this.btnBreakfast.nativeElement;
+
+    if (button === "lunch") {
+      this.renderer2.setStyle(btnLunch, 'backgroundColor', 'black');
+      this.renderer2.setStyle(btnBreakfast, 'backgroundColor', 'gray');      
+    } else {
+      this.renderer2.setStyle(btnLunch, 'backgroundColor', 'gray');
+      this.renderer2.setStyle(btnBreakfast, 'backgroundColor', 'black');      
+    }
+  }
+
   ngOnInit():void {
     this.filterProducts()  
   }
-
-  
-  
 }

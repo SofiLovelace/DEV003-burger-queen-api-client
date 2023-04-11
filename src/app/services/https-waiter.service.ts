@@ -20,5 +20,14 @@ export class HttpsService {
     }
     return this.http.get<IResponseProduct>(this.urlApiWebSofi + '/' + category, httpOptions)
   }
+
+  public post (category: string, body:any): any {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + sessionStorage.getItem('userToken')
+      })
+    }
+    return this.http.post(this.urlApiWebSofi + '/' + category, body, httpOptions)
+  }
   
 }
