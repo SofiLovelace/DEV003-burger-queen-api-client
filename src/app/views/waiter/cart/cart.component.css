@@ -1,39 +1,113 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Roboto+Mono:wght@100;300&display=swap');
-
-.card-item-order{
-    background-color: #F8D732;
-      padding: 5%;
-     border-radius: 20px;
-    } 
-
-    h4 {
-        font-family: 'Roboto Mono', monospace;
-    }
-
-    .btnCon{
-background-color: none;
-    }
-    .btnMas{
-        border-style: none;
-        background-color: black;
-        border-radius: 20px;
-        color: white;
-    }
-
+:root {
+    --main-bg-color: #ffffff;
+    --main-text-color: #ffffff;
+    --second-text-color: #ffffff;
+    --second-bg-color: #ffffff;
+  }
+  
+  .primary-text {
+    color: var(--main-text-color);
+  }
+  
+  .second-text {
+    color: var(--second-text-color);
+  }
+  
+  .primary-bg {
+    background-color: var(--main-bg-color);
+  }
+  
+  .secondary-bg {
+    background-color: var(--second-bg-color);
+  }
+  
   .cart {
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
     background-color: darkgray;
     height: 100%;
   }
+<<<<<<< HEAD
   @media (min-width: 768px) {
+=======
+
+  .name-client {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bolder;
+    font-size: 0.8rem;
+  }
+  .title-item {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    font-size: 0.7rem;
+  }
+  .card-items {
+    max-height: 450px;
+  }
+
+  .card-item-order {
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 20px ;
+    background: rgba(233, 207, 77, 1);
+  }
+
+  .more-less {
+    width: 113px;
+  }
+
+  .fas {
+    font-size: 35px;
+    margin-top: 3px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.55);
+    border-radius: 100%;
+  }
+
+  .checkout {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+  }
+
+  .input-amount {
+   border-style: none;
+  }
+
+  .input-amount:focus {
+    border-style: none;
+    outline: none;
+   }
+
+   .details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   }
+   .total {
+    border-top-style:dashed;
+    width: 100%;
+   }
+
+   .checkout-btn {
+    width: 90%;
+    height: 40px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    background: rgba(38, 154, 28, 1);
+    box-shadow: 0px 4px 4px rgba(15, 43, 26, 0.55);
+   }
+
+/*   @media (min-width: 768px) {
+>>>>>>> main
     #sidebar-wrapper {
       margin-left: 0;
       display: none;
     }
+<<<<<<< HEAD
  
+=======
+  
+>>>>>>> main
     #wrapper.toggled #sidebar-wrapper {
       margin-left: -15rem;
     }
-  }
+  } */

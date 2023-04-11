@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'
+import { HttpsService } from 'src/app/services/https-waiter.service';
 
 
 @Component({
@@ -9,19 +10,14 @@ import { Router } from '@angular/router'
 })
 
 export class WaiterComponent {
-  constructor(private router:Router) { } 
+  constructor(
+    private router:Router,
+    private HttpsService: HttpsService
+    ) { } 
   
   ngOnInit(){
     if(!sessionStorage.getItem('userRole')){
-      this.router.navigate(['/login'])}
-  }
-
-  public validateAuth() {
-    if(!sessionStorage.getItem('userRole')){
-      this.router.navigate(['/login'])} 
-  }
-  
+      this.router.navigate(['/login'])
+    }
+  }  
 }
-
-WaiterComponent
-
