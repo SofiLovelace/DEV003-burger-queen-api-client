@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { HttpsService } from 'src/app/services/https-waiter.service'
+import { HttpsService } from 'src/app/services/https.service'
 
 
 @Injectable({

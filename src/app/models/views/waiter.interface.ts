@@ -8,11 +8,13 @@ export interface IResponseProduct {
 }
 
 export interface IProductToCar {
-    dateEntry: Date
-    id: number
-    image: string
-    name: string
-    price: number
-    type: 'Desayuno' | 'Almuerzo'
-    totalQuantity: number
+    qty: number
+    product: {
+        id: number
+        name: string
+        price: number
+        image: string
+        type: 'Desayuno' | 'Almuerzo'
+        dateEntry: Date
+    }
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'
-import { HttpsService } from 'src/app/services/https-waiter.service';
+import { HttpsService } from 'src/app/services/https.service';
 
 
 @Component({

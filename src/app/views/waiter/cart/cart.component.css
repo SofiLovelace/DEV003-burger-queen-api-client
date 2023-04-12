@@ -1,27 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Roboto+Mono:wght@100;300&display=swap');
-:root {
-    --main-bg-color: #ffffff;
-    --main-text-color: #ffffff;
-    --second-text-color: #ffffff;
-    --second-bg-color: #ffffff;
-  }
-  
-  .primary-text {
-    color: var(--main-text-color);
-  }
-  
-  .second-text {
-    color: var(--second-text-color);
-  }
-  
-  .primary-bg {
-    background-color: var(--main-bg-color);
-  }
-  
-  .secondary-bg {
-    background-color: var(--second-bg-color);
-  }
-  
+
   .cart {
     display: flex;
     flex-direction: column;
@@ -38,9 +16,6 @@
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;
     font-size: 0.7rem;
-  }
-  .card-items {
-    max-height: 450px;
   }
 
   .card-item-order {

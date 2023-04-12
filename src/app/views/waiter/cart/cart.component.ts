@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.service';
 import { IProductToCar } from 'src/app/models/views/waiter.interface';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
-import { HttpsAddOrderService } from 'src/app/services/https-add-order.service';
-import { HttpsService } from 'src/app/services/https-waiter.service';
+import { HttpsService } from 'src/app/services/https.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -27,8 +26,8 @@ export class CartComponent {
   private addToCart (newElement:IProductToCar):boolean {
     let add:boolean = true
     this.productsCart.forEach(element => { //validamos si ya existe el elemento
-      if(element.id === newElement.id){
-        element.totalQuantity ++
+      if(element.product.id === newElement.product.id){
+        element.qty ++
         add = false
       }
     })
@@ -36,27 +35,33 @@ export class CartComponent {
   }
 
   public deleteProduct():void {
-    this.productsCart = this.productsCart.filter((product) => product.totalQuantity > 0 )
+    this.productsCart = this.productsCart.filter((product) => product.qty > 0 )
   }
 
   public sumTotal():void {
     this.productsCart.length === 0
     ? this.total = 0
     : this.productsCart.length === 1
-      ? this.total = this.productsCart[0].totalQuantity * this.productsCart[0].price
-      : this.total = this.productsCart.reduce((accumulator, currentValue):any => accumulator + currentValue.price * currentValue.totalQuantity, 0)
+      ? this.total = this.productsCart[0].qty * this.productsCart[0].product.price
+      : this.total = this.productsCart.reduce((accumulator, currentValue):any => accumulator + currentValue.product.price * currentValue.qty, 0)
   }
   
   public sendOrder () {
+    console.log(this.name.value)
     const bodyHttp = {
-      userId: 1, 
-      client: this.name,
-      porducts: this.productsCart
+      userId: Number(sessionStorage.getItem('userId')), 
+      client: this.name.value,
+      products: this.productsCart,
+      status: 'pending',
+      dataEntry: new Date().toLocaleString()
     }
-    this.HttpsAddOrder.postOrder(this.productsCart)
+    this.HttpsService.post('products', bodyHttp)
     .subscribe({  // Nos subscribimos al observable
       next: (data: any)=> { // codigo correcto
         console.log(data)
+        this.productsCart = []
+        this.total = 0
+        this.client.reset()
       },
       error: (err: any)=> {
         console.log('error',err) // gestion de errores
@@ -69,26 +74,8 @@ export class CartComponent {
   
   constructor (
     private ServiceAdd: ServiceAddToCarService,
-    private HttpsAddOrder: HttpsAddOrderService,
     private HttpsService: HttpsService
   ) {}
-
-  public prueba () {
-    console.log("probando")
-    this.HttpsService.post('orders', {hola: 'hola'})
-    .subscribe({  // Nos subscribimos al observable
-      next: (data: any)=> { // codigo correcto
-        console.log(data)
-      },
-      error: (err: any)=> {
-        console.log('error',err) // gestion de errores
-      },
-      complete:()=> {
-        console.log('complete') // codigo correcto
-      }
-    })
-
-  }
 
   ngOnInit():void {
     this.ServiceAdd.activatorAddToCart

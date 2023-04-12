@@ -1,21 +1,21 @@
 
 <section class="py-5 cart">
-  <form [formGroup]="client" (ngSubmit)="prueba()">
+  <form [formGroup]="client" (ngSubmit)="sendOrder()">
     <div class="row mt-3 mx-2 p-2 bg-dark text-white name-client">
       Nombre del cliente:
       <input type="text" formControlName="name">
     </div>
     <div class="card-items">
       <div class="mt-4 mx-2 card-item-order" *ngFor ='let data of productsCart'>
-        <h4 class="m-2 pt-2 title-item">{{data.name}}</h4>
+        <h4 class="m-2 pt-2 title-item">{{data.product.name}}</h4>
         <div class="d-inline-flex container">
           <br>
           <div class="bg-light rounded-pill mb-2 more-less">
-            <i class="fas fa-minus-circle ms-1 icons" (click)="[data.totalQuantity = data.totalQuantity - 1, deleteProduct(), sumTotal()]"></i>
-            <input type="number" name="" id="" class="col-sm-3 ms-2 fs-2 input-amount" [value]="data.totalQuantity">
-            <i class="fas fa-plus-circle" (click)="[data.totalQuantity = data.totalQuantity + 1, sumTotal()]"></i>
+            <i class="fas fa-minus-circle ms-1 icons" (click)="[data.qty = data.qty - 1, deleteProduct(), sumTotal()]"></i>
+            <input type="number" name="" id="" class="col-sm-3 ms-2 fs-2 input-amount" [value]="data.qty">
+            <i class="fas fa-plus-circle" (click)="[data.qty = data.qty + 1, sumTotal()]"></i>
           </div>
-          <div class="col text-end fw-bolder fs-2 me-3 price-item-order">${{data.price * data.totalQuantity}} </div>
+          <div class="col text-end fw-bolder fs-2 me-3 price-item-order">${{data.product.price * data.qty}} </div>
         </div>
       </div>
     </div>

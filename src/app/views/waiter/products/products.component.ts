@@ -1,5 +1,5 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
-import { HttpsService } from 'src/app/services/https-waiter.service';
+import { HttpsService } from 'src/app/services/https.service';
 import { IResponseProduct, IProductToCar } from 'src/app/models/views/waiter.interface';
 import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.service';
 
@@ -29,8 +29,9 @@ export class ProductsComponent{
         !type
         ?this.dataProducts = data
         :type === 'Desayuno'
-        ?this.dataProducts = data.filter((product: IResponseProduct)=> product.type === 'Desayuno')
+          ?this.dataProducts = data.filter((product: IResponseProduct)=> product.type === 'Desayuno')
           :this.dataProducts = data.filter((product: IResponseProduct)=> product.type === 'Almuerzo')
+        
         },
       error: (err: object) => {
         console.log('error',err) // gestion de errores
@@ -41,15 +42,16 @@ export class ProductsComponent{
 
   public addProduct(productData:IResponseProduct){
     const toCart:IProductToCar = {
-      dateEntry: productData.dateEntry,
+      qty: 1,
+      product: {
       id: productData.id,
-      image: productData.image,
       name: productData.name,
       price: productData.price,
+      image: productData.image,
       type: productData.type,
-      totalQuantity: 1
+      dateEntry: productData.dateEntry,
+      }
     }
-    console.log('delivering data =====>', toCart)
     this.ServiceAdd.activatorAddToCart.emit(toCart)
   }
 
