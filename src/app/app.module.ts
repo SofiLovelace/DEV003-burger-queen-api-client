@@ -20,7 +20,6 @@ import { ProductsComponent } from './views/waiter/products/products.component';
     CartComponent,
     NavComponent,
     ProductsComponent
-
   ],
   imports: [
     BrowserModule,

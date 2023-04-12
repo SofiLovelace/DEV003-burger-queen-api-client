@@ -55,7 +55,7 @@ export class CartComponent {
       status: 'pending',
       dataEntry: new Date().toLocaleString()
     }
-    this.HttpsService.post('products', bodyHttp)
+    this.HttpsService.post('orders', bodyHttp)
     .subscribe({  // Nos subscribimos al observable
       next: (data: any)=> { // codigo correcto
         console.log(data)
