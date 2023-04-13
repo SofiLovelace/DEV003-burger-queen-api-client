@@ -9,4 +9,6 @@ export class SwitchService {
 
   $switchModal = new EventEmitter<any>()
 
+  $dataOrder = new EventEmitter<any>()
+
 }

@@ -1,0 +1,13 @@
+.modal {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.body-modal  {
+    background-color: darkgray; 
+}

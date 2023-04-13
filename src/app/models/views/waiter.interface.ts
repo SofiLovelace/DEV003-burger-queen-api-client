@@ -18,3 +18,8 @@ export interface IProductToCar {
         dateEntry: Date
     }
 }
+
+export interface IDataCheck {
+    products: IProductToCar[]
+    total: number
+}

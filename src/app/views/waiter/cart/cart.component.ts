@@ -16,7 +16,7 @@ export class CartComponent {
   constructor (
     private ServiceAdd: ServiceAddToCarService,
     private HttpsService: HttpsService,
-    private switchS: SwitchService,
+    public switchS: SwitchService,
   ) {}
 
   public productsCart: IProductToCar[] = []
@@ -83,8 +83,15 @@ export class CartComponent {
     })
   }
 
+  public finishOrder():void {
+    setTimeout(() => {
+      this.switchS.$dataOrder.emit({products: this.productsCart, total:this.total})
+    }, 1)
+  }
+
   public openModal() {
     this.modalSwitch = true
+    this.finishOrder()
   }
 
   public closeModal() {
