@@ -3,6 +3,8 @@ import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.serv
 import { IProductToCar } from 'src/app/models/views/waiter.interface';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { HttpsService } from 'src/app/services/https.service';
+import { SwitchService } from 'src/app/services/switch.service';
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -10,8 +12,17 @@ import { HttpsService } from 'src/app/services/https.service';
 })
 
 export class CartComponent {
+
+  constructor (
+    private ServiceAdd: ServiceAddToCarService,
+    private HttpsService: HttpsService,
+    private switchS: SwitchService,
+  ) {}
+
   public productsCart: IProductToCar[] = []
   public total:number = 0
+
+  public modalSwitch: boolean = false
 
   /** Declaramos un objeto en forma de formGroup **/
   client = new FormGroup({
@@ -71,11 +82,15 @@ export class CartComponent {
       }
     })
   }
-  
-  constructor (
-    private ServiceAdd: ServiceAddToCarService,
-    private HttpsService: HttpsService
-  ) {}
+
+  public openModal() {
+    this.modalSwitch = true
+  }
+
+  public closeModal() {
+    this.sendOrder
+    this.modalSwitch = false
+  }
 
   ngOnInit():void {
     this.ServiceAdd.activatorAddToCart
@@ -85,5 +100,8 @@ export class CartComponent {
         }
         this.sumTotal()
       })
+
+    this.switchS.$switchModal.subscribe((res) => this.modalSwitch = res)
   }
 }
+

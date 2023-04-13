@@ -10,6 +10,7 @@ import { HttpClientModule} from '@angular/common/http'
 import { CartComponent } from './views/waiter/cart/cart.component';
 import { NavComponent } from './views/waiter/nav/nav.component';
 import { ProductsComponent } from './views/waiter/products/products.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProductsComponent } from './views/waiter/products/products.component';
     PageNotFoundComponent,
     CartComponent,
     NavComponent,
-    ProductsComponent
+    ProductsComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
