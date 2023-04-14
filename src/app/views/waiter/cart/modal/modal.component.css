@@ -1,17 +1,17 @@
 .modal {
-    display: flex;
-    flex-flow: row;
-    height: 1000%;
-    width: 100%;
-    justify-content: center;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
+  display: block;
+  height: 1000%;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .body-modal  {
-    background-color: darkgray; 
+  padding: 0 30px;
+  width: fit-content;
+  position: relative;
+  background-color: darkgray;
 }
-
 
 html {
   font-family: sans-serif;
