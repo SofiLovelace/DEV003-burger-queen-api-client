@@ -58,7 +58,6 @@ export class CartComponent {
   }
   
   public sendOrder () {
-    console.log(this.name.value)
     const bodyHttp = {
       userId: Number(sessionStorage.getItem('userId')), 
       client: this.name.value,

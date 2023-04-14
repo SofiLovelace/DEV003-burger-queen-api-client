@@ -42,7 +42,6 @@ export class loginComponent {
         sessionStorage.setItem('userRole', data.user.role)
         sessionStorage.setItem('userMail', data.user.email)   
         sessionStorage.setItem('userId', data.user.id.toString())
-        console.log(data)
       },
       error: (err: IErrorAuth)=> {
         console.log('error',err) // gestion de errores
@@ -55,7 +54,6 @@ export class loginComponent {
       },
       complete:()=> {
         if (sessionStorage.getItem('userRole') === 'admin' || sessionStorage.getItem('userRole') === 'waiter') {
-          console.log('navegación', sessionStorage.getItem('userToken'))
           this.router.navigate(['/waiter'])} // navegacion 
       }
     })
