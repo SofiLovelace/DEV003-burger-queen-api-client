@@ -1,56 +1,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Roboto+Mono:wght@100;300&display=swap');
+
 :root {
     --color-principal: yellow;
-  }
+}
 
-  #sidebar-wrapper {
+#sidebar-wrapper {
     min-height: 1000vh;
-  }
+}
 
-  .title-nav{
+.title-nav {
     font-family: 'Fredoka', sans-serif;
     font-size: 2.2rem;
     font-weight: 900;
     margin-top: 100% !important;
-  }
-  
-  .sup-orders{
-    top: -1em;
-    right: -0.5em;  
-  }
+}
 
-  .list-group-item {
+.sup-orders {
+    top: -1em;
+    right: -0.5em;
+}
+
+.list-group-item {
     border: none;
     padding: 20px 30px;
     text-align: center;
-  }
-  
-  .list-group-item.active {
+}
+
+.list-group-item.active {
     background-color: transparent;
     color: var(--main-text-color);
     font-weight: bold;
-  }
-  
-  @media (min-width: 768px) {
-    #sidebar-wrapper {
-      margin-left: 0;
-    }
-  
-    #page-content-wrapper {
-      width: 100%;
-    }
-
-   
-
-.cart{
-    display: flex;
-    flex-direction: column;
-    margin-left: 20% ;
-  border-radius: 20px;
-  background-color: darkgray;
-
 }
-    #wrapper.toggled #sidebar-wrapper {
-      margin-left: -15rem;
+
+@media only screen and (max-width: 768px) {
+  
+   
+    #sidebar-wrapper {
+        background-color: black;
+        min-height: 10vh;
+        min-width: 75vh;
     }
-  }
+
+    .itemNav {
+        display: none;
+    }
+
+    .list-group {
+        margin-left: 15px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .main-products {
+        margin-top: 20px;
+    }
+
+    #page-content-wrapper {
+        width: 100%;
+    }
+
+    .title-nav {
+        display: none;
+    }
+
+
+    .cart {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20%;
+        border-radius: 20px;
+        background-color: darkgray;
+
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
