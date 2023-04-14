@@ -7,21 +7,37 @@
 }
 
 .body-modal  {
-  padding: 0 30px;
+  padding: 10px 30px;
   width: fit-content;
-  position: relative;
   background-color: darkgray;
+  margin: 100px auto;
+  text-align: center;
 }
 
 html {
   font-family: sans-serif;
 }
 
+.title-modal {
+  font-family: 'Fredoka', sans-serif; 
+}
+
 table {
   border-collapse: collapse;
   border: 2px solid rgb(200,200,200);
   letter-spacing: 1px;
-  font-size: 0.8rem;
+  font-size: 1rem;
+}
+
+.table-title {
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.table-total {
+  font-size: 1.1rem;
+  font-weight: bolder; 
+  border-top: 2px solid rgb(56, 52, 52)
 }
 
 td, th {
@@ -43,4 +59,21 @@ tr:nth-child(even) td {
 
 tr:nth-child(odd) td {
   background-color: rgb(245,245,245);
+}
+
+.button-modal {
+  color: white;
+  width: 200px;
+  height: 40px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  box-shadow: 0px 4px 4px rgba(15, 43, 26, 0.55);
+}
+
+.button-send {
+  background: rgba(38, 154, 28, 1);
+}
+
+.button-cancel {
+  background: rgb(85, 84, 84);
 }

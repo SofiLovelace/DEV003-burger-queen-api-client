@@ -29,12 +29,10 @@ export class ModalComponent {
   }
 
   ngOnInit():void {
-    console.log('soy el init')
     this.switchS.$dataOrder
     .subscribe((res:IDataCheck) => {
       this.productsCheck = this.productsCheck.concat(res.products)
       this.total = this.total + res.total
-      console.log(this.productsCheck, this.total)
     })
   }
 }

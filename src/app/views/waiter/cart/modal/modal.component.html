@@ -1,27 +1,29 @@
 <div class="modal">
-    <div class=" body-modal">
+    <div class="body-modal">
         <h2 class="title-modal">Cuenta</h2>
         <table>
             <tr>
-                <td>Cant</td>
-                <td>Producto</td>
-                <td>Precio c/u</td>
-                <td>Precio total</td>
+                <td class="table-title">Cant</td>
+                <td class="table-title">Producto</td>
+                <td class="table-title">Precio c/u</td>
+                <td class="table-title">Precio total</td>
             </tr>
             <tr *ngFor="let data of productsCheck">
                 <td>{{data.qty}} </td>
                 <td>{{data.product.name}}</td>
-                <td>{{data.product.price}}</td>
-                <td>{{data.product.price * data.qty}}</td>
+                <td>{{data.product.price | currency}}</td>
+                <td>{{data.product.price * data.qty | currency}}</td>
             </tr>
             <tr>
-                <td>Total</td>
-                <td></td>
-                <td></td>
-                <td>{{total}}</td>
+                <td class="table-total">Total</td>
+                <td class="table-total"></td>
+                <td class="table-total"></td>
+                <td class="table-total">{{total | currency}}</td>
             </tr>
           </table>
-        <button type="button" class="btn button-modal" (click)="confirmOrder()">Confirmar y enviar orden</button>
-        <button type="button" class="btn button-modal" (click)="closeModal()">Cancelar</button>
+          <div class="my-3">
+            <button type="button" class="btn mx-4 rounded-pill button-modal button-send" (click)="confirmOrder()">Confirmar orden</button>
+            <button type="button" class="btn mx-4 rounded-pill button-modal button-cancel" (click)="closeModal()">Cancelar</button>
+          </div>
     </div>
 </div>

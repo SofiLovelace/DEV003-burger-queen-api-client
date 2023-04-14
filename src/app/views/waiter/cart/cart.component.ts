@@ -94,11 +94,6 @@ export class CartComponent {
     this.finishOrder()
   }
 
-  public closeModal() {
-    this.sendOrder
-    this.modalSwitch = false
-  }
-
   ngOnInit():void {
     this.ServiceAdd.activatorAddToCart
       .subscribe(data => {
