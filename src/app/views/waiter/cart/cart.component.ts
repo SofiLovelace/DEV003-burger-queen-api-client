@@ -58,7 +58,6 @@ export class CartComponent {
   }
   
   public sendOrder () {
-    console.log(this.name.value)
     const bodyHttp = {
       userId: Number(sessionStorage.getItem('userId')), 
       client: this.name.value,
@@ -92,11 +91,6 @@ export class CartComponent {
   public openModal() {
     this.modalSwitch = true
     this.finishOrder()
-  }
-
-  public closeModal() {
-    this.sendOrder
-    this.modalSwitch = false
   }
 
   ngOnInit():void {
