@@ -1,6 +1,5 @@
-
 <section class="py-5 cart">
-  <form [formGroup]="client" (ngSubmit)="[openModal()]"> <!-- sendOrder() -->
+  <form  class="form-check" [formGroup]="client" (ngSubmit)="[openModal()]"> <!-- sendOrder() -->
     <div class="row mt-3 mx-2 p-2 bg-dark text-white name-client">
       Nombre del cliente:
       <input type="text" formControlName="name">

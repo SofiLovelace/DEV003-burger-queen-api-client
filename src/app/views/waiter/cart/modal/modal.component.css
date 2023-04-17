@@ -10,7 +10,7 @@
   padding: 10px 30px;
   width: fit-content;
   background-color: darkgray;
-  margin: 100px auto;
+  margin: 200px auto;
   text-align: center;
 }
 
@@ -76,4 +76,10 @@ tr:nth-child(odd) td {
 
 .button-cancel {
   background: rgb(85, 84, 84);
+}
+
+@media only screen and (max-width: 915px) {
+  .body-modal {
+    margin-top: 500px;
+  }
 }

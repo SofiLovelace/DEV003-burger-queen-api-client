@@ -6,7 +6,7 @@
   
   .container-waiter {
     display: grid;
-    grid-template-rows: 10% 70% 20%;
+    grid-auto-rows: minmax(100px, auto);
     grid-template-columns: 100%;
   }
 
@@ -24,9 +24,11 @@
   }
   
   .cart {
+    padding: 0;
     width: 100%;
     grid-row: 3/4;
     grid-column: 1/2;
   }
+
   
 }

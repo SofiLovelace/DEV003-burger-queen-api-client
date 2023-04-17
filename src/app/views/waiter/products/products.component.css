@@ -33,7 +33,7 @@
     
 
 .card {
-    width: 18   0px;
+    width: 180px;
     height: 180px;
     padding: .8em;
     background: #d9cdcd;
@@ -80,4 +80,11 @@
    img {
     width: 50px;
     height: 50px;
+   }
+
+@media only screen and (max-width: 915px) {
+    .card {
+        width: 190px;
+        height: 170px;
+    }
    }
