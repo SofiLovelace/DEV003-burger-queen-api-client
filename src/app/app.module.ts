@@ -8,7 +8,7 @@ import { WaiterComponent } from './views/waiter/waiter.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { HttpClientModule} from '@angular/common/http'
 import { CartComponent } from './views/waiter/cart/cart.component';
-import { NavComponent } from './views/waiter/nav/nav.component';
+import { NavComponent } from './views/nav/nav.component';
 import { ProductsComponent } from './views/waiter/products/products.component';
 import { ModalComponent } from './views/waiter/cart/modal/modal.component';
 
