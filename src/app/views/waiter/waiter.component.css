@@ -1,3 +1,32 @@
-@media only screen and (max-width: 768px) {
+.nav {
+  padding: 0;
+}
+
+@media only screen and (max-width: 915px) {
   
+  .container-waiter {
+    display: grid;
+    grid-template-rows: 10% 70% 20%;
+    grid-template-columns: 100%;
   }
+
+  .nav {
+    width: 100%;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    display: block;
+  }
+  
+  .products {
+    width: 100%;
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  
+  .cart {
+    width: 100%;
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
+  
+}
