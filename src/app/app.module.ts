@@ -11,6 +11,8 @@ import { CartComponent } from './views/waiter/cart/cart.component';
 import { NavComponent } from './views/nav/nav.component';
 import { ProductsComponent } from './views/waiter/products/products.component';
 import { ModalComponent } from './views/waiter/cart/modal/modal.component';
+import { ChefComponent } from './views/chef/chef.component';
+import { OrderComponent } from './views/chef/order/order.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ModalComponent } from './views/waiter/cart/modal/modal.component';
     CartComponent,
     NavComponent,
     ProductsComponent,
-    ModalComponent
+    ModalComponent,
+    ChefComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
