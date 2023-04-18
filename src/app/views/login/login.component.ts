@@ -54,7 +54,7 @@ export class loginComponent {
       },
       complete:()=> {
         if (sessionStorage.getItem('userRole') === 'admin' || sessionStorage.getItem('userRole') === 'waiter') {
-          this.router.navigate(['/waiter'])} // navegacion 
+          this.router.navigate(['/kitchen'])} // navegacion 
       }
     })
   }

@@ -1,0 +1,25 @@
+
+<main class="mt-5 main-products">
+  
+    <section class="container-products">
+        <div class="card" [id]="" >
+            <!--<div class="card" [id]="'product'+data.id" *ngFor ='let data of dataProducts'>-->
+            <div class="card-info">
+                <p class="fw-bolder title-card">
+                 
+                    <!--{{data.name}}-->
+                    <img [src]="" [alt]="" align="right">
+                    <!--<img [src]="data.image" [alt]="data.name" align="right">-->
+                </p>
+                <h2 class="text-titlePrice"></h2>
+                <!--<h2 class="text-titlePrice">${{data.price}}</h2>-->
+            </div>
+            <div class="container-button">
+                <button class="btnAgregar">
+                <!--<button class="btnAgregar" [id]="'btnId'+data.id" (click)="addProduct(data)">-->
+                    <span class="text">Agregar</span>
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
