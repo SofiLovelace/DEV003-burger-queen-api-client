@@ -9,7 +9,7 @@
         <div class="container-button card2">
             <p class="product">Productos:</p>
             <ul class="list-order">
-                <li *ngFor="let item of data.products">{{item.product.name}}</li>
+                <li *ngFor="let item of data.products">{{item.qty}} {{item.product.name}}</li>
             </ul>
             <button class="btnAgregar">
                 <span class="text">Orden lista</span>
