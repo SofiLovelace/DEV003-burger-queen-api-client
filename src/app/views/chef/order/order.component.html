@@ -4,12 +4,12 @@
             <h2 class="fw-bolder title-card">PEDIDO:</h2>
             <span class="text-titlePrice">{{data.id}}</span>
             <h2 class="clientName">{{data.client}}</h2>
-            <p class="text-titleTime">{{data.dataEntry | date:'medium'}}</p>
+            <p class="text-titleTime">{{data.dataEntry | date:'MM/dd @ HH:mm:ss'}}</p>
         </div>
         <div class="container-button card2">
             <p class="product">Productos:</p>
             <ul class="list-order">
-                <li>item 1</li>
+                <li *ngFor="let item of data.products">{{item.product.name}}</li>
             </ul>
             <button class="btnAgregar">
                 <span class="text">Orden lista</span>
