@@ -1,10 +1,10 @@
 <main class="mt-5 container-products">
-    <section class="card" [id]="">
+    <section class="card" *ngFor="let data of dataOrders">
         <div class="card-info">
-            <h2 class="fw-bolder title-card">PEDIDO: </h2>
-            <span class="text-titlePrice">0001</span>
-            <h2 class="clientName">Sofia</h2>
-            <p class="text-titleTime">Tiempo:00:01:50</p>
+            <h2 class="fw-bolder title-card">PEDIDO:</h2>
+            <span class="text-titlePrice">{{data.id}}</span>
+            <h2 class="clientName">{{data.client}}</h2>
+            <p class="text-titleTime">{{data.dataEntry | date:'medium'}}</p>
         </div>
         <div class="container-button card2">
             <p class="product">Productos:</p>
@@ -12,7 +12,6 @@
                 <li>item 1</li>
             </ul>
             <button class="btnAgregar">
-                <!--<button class="btnAgregar" [id]="'btnId'+data.id" (click)="addProduct(data)">-->
                 <span class="text">Orden lista</span>
             </button>
         </div>

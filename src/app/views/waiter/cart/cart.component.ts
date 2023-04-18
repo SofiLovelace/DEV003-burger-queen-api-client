@@ -63,7 +63,7 @@ export class CartComponent {
       client: this.name.value,
       products: this.productsCart,
       status: 'pending',
-      dataEntry: new Date().toLocaleString()
+      dataEntry: new Date()
     }
     this.HttpsService.post('orders', bodyHttp)
     .subscribe({  // Nos subscribimos al observable
