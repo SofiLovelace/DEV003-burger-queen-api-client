@@ -11,12 +11,9 @@ import { CartComponent } from './views/waiter/cart/cart.component';
 import { NavComponent } from './views/nav/nav.component';
 import { ProductsComponent } from './views/waiter/products/products.component';
 import { ModalComponent } from './views/waiter/cart/modal/modal.component';
-<<<<<<< HEAD
-=======
 import { ChefComponent } from './views/chef/chef.component';
 import { OrderComponent } from './views/chef/order/order.component';
 import { NavChefComponent } from './views/chef/nav-chef/nav-chef.component';
->>>>>>> niki
 
 @NgModule({
   declarations: [
@@ -28,12 +25,9 @@ import { NavChefComponent } from './views/chef/nav-chef/nav-chef.component';
     NavComponent,
     ProductsComponent,
     ModalComponent,
-<<<<<<< HEAD
-=======
     ChefComponent,
     OrderComponent,
     NavChefComponent
->>>>>>> niki
   ],
   imports: [
     BrowserModule,

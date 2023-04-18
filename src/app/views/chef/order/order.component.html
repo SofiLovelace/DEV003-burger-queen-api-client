@@ -1,25 +1,20 @@
-
-<main class="mt-5 main-products">
-  
-    <section class="container-products">
-        <div class="card" [id]="" >
-            <!--<div class="card" [id]="'product'+data.id" *ngFor ='let data of dataProducts'>-->
-            <div class="card-info">
-                <p class="fw-bolder title-card">
-                 
-                    <!--{{data.name}}-->
-                    <img [src]="" [alt]="" align="right">
-                    <!--<img [src]="data.image" [alt]="data.name" align="right">-->
-                </p>
-                <h2 class="text-titlePrice"></h2>
-                <!--<h2 class="text-titlePrice">${{data.price}}</h2>-->
-            </div>
-            <div class="container-button">
-                <button class="btnAgregar">
+<main class="mt-5 main-products container-products">
+    <section class="card" [id]="">
+        <!--<div class="card" [id]="'product'+data.id" *ngFor ='let data of dataProducts'>-->
+        <div class="card-info">
+            <h2 class="fw-bolder title-card">PEDIDO </h2>
+            <span class="text-titlePrice">Numero:0001</span>
+            <p>--------------------------------</p> //pendiente de manejarlo con ccs//
+            <h2 class="clientName">Sofia</h2>
+            <p class="text-titleTime">Tiempo:00:01:50</p>
+            <!--<h2 class="text-titlePrice">${{data.price}}</h2>-->
+        </div>
+        <div class="container-button card2">
+            <p class="product">Productos:</p>
+            <button class="btnAgregar">
                 <!--<button class="btnAgregar" [id]="'btnId'+data.id" (click)="addProduct(data)">-->
-                    <span class="text">Agregar</span>
-                </button>
-            </div>
+                <span class="text">Orden lista</span>
+            </button>
         </div>
     </section>
 </main>

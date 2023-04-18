@@ -26,33 +26,49 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    width: 100%;
-    height: 60%;
     }
 
     
 
 .card {
-    width: 18   0px;
-    height: 180px;
-    padding: .8em;
-    background: #d9cdcd;
     margin: 2%;
+    width: 18   0px;
+    height: 380px;
+    background: #d9cdcd;
     border-radius: 20px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+   }
+   
+   .card2{
+    width: 100%;
+    height: 46%;
+    background: #a6a1a1;
+    border-radius: 20px;
+    z-index: 1;
    }
 
    .container-button {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
    }
+
+   .product{
+    margin-top: 2%;
+    font-family: 'Fredoka', sans-serif;
+    margin-left: 22px;
+   }
+
    .btnAgregar {
     width: 90%;
     height: 130%;
-    background: #F8D732;
+    background: #1eb730;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
+    margin-left:9px;
+    margin-top: 30%;
+    padding: 2%;
     font-family: 'Roboto Mono', monospace;
     font-weight: bolder;
    }
@@ -63,21 +79,32 @@
 
    .title-card {
     margin: 0;
+    padding-left: 5%;
     height: 48px;
     width: 136px;
+    font-family: 'Fredoka', sans-serif;
    }
 
    .text-titlePrice{
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    padding-left: 5%;
    
    }
+
+   .text-titleTime{
+    padding-left: 5%;
+    font-family: 'Roboto Mono', monospace; 
+   }
+
+
    .text-title{
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Fredoka', sans-serif;
     font-weight:bolder ;
     font-size: small;
    }
+   .clientName{
+    padding-left: 5%;
+    font-family: 'Fredoka', sans-serif;
+    font-weight:bolder ;
    
-   img {
-    width: 50px;
-    height: 50px;
    }
