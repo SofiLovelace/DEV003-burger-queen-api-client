@@ -1,16 +1,16 @@
-<main class="mt-5 main-products container-products">
+<main class="mt-5 container-products">
     <section class="card" [id]="">
-        <!--<div class="card" [id]="'product'+data.id" *ngFor ='let data of dataProducts'>-->
         <div class="card-info">
-            <h2 class="fw-bolder title-card">PEDIDO </h2>
-            <span class="text-titlePrice">Numero:0001</span>
-            <p>--------------------------------</p> //pendiente de manejarlo con ccs//
+            <h2 class="fw-bolder title-card">PEDIDO: </h2>
+            <span class="text-titlePrice">0001</span>
             <h2 class="clientName">Sofia</h2>
             <p class="text-titleTime">Tiempo:00:01:50</p>
-            <!--<h2 class="text-titlePrice">${{data.price}}</h2>-->
         </div>
         <div class="container-button card2">
             <p class="product">Productos:</p>
+            <ul class="list-order">
+                <li>item 1</li>
+            </ul>
             <button class="btnAgregar">
                 <!--<button class="btnAgregar" [id]="'btnId'+data.id" (click)="addProduct(data)">-->
                 <span class="text">Orden lista</span>
