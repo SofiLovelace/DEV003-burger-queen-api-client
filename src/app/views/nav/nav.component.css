@@ -6,6 +6,12 @@
 
 #sidebar-wrapper {
     min-height: 1000vh;
+    background-color: black !important ;
+}
+
+
+.mt-5 {
+    background-color: black !important ;   
 }
 
 .title-nav {
@@ -26,9 +32,15 @@
     text-align: center;
 }
 
+.itemNav {
+    font-family: 'Roboto Mono', monospace;
+    font-weight:lighter;
+    font-size: small;
+
+}
+
 .list-group-item.active {
     background-color: transparent;
-    color: var(--main-text-color);
     font-weight: bold;
 }
 
@@ -57,7 +69,7 @@
     .container-icons {
         display: flex,;
         flex-flow: row wrap;
-        margin: 0 !important;
+        margin-left: 45%  !important;
     }
 
     .user {
