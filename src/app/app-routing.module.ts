@@ -9,7 +9,7 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
 const routes: Routes = [
   {path: 'login', component: loginComponent },
   {path: 'waiter', component: WaiterComponent },
-  {path: 'kitchen', component: ChefComponent },
+  {path: 'chef', component: ChefComponent },
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
 ];

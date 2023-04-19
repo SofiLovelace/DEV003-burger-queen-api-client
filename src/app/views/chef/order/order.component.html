@@ -12,7 +12,7 @@
             <ul class="list-order">
                 <li *ngFor="let item of data.products">{{item.qty}} {{item.product.name}}</li>
             </ul>
-            <button class="btnAgregar">
+            <button class="btnAgregar" (click)="completeOrder(data.id)">
                 <span class="text">Orden lista</span>
             </button>
         </div>

@@ -20,7 +20,37 @@ export class OrderComponent {
     this.HttpsService.get('orders')
     .subscribe({
       next: (response: IResponseOrder[]) => {
-        this.dataOrders = response.sort((a,b) => a.dataEntry - b.dataEntry)
+        this.dataOrders = response.filter((order: IResponseOrder) => order.status === 'pending').sort((a,b) => a.dataEntry - b.dataEntry)
+      }
+      ,
+      error: (err: any)=> {
+        console.log('error',err) // gestion de errores
+      },
+      complete:()=> {
+        console.log('complete') // codigo correcto
+      }
+    })
+  }
+
+
+  public completeOrder (id:number) {
+    console.log('soy tu btn')
+    const bodyHttp = {
+      dataFinish: new Date(),
+      status: 'complete'
+    }
+    this.HttpsService.patch('orders' + '/' + id, bodyHttp)
+    .subscribe({
+      next: (response: any) => {
+        console.log('respuesta', response)
+      }
+      ,
+      error: (err: any)=> {
+        console.log('error',err) // gestion de errores
+      },
+      complete:()=> {
+        this.getOrders()
+        console.log('complete') // codigo correcto
       }
     })
   }
