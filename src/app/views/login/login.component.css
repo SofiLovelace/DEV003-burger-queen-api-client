@@ -24,6 +24,7 @@ input{
     .card-body {
         width: 100%;
         height: min-content;
+        
     }
 
     input{
@@ -86,6 +87,7 @@ input{
         background: rgba(255, 255, 255, 0.9);
         border-radius: 20px;
         margin: 20px;
+        margin-left: 3%;
         width: 720px;
         height: auto;
         justify-content: center;
@@ -100,7 +102,7 @@ input{
     }
 
     .bg-image {
-        background-image: url(../../../assets/img/bglogin2.png);
+        background-image: url(../../../assets/img/bglogin3.png);
         background-size: cover;
         width: 100vw;
         height: 110vh;
