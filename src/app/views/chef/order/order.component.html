@@ -3,10 +3,10 @@
         <div class="card-info">
             <h2 class="fw-bolder title-card">PEDIDO:</h2>
             <span class="text-titlePrice">{{data.id}}</span>
-            <h2 class="clientName">{{data.client}}</h2>
+            <h2 class="clientName">{{data.client}} <sup>{{data.status}}</sup> </h2>
             <p class="text-titleTime">{{data.dataEntry | date:'MM/dd @ HH:mm:ss'}}</p>
         </div>
-        <div class="container-button card2">
+        <div class="container-button">
             <p class="product">Productos:</p>
             <ul class="list-order">
                 <li *ngFor="let item of data.products">{{item.qty}} {{item.product.name}}</li>
