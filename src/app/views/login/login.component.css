@@ -51,7 +51,7 @@ input{
         padding: 2%;
         border-radius: 15px;
         width: 50%;
-        color: white;
+        color: rgba(255, 255, 255, 0.9);
         margin-top: 1%;
         box-shadow: 1px 2px 4px rgba(20, 20, 20, 0.467);
     }
@@ -68,7 +68,7 @@ input{
 @media (max-width: 960px) {
     * {
         margin: 0;
-    }
+    }   
 
     .form-label {
         color: rgb(0, 0, 0) !important;
@@ -83,7 +83,7 @@ input{
    
 
     .card-body {
-        background: rgb(255, 255, 255);
+        background: rgba(255, 255, 255, 0.9);
         border-radius: 20px;
         margin: 20px;
         width: 720px;
@@ -94,11 +94,9 @@ input{
     }
 
     .titulo {
-        color: white;
+        color: rgba(255, 255, 255, 0.9);;
         font-size: 1000%;
-        margin-top: 10% !important;
-
-
+        text-shadow: 2px 4px 6px rgba(255, 255, 255, 0.7);
     }
 
     .bg-image {
@@ -115,7 +113,7 @@ input{
         padding: 2%;
         border-radius: 15px;
         width: 30%;
-        color: white;
+        color:rgba(255, 255, 255, 0.9);
         margin-top: 1%;
         box-shadow: 1px 2px 4px rgba(20, 20, 20, 0.467);
     }
