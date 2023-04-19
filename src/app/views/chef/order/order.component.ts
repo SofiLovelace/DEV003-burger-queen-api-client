@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IResponseOrder } from 'src/app/models/views/chef.interface';
 import { HttpsService } from 'src/app/services/https.service';
+import { SwitchService } from 'src/app/services/switch.service';
 
 @Component({
   selector: 'app-order',
@@ -12,8 +13,11 @@ export class OrderComponent {
 
   public dataOrders: IResponseOrder[] = [] // generamos un array que modidifcaremos con la data que recibamos del servidor
 
+  public modalSwitch: boolean = false
+
   constructor (
-    private HttpsService: HttpsService
+    private HttpsService: HttpsService,
+    public switchS: SwitchService
   ) {}
 
   private getOrders (): void {
@@ -32,9 +36,18 @@ export class OrderComponent {
     })
   }
 
+  public finishOrder(data: any):void {
+    setTimeout(() => {
+      this.switchS.$dataOrder.emit(data)
+    }, 1)
+  }
 
-  public completeOrder (id:number) {
-    console.log('soy tu btn')
+  public openModal(data: any) {
+    this.modalSwitch = true
+    this.finishOrder(data)
+  }
+
+  public completeOrder (id:number) { // funcion que marca el pedido como ccompletado
     const bodyHttp = {
       dataFinish: new Date(),
       status: 'complete'
@@ -57,5 +70,6 @@ export class OrderComponent {
 
   ngOnInit():void {
     this.getOrders()
+    this.switchS.$switchModal.subscribe((res) => this.modalSwitch = res)
   }
 }

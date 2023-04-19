@@ -14,6 +14,7 @@ import { ModalComponent } from './views/waiter/cart/modal/modal.component';
 import { ChefComponent } from './views/chef/chef.component';
 import { OrderComponent } from './views/chef/order/order.component';
 import { NavChefComponent } from './views/chef/nav-chef/nav-chef.component';
+import { ModalComponentChef } from './views/chef/order/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NavChefComponent } from './views/chef/nav-chef/nav-chef.component';
     NavComponent,
     ProductsComponent,
     ModalComponent,
+    ModalComponentChef,
     ChefComponent,
     OrderComponent,
     NavChefComponent
