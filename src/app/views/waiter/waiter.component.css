@@ -25,9 +25,12 @@ box-shadow:
     grid-row: 1/2;
     grid-column: 1/2;
     display: block;
+    position: fixed;
+    z-index: 100;
   }
   
   .products {
+    margin-top: 7%;
     width: 100%;
     grid-row: 2/3;
     grid-column: 1/2;
