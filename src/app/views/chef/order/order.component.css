@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Roboto+Mono:wght@100;300&display=swap');
 
+.buttons-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0, 30px;
+}
+
+.buttonsN {
+    margin:30px 25px 0px 25px;
+}
+
 .btns-container{
     display: flex;
     flex-direction: row;

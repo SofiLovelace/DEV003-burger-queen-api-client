@@ -68,7 +68,6 @@ export class CartComponent {
     this.HttpsService.post('orders', bodyHttp)
     .subscribe({  // Nos subscribimos al observable
       next: (data: any)=> { // codigo correcto
-        console.log(data)
         this.productsCart = []
         this.total = 0
         this.client.reset()

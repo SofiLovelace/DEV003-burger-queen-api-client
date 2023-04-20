@@ -1,10 +1,21 @@
+<div class="buttons-nav">
+    <button class="buttonsN" (click)="filterOrder('pending')">Pendientes</button>
+    <button class="buttonsN" (click)="filterOrder('complete')">Completadas</button>
+</div>
 <main class="mt-5 container-products">
-    <section class="card" *ngFor="let data of dataOrders">
+    <section class="card" *ngFor="let data of orderFilter">
         <div class="card-info">
             <h2 class="fw-bolder title-card">PEDIDO:</h2>
             <span class="text-titlePrice">{{data.id}}</span>
             <h2 class="clientName">{{data.client}}  </h2>
-            <p class="text-titleTime">{{data.dataEntry | date:'MM/dd ▪ HH:mm:ss'}}</p>
+            <ng-container *ngIf="!data.dataFinish">
+                <p class="text-titleTime">{{data.dataEntry | date:'MM/dd ▪ HH:mm:ss'}}</p>
+            </ng-container>
+            <ng-container *ngIf="data.dataFinish">
+                <p class="text-titleTime">
+                    {{(data.dataFinish) | date:'HH:mm:ss'}} 
+                </p> <!--  hacer una resta de dataEntry - dataFinish, para el tiempo que tomo terminar la orden -->
+            </ng-container>
         </div>
         <div class="container-button">
             <p class="product">Productos:</p>

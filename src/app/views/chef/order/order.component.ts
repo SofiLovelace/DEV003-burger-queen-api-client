@@ -12,6 +12,7 @@ import { SwitchService } from 'src/app/services/switch.service';
 export class OrderComponent {
 
   public dataOrders: IResponseOrder[] = [] // generamos un array que modidifcaremos con la data que recibamos del servidor
+  public orderFilter: IResponseOrder[] = []
 
   public modalSwitch: boolean = false
 
@@ -19,14 +20,18 @@ export class OrderComponent {
     private HttpsService: HttpsService,
     public switchS: SwitchService
   ) {}
+  
+  public filterOrder(status: 'complete' | 'pending') {
+    this.orderFilter = this.dataOrders.filter(order => order.status === status)
+  }
 
   private getOrders (): void {
     this.HttpsService.get('orders')
     .subscribe({
       next: (response: IResponseOrder[]) => {
-        this.dataOrders = response.filter((order: IResponseOrder) => order.status === 'pending').sort((a,b) => a.dataEntry - b.dataEntry)
-      }
-      ,
+        this.dataOrders = response.sort((a,b) => a.dataEntry - b.dataEntry)
+        this.filterOrder('pending')
+      },
       error: (err: any)=> {
         console.log('error',err) // gestion de errores
       },
@@ -37,8 +42,17 @@ export class OrderComponent {
   }
 
   public finishOrder(data: any):void {
+    const dataFinish = {
+      id: data.id,
+      userId: data.userId,
+      client: data.client,
+      products: data.products,
+      status: data.status,
+      dataEntry: data.dataEntry,
+  }
+
     setTimeout(() => {
-      this.switchS.$dataOrder.emit(data)
+      this.switchS.$dataOrder.emit(dataFinish)
     }, 1)
   }
 

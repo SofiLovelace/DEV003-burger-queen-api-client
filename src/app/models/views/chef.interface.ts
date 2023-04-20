@@ -6,5 +6,6 @@ export interface IResponseOrder {
     client: string
     products: IProductToCar[]
     status: 'pending' | 'complete'
-    dataEntry: any
+    dataEntry: any,
+    dataFinish: any
 }
