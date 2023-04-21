@@ -21,7 +21,7 @@ export class OrderComponent {
     public switchS: SwitchService
   ) {}
   
-  public filterOrder(status: 'complete' | 'pending') {
+  public filterOrder(status: 'delivering' | 'pending') {
     this.orderFilter = this.dataOrders.filter(order => order.status === status)
   }
 
@@ -29,7 +29,7 @@ export class OrderComponent {
     this.HttpsService.get('orders')
     .subscribe({
       next: (response: IResponseOrder[]) => {
-        this.dataOrders = response.sort((a,b) => a.dataEntry - b.dataEntry)
+        this.dataOrders = response.sort((a,b) => new Date (a.dateEntry).getTime() - new Date (b.dateEntry).getTime())
         this.filterOrder('pending')
       },
       error: (err: any)=> {
@@ -41,30 +41,30 @@ export class OrderComponent {
     })
   }
 
-  public finishOrder(data: any):void {
+  public finishOrder(data: IResponseOrder):void {
     const dataFinish = {
       id: data.id,
       userId: data.userId,
       client: data.client,
       products: data.products,
       status: data.status,
-      dataEntry: data.dataEntry,
-  }
+      dateEntry: data.dateEntry,
+    }
 
     setTimeout(() => {
       this.switchS.$dataOrder.emit(dataFinish)
     }, 1)
   }
 
-  public openModal(data: any) {
+  public openModal(data: IResponseOrder) {
     this.modalSwitch = true
     this.finishOrder(data)
   }
 
   public completeOrder (id:number) { // funcion que marca el pedido como ccompletado
     const bodyHttp = {
-      dataFinish: new Date(),
-      status: 'complete'
+      dateProcessed: new Date(),
+      status: 'delivering'
     }
     this.HttpsService.patch('orders' + '/' + id, bodyHttp)
     .subscribe({
@@ -80,6 +80,29 @@ export class OrderComponent {
         console.log('complete') // codigo correcto
       }
     })
+  }
+
+  public kitchenTimer (dataOrder: IResponseOrder) {
+    let timeGralSeconds = (new Date (dataOrder.dateProcessed).getTime() - new Date (dataOrder.dateEntry).getTime()) / 1000
+    
+    let timerInSeconds = parseInt(timeGralSeconds.toString()).toString()
+    let seconds = timerInSeconds.substring(timerInSeconds.length-2, timerInSeconds.length)
+    if (seconds.length !== 1 ){
+      if(Number(seconds) >= 60){
+        seconds = (Number(seconds) - 60).toString()
+      }
+    }
+    
+    let timerInMinutes = parseInt((timeGralSeconds / 60).toString()).toString()
+    let minutes = timerInMinutes.substring(timerInMinutes.length-2, timerInMinutes.length)
+    if (minutes.length !== 1) {
+      if (Number(minutes) >= 60){
+        minutes = (Number(minutes) - 60).toString()
+      }
+    } 
+
+    let hours = parseInt(((timeGralSeconds / 60) /60).toString()).toString()
+    return `${hours}:${minutes}:${seconds}`
   }
 
   ngOnInit():void {
