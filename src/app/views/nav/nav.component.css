@@ -52,7 +52,7 @@
      
     #sidebar-wrapper {
         min-height: 150px;
-        width: 100% !important;
+        width: 105% !important;
         height: 150px;
         display: grid;
         grid-template-columns: 30% 70%;
