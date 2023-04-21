@@ -13,7 +13,6 @@ import { ProductsComponent } from './views/waiter/products/products.component';
 import { ModalComponent } from './views/waiter/cart/modal/modal.component';
 import { ChefComponent } from './views/chef/chef.component';
 import { OrderComponent } from './views/chef/order/order.component';
-import { NavChefComponent } from './views/chef/nav-chef/nav-chef.component';
 import { ModalComponentChef } from './views/chef/order/modal/modal.component';
 
 @NgModule({
@@ -29,7 +28,6 @@ import { ModalComponentChef } from './views/chef/order/modal/modal.component';
     ModalComponentChef,
     ChefComponent,
     OrderComponent,
-    NavChefComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@
 }
 
 #sidebar-wrapper {
+    width: 200px !important;
     min-height: 1000vh;
     background-color: black !important ;
 }
@@ -18,7 +19,10 @@
     font-family: 'Fredoka', sans-serif;
     font-size: 2.2rem;
     font-weight: 900;
-    margin-top: 100% !important;
+    padding-top: 20% !important;
+    padding-bottom: 20%;
+    color: white;
+    width: 100%;
 }
 
 .sup-orders {
@@ -45,14 +49,10 @@
 }
 
 @media only screen and (max-width: 915px) {
-    
-    #wrapper {
-        width: 100%;
-        height: 150px;
-    }
      
     #sidebar-wrapper {
         min-height: 150px;
+        width: 100%;
         height: 150px;
         display: grid;
         grid-template-columns: 30% 70%;
@@ -75,41 +75,4 @@
     .user {
         margin: 16px 0 0 0 !important;
     }
-    /*
-    .itemNav {
-        display: none;
-    }
-
-    .list-group {
-        margin-left: 15px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-    }
-
-    .main-products {
-        margin-top: 20px;
-    }
-
-    #page-content-wrapper {
-        width: 100%;
-    }
-
-    .title-nav {
-        display: none;
-    }
-
-
-    .cart {
-        display: flex;
-        flex-direction: column;
-        margin-left: 20%;
-        border-radius: 20px;
-        background-color: darkgray;
-
-    }
-
-    #wrapper.toggled #sidebar-wrapper {
-        margin-left: -15rem;
-    } */
 }
