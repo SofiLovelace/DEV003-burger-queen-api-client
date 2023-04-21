@@ -1,6 +1,6 @@
 <div class="buttons-nav">
-    <button class="buttonsN" (click)="filterOrder('pending')">Pendientes</button>
-    <button class="buttonsN" (click)="filterOrder('complete')">Completadas</button>
+    <button class="buttonsN" (click)="[filterOrder('pending'), changeColor('pendiente')]" #btnPending>Pendientes</button>
+    <button class="buttonsN" (click)="[filterOrder('complete'), changeColor('completado')]" #btnComplete>Completadas</button>
 </div>
 <main class="mt-5 container-products">
     <section class="card" *ngFor="let data of orderFilter">
