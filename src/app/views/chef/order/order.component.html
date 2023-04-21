@@ -12,7 +12,7 @@
         <p class="text-titleTime">{{data.dateEntry | date:'MM/dd ▪ HH:mm:ss'}}</p>
       </ng-container>
       <ng-container *ngIf="data.dateProcessed">
-        <p class="text-titleTime">
+        <p class="text-titleTime">Tiempo de preparación: 
           {{kitchenTimer(data)}}
         </p>
       </ng-container>
@@ -22,9 +22,11 @@
       <ul class="list-order">
         <li *ngFor="let item of data.products">{{item.qty}} {{item.product.name}}</li>
       </ul>
-      <button class="btnAgregar" (click)="openModal(data)">
-        <span class="text">Orden lista</span>
-      </button>
+      <ng-container *ngIf="!data.dateProcessed">
+        <button class="btnAgregar" (click)="openModal(data)">
+          <span class="text">Orden lista</span>
+        </button>
+      </ng-container>
     </div>
   </section>
 </main>
