@@ -15,12 +15,12 @@
         </section>
         <section *ngIf="user === 'admin' || user === 'waiter'" class="h4 mt-3 list-group-item active orders">
             <i class="fas fa-utensils h1"></i>
-            <sup class="sup-orders">0</sup>
+            <sup class="sup-orders">{{delivering}}</sup>
             <h3 class="itemNav">Ordenes listas</h3>
         </section>
         <section *ngIf="user === 'admin' || user === 'chef'" class="h4 mt-3 list-group-item active orders">
             <i class="fas fa-fire h1"></i>
-            <sup class="sup-orders">0</sup>
+            <sup class="sup-orders">{{cooking}}</sup>
             <h3 class="itemNav">Cocinando</h3>
         </section>
     </div>

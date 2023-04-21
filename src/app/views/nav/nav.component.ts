@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpsService } from 'src/app/services/https.service';
+import { IResponseOrder } from 'src/app/models/views/chef.interface';
 
 @Component({
   selector: 'app-nav',
@@ -7,6 +9,10 @@ import { Component } from '@angular/core';
 })
 export class NavComponent {
   public user: string | any 
+  public delivering: number = 0
+  public cooking: number = 0
+
+  constructor ( private HttpsService: HttpsService ) {}
 
   public getUser ():string | void {
     let user = sessionStorage.getItem('userRole')
@@ -22,8 +28,29 @@ export class NavComponent {
     this.user = user
   }
 
+
+  public getOrders(): void {
+    this.HttpsService.get('orders')
+      .subscribe({
+        next: (response: IResponseOrder[]) => {
+          this.cooking = response.filter(order => order.status === 'pending').length
+          this.delivering = response.filter(order => order.status === 'delivering').length
+        },
+        error: (err: any) => {
+          console.log('error', err) // gestion de errores
+        },
+        complete: () => {
+          console.log('complete') // codigo correcto
+        }
+      })
+  }
+
+
   ngOnInit ():void {
     this.user = sessionStorage.getItem('userRole')
-    console.log(this.user)
+    this.getOrders()
+    setInterval(() => {
+      this.getOrders()
+    }, 10000)
   }
 }

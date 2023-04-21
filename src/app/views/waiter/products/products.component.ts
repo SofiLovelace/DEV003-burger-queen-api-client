@@ -1,6 +1,6 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { HttpsService } from 'src/app/services/https.service';
-import { IResponseProduct, IProductToCar } from 'src/app/models/views/waiter.interface';
+import { IResponseProduct, IProductToCar} from 'src/app/models/views/waiter.interface';
 import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.service';
 
 @Component({
@@ -69,6 +69,6 @@ export class ProductsComponent{
   }
 
   ngOnInit():void {
-    this.filterProducts()  
+    this.filterProducts()
   }
 }
