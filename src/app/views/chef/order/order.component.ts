@@ -1,29 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { IResponseOrder } from 'src/app/models/views/chef.interface';
 import { HttpsService } from 'src/app/services/https.service';
 import { SwitchService } from 'src/app/services/switch.service';
 
 @Component({
-  selector: 'app-order',
-  templateUrl: './order.component.html',
-  styleUrls: ['./order.component.css']
+    selector: 'app-order',
+    templateUrl: './order.component.html',
+    styleUrls: ['./order.component.css']
 })
 
 export class OrderComponent {
 
-  public dataOrders: IResponseOrder[] = [] // generamos un array que modidifcaremos con la data que recibamos del servidor
-  public orderFilter: IResponseOrder[] = []
 
-  public modalSwitch: boolean = false
+    @ViewChild('btnPending') btnPending!: ElementRef;
+    @ViewChild('btnComplete') btnComplete!: ElementRef;
 
-  constructor (
-    private HttpsService: HttpsService,
-    public switchS: SwitchService
-  ) {}
-  
-  public filterOrder(status: 'delivering' | 'pending') {
-    this.orderFilter = this.dataOrders.filter(order => order.status === status)
-  }
+
+    public dataOrders: IResponseOrder[] = [] // generamos un array que modidifcaremos con la data que recibamos del servidor
+    public orderFilter: IResponseOrder[] = []
+
+    public modalSwitch: boolean = false
+
+    constructor(
+        private HttpsService: HttpsService,
+        public switchS: SwitchService,
+        private renderer2: Renderer2
+    ) { }
+
+    public filterOrder(status: 'delivering' | 'pending') {
+        this.orderFilter = this.dataOrders.filter(order => order.status === status)
+    }
 
   private getOrders (): void {
     this.HttpsService.get('orders')
@@ -51,10 +57,10 @@ export class OrderComponent {
       dateEntry: data.dateEntry,
     }
 
-    setTimeout(() => {
-      this.switchS.$dataOrder.emit(dataFinish)
-    }, 1)
-  }
+        setTimeout(() => {
+            this.switchS.$dataOrder.emit(dataFinish)
+        }, 1)
+    }
 
   public openModal(data: IResponseOrder) {
     this.modalSwitch = true
@@ -105,8 +111,21 @@ export class OrderComponent {
     return `${hours}:${minutes}:${seconds}`
   }
 
-  ngOnInit():void {
-    this.getOrders()
-    this.switchS.$switchModal.subscribe((res) => this.modalSwitch = res)
-  }
+    public changeColor(button: string) {
+        const btnPending = this.btnPending.nativeElement;
+        const btnComplete = this.btnComplete.nativeElement;
+
+        if (button === "pendiente") {
+            this.renderer2.setStyle(btnPending, 'backgroundColor', 'black');
+            this.renderer2.setStyle(btnComplete, 'backgroundColor', 'gray');
+        } else {
+            this.renderer2.setStyle(btnPending, 'backgroundColor', 'gray');
+            this.renderer2.setStyle(btnComplete, 'backgroundColor', 'black');
+        }
+    }
+
+    ngOnInit(): void {
+        this.getOrders()
+        this.switchS.$switchModal.subscribe((res) => this.modalSwitch = res)
+    }
 }
