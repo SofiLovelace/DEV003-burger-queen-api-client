@@ -1,182 +1,121 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Roboto+Mono:wght@100;300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Roboto+Mono:wght@100;300&display=swap");
 
-input{
-    border-bottom: 2px solid black;
+input {
+  border-bottom: 2px solid black;
 }
 
 @media (max-width: 1580px) {
-    .titulo {
-        color: rgb(0, 0, 0);
-        font-size:580%;
-        font-family: 'Fredoka', sans-serif;
-        padding-left: 10%;    
-        padding-top: 5%;    
-    }
+  .titulo {
+    color: rgb(0, 0, 0);
+    font-size: 580%;
+    font-family: "Fredoka", sans-serif;
+    padding-left: 10%;
+    padding-top: 5%;
+  }
 
-    .bg-image {
-        background-image: url(./img/fondoBdesk.png);
-        background-repeat: no-repeat;
-        background-size:cover;
-        width: 100vw;
-        height: 100vh;   
-    }
+  .bg-image {
+    background-image: url(./img/fondoBdesk.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+  }
 
-    .card-body {
-        width: 100%;
-        height: min-content;
-        
-    }
+  .card-body {
+    width: 100%;
+    height: min-content;
+  }
 
-    input{
-        color: rgb(0, 0, 0) !important;
-        width: 420px;
-        height: 50px;
-        cursor: text;
-    }
+  input {
+    color: rgb(0, 0, 0) !important;
+    width: 420px;
+    height: 50px;
+    cursor: text;
+  }
 
-    .placeholder {
-        background-color: white !important;
-    }
-    
-    .form-label {
-        color: rgb(0, 0, 0) !important;
-        font-family: 'Fredoka', sans-serif !important;
-        font-size: 180%;
+  .placeholder {
+    background-color: white !important;
+  }
 
-    }
+  .form-label {
+    color: rgb(0, 0, 0) !important;
+    font-family: "Fredoka", sans-serif !important;
+    font-size: 180%;
+  }
 
+  .btn {
+    background: rgb(0, 0, 0);
+    font-family: "Fredoka", sans-serif;
+    padding: 2%;
+    border-radius: 15px;
+    width: 50%;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 1%;
+    box-shadow: 1px 2px 4px rgba(20, 20, 20, 0.467);
+  }
 
-    .btn {
-        background: rgb(0, 0, 0);
-        font-family: 'Fredoka', sans-serif;
-        padding: 2%;
-        border-radius: 15px;
-        width: 50%;
-        color: rgba(255, 255, 255, 0.9);
-        margin-top: 1%;
-        box-shadow: 1px 2px 4px rgba(20, 20, 20, 0.467);
-    }
-    
-    .btn:hover {
-        background-color: black;
-        color: white;
-        border-color: rgb(0, 0, 0);
-    }
+  .btn:hover {
+    background-color: black;
+    color: white;
+    border-color: rgb(0, 0, 0);
+  }
 }
-
 
 /*tablet*/
 @media (max-width: 960px) {
-    * {
-        margin: 0;
-    }   
+  * {
+    margin: 0;
+  }
 
-    .form-label {
-        color: rgb(0, 0, 0) !important;
-        font-family: 'roboto', sans-serif;
-    }
+  .form-label {
+    color: rgb(0, 0, 0) !important;
+    font-family: "roboto", sans-serif;
+  }
 
-    #exampleInputEmail1{
-        background-color: transparent !important;
-       
-    }
+  #exampleInputEmail1 {
+    background-color: transparent !important;
+  }
 
-   
+  .card-body {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    margin: 20px;
+    margin-left: 6%;
+    width: 720px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 4px 6px rgba(29, 29, 29, 0.467);
+  }
 
-    .card-body {
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 20px;
-        margin: 20px;
-        margin-left: 6%;
-        width: 720px;
-        height: auto;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 2px 4px 6px rgba(29, 29, 29, 0.467);
-    }
+  .titulo {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1000%;
+    text-shadow: 2px 4px 6px rgba(255, 255, 255, 0.7);
+  }
 
-    .titulo {
-        color: rgba(255, 255, 255, 0.9);;
-        font-size: 1000%;
-        text-shadow: 2px 4px 6px rgba(255, 255, 255, 0.7);
-    }
+  .bg-image {
+    background-image: url(../../../assets/img/bglogin3.png);
+    background-size: cover;
+    width: 100vw;
+    height: 110vh;
+    opacity: 2;
+  }
 
-    .bg-image {
-        background-image: url(../../../assets/img/bglogin3.png);
-        background-size: cover;
-        width: 100vw;
-        height: 110vh;
-        opacity: 2;
-    }
+  .btn {
+    background: rgb(0, 0, 0);
+    font-family: "Fredoka", sans-serif;
+    padding: 2%;
+    border-radius: 15px;
+    width: 30%;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 1%;
+    box-shadow: 1px 2px 4px rgba(20, 20, 20, 0.467);
+  }
 
-    .btn {
-        background: rgb(0, 0, 0);
-        font-family: 'Fredoka', sans-serif;
-        padding: 2%;
-        border-radius: 15px;
-        width: 30%;
-        color:rgba(255, 255, 255, 0.9);
-        margin-top: 1%;
-        box-shadow: 1px 2px 4px rgba(20, 20, 20, 0.467);
-    }
-
-    .btn:hover {
-        background-color: rgb(70, 69, 69);
-        color: white;
-        border-color: rgb(0, 0, 0);
-    }
-
-}
-
-
-
-
-/*
-celular*/
-
-@media (max-width: 660px) {
-    .titulo {
-        font-family: 'Fredoka', sans-serif;
-        color: yellow;
-        font-size: 1200%;
-        margin-top: 40%;
-    }
-
-    .btn {
-        background: yellow;
-        font-family: 'Fredoka', sans-serif;
-        padding: 2%;
-        margin-top: 3%;
-        box-shadow: 1px 2px 4px rgba(255, 255, 255, 0.467);
-    }
-
-    input {
-        color: yellow !important;
-    }
-
-    .btn:hover {
-        background-color: black;
-        color: white;
-        border-color: yellow;
-    }
-
-    .bg-image {
-        background-image: url(https://images.pexels.com/photos/7764698/pexels-photo-7764698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
-        background-size: cover;
-        width: 220vw;
-        height: 220vh;
-        position: relative;
-    }
-
-    .card-body {
-        background: rgb(0, 0, 0);
-        border-radius: 20px;
-        margin: 1%;
-        width: 98%;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 1px 2px 4px white;
-    }
+  .btn:hover {
+    background-color: rgb(70, 69, 69);
+    color: white;
+    border-color: rgb(0, 0, 0);
+  }
 }
