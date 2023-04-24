@@ -1,35 +1,61 @@
-   <div class="bg-image row">
-    <div class="col-lg-5">
-        <h1 class="titulo">BURGER QUEEN</h1>
-        <div class="card-body">
-            <form  [formGroup]="credential" (ngSubmit)="login()" class="p-5 form">
-                <div class="mb-3">
-                    <label for="exampleInputUser" class="form-label">USUARIO &nbsp; &nbsp; &nbsp;</label>
-                    <input type="email" formControlName="email" class="form-control  fs-2 mb-4" id="exampleInputEmail1">
-                    <br>
-                    <div class="alert alert-danger mt-1" [hidden]="email.valid || email.untouched" >
-                        <Span *ngIf="email.errors?.['required']">El campo usuario es obligatorio</Span>
-                        <Span *ngIf="email.errors?.['email']">Ingresa un correo valido</Span>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">CONTRASEÑA &nbsp;</label>
-                    <input type="password" formControlName="password" class="form-control  fs-4 mb-2" id="exampleInputPassword1">
-                    <br>
-                    <div class="alert alert-danger mt-1" [hidden]="password.valid || password.untouched" >
-                        Ingresa una contraseña minimo 8 caracteres
-                    </div>
-                    <div class="alert alert-danger mt-1" [hidden]="errorHttp.length === 0" >
-                        {{errorHttp}}
-                    </div>
-                </div>
-               
-                <button type="submit" class="btn fs-2" [disabled]="credential.invalid">
-                    Ingresar
-                </button>
-            </form>
+<div class="bg-image">
+  <div class="col-lg-5">
+    <h1 class="titulo">BURGER QUEEN</h1>
+    <div class="card-body">
+      <form [formGroup]="credential" (ngSubmit)="login()" class="p-5 form">
+        <div class="mb-3">
+          <label for="exampleInputUser" class="form-label"
+            >USUARIO &nbsp; &nbsp; &nbsp;</label
+          >
+          <input
+            type="email"
+            formControlName="email"
+            class="form-control fs-2 mb-4"
+            id="exampleInputEmail1"
+          />
+          <br />
+          <div
+            class="alert alert-danger mt-1"
+            [hidden]="email.valid || email.untouched"
+          >
+            <Span *ngIf="email.errors?.['required']"
+              >El campo usuario es obligatorio</Span
+            >
+            <Span *ngIf="email.errors?.['email']"
+              >Ingresa un correo valido</Span
+            >
+          </div>
         </div>
-        <div class="col-lg-7">
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >CONTRASEÑA &nbsp;</label
+          >
+          <input
+            type="password"
+            formControlName="password"
+            class="form-control fs-4 mb-2"
+            id="exampleInputPassword1"
+          />
+          <br />
+          <div
+            class="alert alert-danger mt-1"
+            [hidden]="password.valid || password.untouched"
+          >
+            Ingresa una contraseña minimo 8 caracteres
+          </div>
+          <div
+            class="alert alert-danger mt-1"
+            [hidden]="errorHttp.length === 0"
+          >
+            {{ errorHttp }}
+          </div>
         </div>
+
+        <button type="submit" class="btn fs-2" [disabled]="credential.invalid">
+          Ingresar
+        </button>
+      </form>
     </div>
+    <div class="col-lg-7"></div>
+  </div>
 </div>
