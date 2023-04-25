@@ -12,6 +12,7 @@ import { NavComponent } from './views/nav/nav.component';
 import { ProductsComponent } from './views/waiter/products/products.component';
 import { ModalComponent } from './views/waiter/cart/modal/modal.component';
 import { ChefComponent } from './views/chef/chef.component';
+import { AdminComponent } from './views/admin/admin.component';
 import { OrderComponent } from './views/chef/order/order.component';
 import { ModalComponentChef } from './views/chef/order/modal/modal.component';
 import { OrdersReadyComponent } from './views/waiter/orders-ready/orders-ready.component';
@@ -28,6 +29,7 @@ import { OrdersReadyComponent } from './views/waiter/orders-ready/orders-ready.c
     ModalComponent,
     ModalComponentChef,
     ChefComponent,
+    AdminComponent,
     OrderComponent,
     OrdersReadyComponent,
   ],
