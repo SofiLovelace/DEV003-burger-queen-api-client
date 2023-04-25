@@ -2,6 +2,8 @@
 
 .notification-container {
   margin-left: 70%;
+  margin-top: 5px;
+  margin-bottom: 1%;
   border: none;
   text-align: center;
   color: gray;
@@ -42,7 +44,7 @@
   font-family: "Roboto Mono", monospace;
   font-weight: bolder;
   display: inline;
-  margin: 5%;
+  margin: 0% 5% 5% 5%;
 }
 
 .container-products {
