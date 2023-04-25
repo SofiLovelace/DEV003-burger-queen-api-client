@@ -24,14 +24,9 @@
   width: 100%;
 }
 
-/* .sup-orders {
-  top: -1em;
-  right: -0.5em;
-} */
-
 .list-group-item {
   border: none;
-  padding: 20px 30px;
+  padding: 20px 40px;
   text-align: center;
 }
 

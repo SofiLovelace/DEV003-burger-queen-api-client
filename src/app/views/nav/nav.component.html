@@ -1,3 +1,14 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BQ</title>
+</head>
+
 <div id="sidebar-wrapper">
   <div class="text-center title-nav">
     BURGER
@@ -5,11 +16,15 @@
     QUEEN
   </div>
   <div class="list-group list-group-flush ml-1 container-icons">
-    <section class="h4 mt-2 list-group-item active user">
+    <section
+      routerLink="/nav/admin"
+      class="h4 mt-2 list-group-item active user"
+    >
       <i class="fas fa-user-circle h1 me-2"></i>
-      <h3 class="itemNav">{{ getUser() }}</h3>
+      <h3 class="itemNav">Administrador</h3>
     </section>
     <section
+      routerLink="/nav/waiter"
       *ngIf="user === 'admin' || user === 'waiter'"
       class="h4 mt-3 list-group-item active orders"
     >
@@ -17,6 +32,7 @@
       <h3 class="itemNav">Mesero</h3>
     </section>
     <section
+      routerLink="/nav/chef"
       *ngIf="user === 'admin' || user === 'chef'"
       class="h4 mt-3 list-group-item active orders"
     >
@@ -26,3 +42,4 @@
     </section>
   </div>
 </div>
+<router-outlet></router-outlet>

@@ -4,18 +4,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { loginComponent } from './views/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { WaiterComponent } from './views/waiter/waiter.component';
+import { WaiterComponent } from './views/nav/waiter/waiter.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
-import { HttpClientModule} from '@angular/common/http'
-import { CartComponent } from './views/waiter/cart/cart.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './views/nav/waiter/cart/cart.component';
 import { NavComponent } from './views/nav/nav.component';
-import { ProductsComponent } from './views/waiter/products/products.component';
-import { ModalComponent } from './views/waiter/cart/modal/modal.component';
-import { ChefComponent } from './views/chef/chef.component';
-import { AdminComponent } from './views/admin/admin.component';
-import { OrderComponent } from './views/chef/order/order.component';
-import { ModalComponentChef } from './views/chef/order/modal/modal.component';
-import { OrdersReadyComponent } from './views/waiter/orders-ready/orders-ready.component';
+import { ProductsComponent } from './views/nav/waiter/products/products.component';
+import { ModalComponent } from './views/nav/waiter/cart/modal/modal.component';
+import { ChefComponent } from './views/nav/chef/chef.component';
+import { AdminComponent } from './views/nav/admin/admin.component';
+import { OrderComponent } from './views/nav/chef/order/order.component';
+import { ModalComponentChef } from './views/nav/chef/order/modal/modal.component';
+import { OrdersReadyComponent } from './views/nav/waiter/orders-ready/orders-ready.component';
 
 @NgModule({
   declarations: [
@@ -37,10 +37,10 @@ import { OrdersReadyComponent } from './views/waiter/orders-ready/orders-ready.c
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule, 
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [Title],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
