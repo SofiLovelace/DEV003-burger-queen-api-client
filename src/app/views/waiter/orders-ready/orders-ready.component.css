@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Roboto+Mono:wght@100;300&display=swap");
+
+.buttons-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0, 30px;
+}
+
+.buttons-status {
+  margin: 5% 5% 0 5%;
+  width: 160px;
+  height: 50px;
+  color: aliceblue;
+  background: #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: bolder;
+  display: inline;
+}
+
+.button-delivered {
+  background-color: gray;
+}
+
+.btns-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btn {
+  margin-top: 26%;
+  width: 30%;
+  height: 50px;
+  color: aliceblue;
+  background: #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: bolder;
+  display: inline;
+  margin: 5%;
+}
+
+.container-products {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.card {
+  margin: 2%;
+  width: 220px;
+  min-height: fit-content;
+  background: #d9cdcd;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.container-button {
+  justify-content: center;
+  width: 100%;
+  min-height: fit-content;
+  background: #a6a1a1;
+  border-radius: 20px;
+}
+
+.product {
+  font-family: "Fredoka", sans-serif;
+  margin-left: 22px;
+}
+
+.list-order {
+  min-height: fit-content;
+}
+
+.btnAComplete {
+  width: 90%;
+  height: 80px;
+  background: #1eb730;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin-left: 9px;
+  padding: 2%;
+  font-family: "Roboto Mono", monospace;
+  font-weight: bolder;
+}
+
+.card-info {
+  padding-top: 5%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.title-card {
+  margin: 0;
+  padding-left: 5%;
+  height: 48px;
+  width: 136px;
+  font-family: "Fredoka", sans-serif;
+}
+
+.text-titlePrice {
+  font-family: "Roboto Mono", monospace;
+  padding-left: 5%;
+}
+
+.text-titleTime {
+  padding-left: 5%;
+  font-family: "Roboto Mono", monospace;
+  grid-row: 3/4;
+}
+
+.text-title {
+  font-family: "Fredoka", sans-serif;
+  font-weight: bolder;
+  font-size: small;
+}
+
+.clientName {
+  padding-left: 5%;
+  font-family: "Fredoka", sans-serif;
+  font-weight: bolder;
+  border-top-style: dashed;
+  width: 100%;
+  grid-column: 1/3;
+}

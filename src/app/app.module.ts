@@ -14,6 +14,7 @@ import { ModalComponent } from './views/waiter/cart/modal/modal.component';
 import { ChefComponent } from './views/chef/chef.component';
 import { OrderComponent } from './views/chef/order/order.component';
 import { ModalComponentChef } from './views/chef/order/modal/modal.component';
+import { OrdersReadyComponent } from './views/waiter/orders-ready/orders-ready.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ModalComponentChef } from './views/chef/order/modal/modal.component';
     ModalComponentChef,
     ChefComponent,
     OrderComponent,
+    OrdersReadyComponent,
   ],
   imports: [
     BrowserModule,
