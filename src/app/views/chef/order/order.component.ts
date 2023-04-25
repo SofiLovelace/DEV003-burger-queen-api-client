@@ -24,7 +24,9 @@ export class OrderComponent {
   ) {}
 
   public filterOrder(status: 'delivering' | 'pending') {
-    return this.dataOrders.filter((order) => order.status === status);
+    this.orderFilter = this.dataOrders.filter(
+      (order) => order.status === status
+    );
   }
 
   private getOrders(): void {
@@ -34,7 +36,7 @@ export class OrderComponent {
           (a, b) =>
             new Date(a.dateEntry).getTime() - new Date(b.dateEntry).getTime()
         );
-        this.orderFilter = this.filterOrder('pending');
+        this.filterOrder('pending');
       },
       error: (err: any) => {
         console.log('error', err); // gestion de errores
