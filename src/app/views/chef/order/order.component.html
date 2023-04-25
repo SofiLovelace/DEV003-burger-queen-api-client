@@ -1,26 +1,43 @@
 <div class="buttons-nav">
-  <button class="buttons-status" (click)="[filterOrder('pending'), changeColor('pendiente')]" #btnPending>Pendientes</button>
-  <button class="buttons-status button-complete" (click)="[filterOrder('delivering'), changeColor('completado')]" #btnComplete>Completadas</button>
+  <button
+    class="buttons-status"
+    (click)="[filterOrder('pending'), changeColor('pendiente')]"
+    #btnPending
+  >
+    Pendientes
+  </button>
+  <button
+    class="buttons-status button-complete"
+    (click)="[filterOrder('delivering'), changeColor('completado')]"
+    #btnComplete
+  >
+    Completadas
+  </button>
 </div>
 <main class="mt-5 container-products">
   <section class="card" *ngFor="let data of orderFilter">
     <div class="card-info">
       <h2 class="fw-bolder title-card">PEDIDO:</h2>
-      <span class="text-titlePrice">{{data.id}}</span>
-      <h2 class="clientName">{{data.client}} </h2>
+      <span class="text-titlePrice">{{ data.id }}</span>
+      <h2 class="clientName">{{ data.client }}</h2>
       <ng-container *ngIf="!data.dateProcessed">
-        <p class="text-titleTime">{{data.dateEntry | date:'MM/dd ▪ HH:mm:ss'}}</p>
+        <p class="text-titleTime">
+          {{ data.dateEntry | date : "MM/dd ▪ HH:mm:ss" }}
+        </p>
       </ng-container>
       <ng-container *ngIf="data.dateProcessed">
-        <p class="text-titleTime">Tiempo de preparación: 
-          {{kitchenTimer(data)}}
+        <p class="text-titleTime">
+          Tiempo de preparación:
+          {{ kitchenTimer(data) }}
         </p>
       </ng-container>
     </div>
     <div class="container-button">
       <p class="product">Productos:</p>
       <ul class="list-order">
-        <li *ngFor="let item of data.products">{{item.qty}} {{item.product.name}}</li>
+        <li *ngFor="let item of data.products">
+          {{ item.qty }} {{ item.product.name }}
+        </li>
       </ul>
       <ng-container *ngIf="!data.dateProcessed">
         <button class="btnAgregar" (click)="openModal(data)">

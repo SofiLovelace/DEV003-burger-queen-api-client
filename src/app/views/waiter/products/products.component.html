@@ -1,22 +1,48 @@
-<main class="mt-5 main-products">
-    <div class="btns-container">
-        <button class="btn" (click)="[filterProducts('Almuerzo'), changeColor('lunch')]" #btnLunch>Almuerzo</button>
-        <button class="btn" (click)="[filterProducts('Desayuno'), changeColor('breakfast')]" #btnBreakfast>Desayuno</button>
+<section class="h4 mt-3 notification-container active orders">
+  <i class="fas fa-utensils"><sup class="sup-orders">0</sup></i>
+  <br />
+  <span class="orders-ready">Ordenes listas</span>
+</section>
+
+<main class="main-products">
+  <div class="btns-container">
+    <button
+      class="btn"
+      (click)="[filterProducts('Almuerzo'), changeColor('lunch')]"
+      #btnLunch
+    >
+      Almuerzo
+    </button>
+    <button
+      class="btn"
+      (click)="[filterProducts('Desayuno'), changeColor('breakfast')]"
+      #btnBreakfast
+    >
+      Desayuno
+    </button>
+  </div>
+  <section class="container-products">
+    <div
+      class="card"
+      [id]="'product' + data.id"
+      *ngFor="let data of dataProducts"
+    >
+      <div class="card-info">
+        <p class="fw-bolder title-card">
+          {{ data.name }}
+          <img [src]="data.image" [alt]="data.name" align="right" />
+        </p>
+        <h2 class="text-titlePrice">${{ data.price }}</h2>
+      </div>
+      <div class="container-button">
+        <button
+          class="btnAgregar"
+          [id]="'btnId' + data.id"
+          (click)="addProduct(data)"
+        >
+          <span class="text">Agregar</span>
+        </button>
+      </div>
     </div>
-    <section class="container-products">
-        <div class="card" [id]="'product'+data.id" *ngFor ='let data of dataProducts'>
-            <div class="card-info">
-                <p class="fw-bolder title-card">
-                    {{data.name}}
-                    <img [src]="data.image" [alt]="data.name" align="right">
-                </p>
-                <h2 class="text-titlePrice">${{data.price}}</h2>
-            </div>
-            <div class="container-button">
-                <button class="btnAgregar" [id]="'btnId'+data.id" (click)="addProduct(data)">
-                    <span class="text">Agregar</span>
-                </button>
-            </div>
-        </div>
-    </section>
+  </section>
 </main>

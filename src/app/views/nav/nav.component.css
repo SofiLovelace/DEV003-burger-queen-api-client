@@ -1,81 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Roboto+Mono:wght@100;300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Roboto+Mono:wght@100;300&display=swap");
 
 :root {
-    --color-principal: yellow;
+  --color-principal: yellow;
 }
 
 #sidebar-wrapper {
-    width: 200px !important;
-    min-height: 1000vh;
-    background-color: black !important ;
+  width: 200px !important;
+  min-height: 1000vh;
+  background-color: black !important ;
 }
 
-
 .mt-5 {
-    background-color: black !important ;   
+  background-color: black !important ;
 }
 
 .title-nav {
-    font-family: 'Fredoka', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 900;
-    padding-top: 20% !important;
-    padding-bottom: 20%;
-    color: white;
-    width: 100%;
+  font-family: "Fredoka", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  padding-top: 20% !important;
+  padding-bottom: 20%;
+  color: white;
+  width: 100%;
 }
 
-.sup-orders {
-    top: -1em;
-    right: -0.5em;
-}
+/* .sup-orders {
+  top: -1em;
+  right: -0.5em;
+} */
 
 .list-group-item {
-    border: none;
-    padding: 20px 30px;
-    text-align: center;
+  border: none;
+  padding: 20px 30px;
+  text-align: center;
 }
 
 .itemNav {
-    font-family: 'Roboto Mono', monospace;
-    font-weight:lighter;
-    font-size: small;
-
+  font-family: "Roboto Mono", monospace;
+  font-weight: lighter;
+  font-size: small;
 }
 
 .list-group-item.active {
-    background-color: transparent;
-    font-weight: bold;
+  background-color: transparent;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 915px) {
-     
-    #sidebar-wrapper {
-        min-height: 150px;
-        width: 105% !important;
-        height: 150px;
-        display: grid;
-        grid-template-columns: 30% 70%;
-    }
+  #sidebar-wrapper {
+    min-height: 150px;
+    width: 105% !important;
+    height: 150px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+  }
 
-    .title-nav {
-        height: 100%;
-        width: 100%;
-        margin: 0 !important;
-        padding-top: 10% !important;
-        text-align: center;
-    }
+  .title-nav {
+    height: 100%;
+    width: 100%;
+    margin: 0 !important;
+    padding-top: 10% !important;
+    text-align: center;
+  }
 
-    .container-icons {
-        display: flex,;
-        flex-flow: row wrap;
-        margin-top: 2%;
-    }
-    .list-group-item {
-        padding: 20px 18px;
-    }
+  .container-icons {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    margin-top: 2%;
+    margin-right: 100px;
+  }
+  .list-group-item {
+    padding: 20px 25px;
+  }
 
-    .user {
-        margin: 16px 0 0 0 !important;
-    }
+  .user {
+    margin: 16px 0 0 0 !important;
+  }
 }
