@@ -18,8 +18,6 @@ const routes: Routes = [
       { path: 'admin', component: AdminComponent },
     ],
   },
-  { path: 'chef', component: ChefComponent },
-  { path: 'admin', component: AdminComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
