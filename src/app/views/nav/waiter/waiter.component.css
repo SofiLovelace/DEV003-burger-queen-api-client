@@ -1,6 +1,6 @@
 .container-waiter {
   display: grid;
-  grid-template-columns: 65% 30%;
+  grid-template-columns: 70% 30%;
 }
 .nav {
   padding: 0 !important;
