@@ -6,6 +6,8 @@ import { ChefComponent } from './views/nav/chef/chef.component';
 import { AdminComponent } from './views/nav/admin/admin.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { WaiterComponent } from './views/nav/waiter/waiter.component';
+import { OrdainComponent } from './views/nav/waiter/ordain/ordain.component';
+import { OrdersReadyComponent } from './views/nav/waiter/orders-ready/orders-ready.component';
 
 const routes: Routes = [
   { path: 'login', component: loginComponent },
@@ -13,7 +15,14 @@ const routes: Routes = [
     path: 'nav',
     component: NavComponent,
     children: [
-      { path: 'waiter', component: WaiterComponent },
+      {
+        path: 'waiter',
+        component: WaiterComponent,
+        children: [
+          { path: 'ordain', component: OrdainComponent },
+          { path: 'orders-ready', component: OrdersReadyComponent },
+        ],
+      },
       { path: 'chef', component: ChefComponent },
       { path: 'admin', component: AdminComponent },
     ],
