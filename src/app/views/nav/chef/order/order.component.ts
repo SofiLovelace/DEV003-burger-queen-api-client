@@ -56,7 +56,6 @@ export class OrderComponent {
       status: data.status,
       dateEntry: data.dateEntry,
     };
-
     setTimeout(() => {
       this.switchS.$dataOrder.emit(dataFinish);
     }, 1);

@@ -40,7 +40,7 @@
         </li>
       </ul>
       <ng-container *ngIf="data.status === 'delivering'">
-        <button class="btnComplete">
+        <button (click)="openModal(data)" class="btnComplete">
           <span class="text">Orden entregada</span>
         </button>
       </ng-container>
@@ -48,6 +48,6 @@
   </section>
 </main>
 
-<div *ngIf="">
-  <app-modal-chef></app-modal-chef>
+<div *ngIf="modalSwitch">
+  <app-modal-delivering></app-modal-delivering>
 </div>

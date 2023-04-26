@@ -15,8 +15,11 @@ export class OrdersReadyComponent {
   public allOrders: IResponseOrder[] = [];
   public ordersView: IResponseOrder[] = [];
 
+  public modalSwitch: boolean = false;
+
   constructor(
     private HttpsService: HttpsService,
+    public switchS: SwitchService,
     private renderer2: Renderer2
   ) {}
 
@@ -38,6 +41,46 @@ export class OrdersReadyComponent {
       complete: () => console.log('complete'), // codigo que se ejecuta al finalizar la subscripción
     });
   }
+
+  public finishOrder(data: IResponseOrder): void {
+    const dataFinish = {
+      id: data.id,
+      userId: data.userId,
+      client: data.client,
+      products: data.products,
+      status: data.status,
+      dateEntry: data.dateEntry,
+    };
+    setTimeout(() => {
+      this.switchS.$dataOrder.emit(dataFinish);
+    }, 1);
+  }
+
+  public openModal(data: IResponseOrder) {
+    this.modalSwitch = true;
+    this.finishOrder(data);
+  }
+
+  public completeOrder(id: number) {
+    // funcion que marca el pedido como ccompletado
+    const bodyHttp = {
+      dateProcessed: new Date(),
+      status: 'delivered',
+    };
+    this.HttpsService.patch('orders' + '/' + id, bodyHttp).subscribe({
+      next: (response: any) => {
+        console.log('respuesta', response);
+      },
+      error: (err: any) => {
+        console.log('error', err); // gestion de errores
+      },
+      complete: () => {
+        this.getOrders();
+        console.log('complete'); // codigo correcto
+      },
+    });
+  }
+  ////////////////////////////
 
   public completeTimer(dataOrder: IResponseOrder) {
     let timeGralSeconds =
@@ -86,5 +129,6 @@ export class OrdersReadyComponent {
 
   ngOnInit(): void {
     this.getOrders();
+    this.switchS.$switchModal.subscribe((res) => (this.modalSwitch = res));
   }
 }

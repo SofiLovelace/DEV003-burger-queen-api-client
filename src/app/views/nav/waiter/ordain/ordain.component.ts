@@ -12,9 +12,5 @@ export class OrdainComponent {
 
   constructor(private router: Router, private HttpsService: HttpsService) {}
 
-  ngOnInit() {
-    if (!sessionStorage.getItem('userRole')) {
-      this.router.navigate(['/login']);
-    }
-  }
+  ngOnInit() {}
 }
