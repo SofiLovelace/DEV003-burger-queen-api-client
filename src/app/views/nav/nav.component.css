@@ -4,9 +4,14 @@
   --color-principal: yellow;
 }
 
+.container-main {
+  display: flex;
+  flex-direction: row;
+}
+
 #sidebar-wrapper {
   width: 200px !important;
-  min-height: 1000vh;
+  min-height: 300vh;
   background-color: black !important ;
 }
 
@@ -24,14 +29,9 @@
   width: 100%;
 }
 
-/* .sup-orders {
-  top: -1em;
-  right: -0.5em;
-} */
-
 .list-group-item {
   border: none;
-  padding: 20px 30px;
+  padding: 20px 40px;
   text-align: center;
 }
 
@@ -47,6 +47,9 @@
 }
 
 @media only screen and (max-width: 915px) {
+  .container-main {
+    flex-direction: column;
+  }
   #sidebar-wrapper {
     min-height: 150px;
     width: 105% !important;

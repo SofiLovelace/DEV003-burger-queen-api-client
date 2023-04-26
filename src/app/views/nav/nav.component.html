@@ -1,28 +1,43 @@
-<div id="sidebar-wrapper">
-  <div class="text-center title-nav">
-    BURGER
-    <br />
-    QUEEN
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BQ</title>
+</head>
+
+<div class="container-main">
+  <div id="sidebar-wrapper">
+    <div class="text-center title-nav">
+      BURGER
+      <br />
+      QUEEN
+    </div>
+    <div class="list-group list-group-flush ml-1 container-icons">
+      <section class="h4 mt-2 list-group-item active user">
+        <i routerLink="/nav/admin" class="fas fa-user-circle h1 me-2"></i>
+        <h3 class="itemNav">Administrador</h3>
+      </section>
+      <section
+        *ngIf="user === 'admin' || user === 'waiter'"
+        class="h4 mt-3 list-group-item active orders"
+      >
+        <i routerLink="/nav/waiter" class="fas fa-hamburger h1"></i>
+        <h3 class="itemNav">Mesero</h3>
+      </section>
+      <section
+        *ngIf="user === 'admin' || user === 'chef'"
+        class="h4 mt-3 list-group-item active orders"
+      >
+        <i routerLink="/nav/chef" class="fas fa-utensil-spoon h1"></i>
+        <!-- fa-fire -->
+        <h3 class="itemNav">Cocina</h3>
+      </section>
+    </div>
   </div>
-  <div class="list-group list-group-flush ml-1 container-icons">
-    <section class="h4 mt-2 list-group-item active user">
-      <i class="fas fa-user-circle h1 me-2"></i>
-      <h3 class="itemNav">{{ getUser() }}</h3>
-    </section>
-    <section
-      *ngIf="user === 'admin' || user === 'waiter'"
-      class="h4 mt-3 list-group-item active orders"
-    >
-      <i class="fas fa-hamburger h1"></i>
-      <h3 class="itemNav">Mesero</h3>
-    </section>
-    <section
-      *ngIf="user === 'admin' || user === 'chef'"
-      class="h4 mt-3 list-group-item active orders"
-    >
-      <i class="fas fa-utensil-spoon h1"></i>
-      <!-- fa-fire -->
-      <h3 class="itemNav">Cocina</h3>
-    </section>
-  </div>
+
+  <router-outlet></router-outlet>
 </div>
