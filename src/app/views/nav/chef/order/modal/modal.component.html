@@ -2,15 +2,29 @@
   <ng-container *ngIf="dataOrder">
     <div class="body-modal">
       <div class="title my-2">
-        <h1>{{dataOrder.client}}</h1>
-        <span>Pedido {{dataOrder.id}}</span>
+        <h1>{{ dataOrder.client }}</h1>
+        <span>Pedido {{ dataOrder.id }}</span>
       </div>
       <ul>
-        <li *ngFor="let data of dataOrder.products">{{data.qty}} {{data.product.name}}</li>
+        <li *ngFor="let data of dataOrder.products">
+          {{ data.qty }} {{ data.product.name }}
+        </li>
       </ul>
       <div class="my-3">
-        <button type="button" class="btn mx-4 rounded-pill button-modal button-send" (click)="confirmOrder(dataOrder.id)">Completado</button>
-        <button type="button" class="btn mx-4 rounded-pill button-modal button-cancel" (click)="closeModal()">Cancelar</button>
+        <button
+          type="button"
+          class="btn mx-4 rounded-pill button-modal button-send"
+          (click)="confirmOrder(dataOrder.id)"
+        >
+          Completado
+        </button>
+        <button
+          type="button"
+          class="btn mx-4 rounded-pill button-modal button-cancel"
+          (click)="closeModal()"
+        >
+          Cancelar
+        </button>
       </div>
     </div>
   </ng-container>
