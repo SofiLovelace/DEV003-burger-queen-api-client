@@ -8,6 +8,8 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
 import { WaiterComponent } from './views/nav/waiter/waiter.component';
 import { OrdainComponent } from './views/nav/waiter/ordain/ordain.component';
 import { OrdersReadyComponent } from './views/nav/waiter/orders-ready/orders-ready.component';
+import { GestionProductsComponent } from './views/nav/admin/gestion-products/gestion-products.component';
+import { GestionUsersComponent } from './views/nav/admin/gestion-users/gestion-users.component';
 
 const routes: Routes = [
   { path: 'login', component: loginComponent },
@@ -24,7 +26,14 @@ const routes: Routes = [
         ],
       },
       { path: 'chef', component: ChefComponent },
-      { path: 'admin', component: AdminComponent },
+      {
+        path: 'admin',
+        component: AdminComponent,
+        children: [
+          { path: 'users', component: GestionUsersComponent },
+          { path: 'products', component: GestionProductsComponent },
+        ],
+      },
     ],
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
