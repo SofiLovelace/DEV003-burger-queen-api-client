@@ -1,8 +1,20 @@
 <div class="btns-container">
-  <button class="btn" routerLink="/nav/admin/users" #btnUsers>
+  <button
+    class="btn"
+    (click)="changeColor('users')"
+    routerLink="/nav/admin/users"
+    #btnUsers
+  >
     Colaboradores
   </button>
-  <button class="btn" routerLink="/nav/admin/products" #btnProducts>
+  <button
+    class="btn"
+    (click)="changeColor('products')"
+    routerLink="/nav/admin/products"
+    #btnProducts
+  >
     Productos
   </button>
 </div>
+
+<router-outlet></router-outlet>
