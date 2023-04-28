@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Roboto+Mono:wght@100;300&display=swap");
+
+.tittle{
+  font-family: "Fredoka", sans-serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  padding-top: 2% !important;
+  padding-bottom: 2%;
+  color: rgb(0, 0, 0);
+  width: 50%;
+  margin-left: 12%;
+}
+
+.container-products{
+margin-left: 10%;
+}
+
+.tittle-table{
+  font-family: "Fredoka";
+  font-weight:bold;
+    font-size:1rem;
+
+}
+
+.product-table{
+  font-family: "Roboto Mono", monospace;
+
+}

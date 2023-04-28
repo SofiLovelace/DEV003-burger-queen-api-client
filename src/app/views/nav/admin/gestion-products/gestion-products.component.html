@@ -1,1 +1,28 @@
-<p>gestion-products works!</p>
+<main>
+<h2 class="tittle">Colaboradores</h2>
+<Section class="container-products">
+ <table class="table" >
+ <thead>
+    <tr>
+      <th class= "tittle-table" scope="col">Id</th>
+      <th class= "tittle-table"  scope="col">Imagen</th>
+      <th class= "tittle-table" scope="col">Nombre</th>
+      <th class= "tittle-table"  scope="col">Tipo</th>
+      <th class= "tittle-table" scope="col">Precio</th>
+    </tr>
+  </thead>
+  <tbody [id]="'product' + data.id"
+  *ngFor="let data of dataProducts">
+    <tr>
+      <th scope="row"> {{ data.id }}</th>
+      <td class= "product-table" > <img [src]="data.image" [alt]="data.name" align="right"  width="40"
+        height="50" /></td>
+      <td class= "product-table" > {{ data.name }}</td>
+      <td class= "product-table" > {{ data.type }}</td>
+      <td class= "product-table" >{{ data.price }}</td>
+    </tr>
+  </tbody>
+</table>
+</Section>
+</main>
+
