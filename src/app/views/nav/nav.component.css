@@ -10,9 +10,13 @@
 }
 
 #sidebar-wrapper {
-  width: 200px !important;
+  flex-grow: 0.1;
   min-height: 300vh;
   background-color: black !important ;
+}
+
+.views {
+  flex-grow: 0.9;
 }
 
 .mt-5 {

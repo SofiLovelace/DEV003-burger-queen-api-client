@@ -2,7 +2,11 @@
   routerLink="/nav/waiter/orders-ready"
   class="h4 notification-container active orders"
 >
-  <i class="fas fa-utensils"><sup class="sup-orders">0</sup></i>
+  <i class="fas fa-utensils" [ngStyle]="{ color: iconOrderColor }"
+    ><sup class="sup-orders" *ngIf="numberOrders > 0">{{
+      numberOrders
+    }}</sup></i
+  >
   <br />
   <span class="orders-ready">Ordenes listas</span>
 </section>
