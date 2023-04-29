@@ -17,16 +17,11 @@ export class GestionProductsComponent {
     ) { }
 
     
-  public toProducts(type: 'Desayuno' | 'Almuerzo' | void): void {
+  public toProducts(type:void): void {
     this.HttpsService.get('products')
     .subscribe({  // Nos subscribimos al observable
       next: (data: IResponseProduct[])=> { // codigo correcto
-        !type
-        ?this.dataProducts = data
-        :type === 'Desayuno'
-          ?this.dataProducts = data.filter((product: IResponseProduct)=> product.type === 'Desayuno')
-          :this.dataProducts = data.filter((product: IResponseProduct)=> product.type === 'Almuerzo')
-        
+        this.dataProducts = data 
         },
       error: (err: object) => {
         console.log('error',err) // gestion de errores
@@ -34,7 +29,6 @@ export class GestionProductsComponent {
       complete:()=> console.log('complete')  // codigo que se ejecuta al finalizar la subscripción
     })    
   }
-
 
   //public addProduct(productData:IResponseProduct){
   // const toCart:IProductToCar = {
