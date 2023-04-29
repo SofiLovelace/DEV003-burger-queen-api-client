@@ -16,7 +16,6 @@ export class GestionProductsComponent {
     private HttpsService: HttpsService,
     ) { }
 
- 
     
   public toProducts(type: 'Desayuno' | 'Almuerzo' | void): void {
     this.HttpsService.get('products')
@@ -35,8 +34,10 @@ export class GestionProductsComponent {
       complete:()=> console.log('complete')  // codigo que se ejecuta al finalizar la subscripción
     })    
   }
+
+
   //public addProduct(productData:IResponseProduct){
-  //  const toCart:IProductToCar = {
+  // const toCart:IProductToCar = {
   //    qty: 1,
   //    product: {
   //    id: productData.id,
