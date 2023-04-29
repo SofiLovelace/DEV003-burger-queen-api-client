@@ -1,5 +1,5 @@
 <main>
-<h2 class="tittle">Colaboradores</h2>
+<h2 class="tittle">Productos</h2>
 <Section class="container-products">
  <table class="table" >
  <thead>
@@ -19,7 +19,7 @@
         height="50" /></td>
       <td class= "product-table" > {{ data.name }}</td>
       <td class= "product-table" > {{ data.type }}</td>
-      <td class= "product-table" >{{ data.price }}</td>
+      <td class= "product-table" >{{ data.price | currency }}</td>
     </tr>
   </tbody>
 </table>

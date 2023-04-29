@@ -27,7 +27,7 @@ export class GestionProductsComponent {
         :type === 'Desayuno'
           ?this.dataProducts = data.filter((product: IResponseProduct)=> product.type === 'Desayuno')
           :this.dataProducts = data.filter((product: IResponseProduct)=> product.type === 'Almuerzo')
-
+        
         },
       error: (err: object) => {
         console.log('error',err) // gestion de errores
