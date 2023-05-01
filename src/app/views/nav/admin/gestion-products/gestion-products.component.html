@@ -26,7 +26,7 @@ Nuevo producto
       <td class= "product-table" > {{ data.name }}</td>
       <td class= "product-table" > {{ data.type }}</td>
       <td class= "product-table" >{{ data.price | currency }}</td>
-      <td class= "product-table" ><button  (click)="editarProducto(data.id)"   type="button" class="btn btn-success"> Editar </button></td>
+      <td class= "product-table" ><button  [routerLink]="'/nav/admin/editProduct'"   type="button" class="btn btn-success" (click)="sendProduct(data)"> Editar </button></td>
       <td class= "product-table" ><button (click)="ShowSuccess()" type="button" class="btn btn-danger"> Eliminar </button></td>
     </tr>
   </tbody>

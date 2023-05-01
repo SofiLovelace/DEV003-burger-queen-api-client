@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { ProductoI } from 'src/app/models/views/product.interface';
+import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { IResponseProduct } from 'src/app/models/views/waiter.interface';
 import { HttpsService } from 'src/app/services/https.service';
-//import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.service';
 
 
 
@@ -14,48 +14,60 @@ import { HttpsService } from 'src/app/services/https.service';
 })
 export class EditComponent {
 
-  //editarForm: FormGroup;
+  public dataProducts:any | IResponseProduct 
+
+  get name(){
+    return this.productForm.get('name') as FormControl;
+  }
+
+  get image(){
+    return this.productForm.get('image') as FormControl;
+  }
+
+  get type(){
+    return this.productForm.get('type') as FormControl;
+  }
+
+  get price(){
+    return this.productForm.get('price') as FormControl;
+  }
+
+  productForm = new FormGroup({
+    name : new FormControl('', [Validators.required]),
+    //solicitar el required para url
+    image : new FormControl('', [Validators.required]),
+    type: new FormControl('', [Validators.required]),
+    price: new FormControl('', [Validators.required]),
+  })
 
   constructor (
-    private activatedrouter:ActivatedRoute , private router:Router,
+    private router:Router,
     private HttpsService: HttpsService,
-    ) { 
+    private ServiceAdd: ServiceAddToCarService,
+    ) { }
+ 
 
-     // formularios para validar informacion
-      //this.editarForm = this.group({
-      //  name: ['', [Validators.required]],
-      //  type: ['type', [Validators.required]],
-      //  price: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
-      //  image: ['', [Validators.required]]
-      //});
-    }
-    public dataProduct: ProductoI[] = []
 
+getProduct(){
+  this.ServiceAdd.activatorAddToCart.subscribe({
+    next: (data: IResponseProduct) => {
+    this.dataProducts = data
+    console.log(data)
+    },
+    error:(err:object) => {
+      console.log('error', err)
+    },
+    complete:() => console.log('complete')
+  })
+}
 
     
-  ngOnInit():void{
-  let productid = this.activatedrouter.snapshot.paramMap.get('id');
-   let token = this.getToken();
-   console.log(productid) 
-  // this.HttpsService.get('orders').subscribe({  // Nos subscribimos al observable
-  //  next: (data: IResponseProduct[])=> { // codigo correcto
+ngOnInit():void{
+    
+}  
   
-  //    },
-  //  error: (err: object) => {
-  //    console.log('error',err) // gestion de errores
-  //    },
-  //  complete:()=> console.log('complete')  // codigo que se ejecuta al finalizar la subscripción
-  //})    
-}
-   
-   
-
-  
-
   getToken(){
     return sessionStorage.getItem('userToken')
   }
-
- 
 
 }

@@ -35,9 +35,8 @@ const routes: Routes = [
         children: [
           { path: 'users', component: GestionUsersComponent },
           { path: 'products', component: GestionProductsComponent},
-          { path: 'new', component: NewComponent },
-          { path: 'edit/:id', component: EditComponent },
-        
+          { path: 'newProduct', component: NewComponent },
+          { path: 'editProduct', component: EditComponent },
         ],
       },
     ],
