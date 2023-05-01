@@ -12,21 +12,21 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class EditComponent {
 
+  //editarForm: FormGroup;
+
   constructor (
     private activerouter:ActivatedRoute , private router:Router,
     private HttpsService: HttpsService
-    ) { }
+    ) { 
+      //this.editarForm = this.group({
+      //  name: ['', [Validators.required]],
+      //  type: ['type', [Validators.required]],
+      //  price: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
+      //  image: ['', [Validators.required]]
+      //});
+    }
 
     public datosProducto: ProductoI[] = [] 
-
-    editarFor = new FormGroup([
-    //  nombre = new FormControl(''),
-    //  precio = new FormControl(''),
-    //  imagen = new FormControl(''),
-    //  tipo = new FormControl(''),
-      
-    ]);
- 
 
 
 
