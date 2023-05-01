@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { loginComponent } from './views/login/login.component';
@@ -23,6 +24,7 @@ import { GestionProductsComponent } from './views/nav/admin/gestion-products/ges
 import { NewComponent } from './views/nav/admin/gestion-products/new/new.component';
 import { EditComponent } from './views/nav/admin/gestion-products/edit/edit.component';
 import { ToastrModule } from 'ngx-toastr'
+
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { ToastrModule } from 'ngx-toastr'
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
