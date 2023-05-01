@@ -1,0 +1,24 @@
+.tittle {
+  font-family: "Fredoka", sans-serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  padding-top: 2% !important;
+  padding-bottom: 2%;
+  color: rgb(0, 0, 0);
+  width: 50%;
+  margin-left: 12%;
+}
+
+.container-users {
+  margin-left: 10%;
+}
+
+.tittle-table {
+  font-family: "Fredoka";
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.product-table {
+  font-family: "Roboto Mono", monospace;
+}
