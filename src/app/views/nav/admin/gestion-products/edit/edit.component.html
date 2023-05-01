@@ -1,6 +1,29 @@
-<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <div class="text-header">Editar producto</div>
+    </div>
+    <div class="card-body">
+      <form action="#">
+        <div class="form-group">
+          <label for="username">Nombre:</label>
+          <input required="" class="form-control" name="username" id="username" type="text" placeholder="Nombre del producto">
+       
+          <label for="url">Imagen</label>
+          <input required="" class="form-control" name="email" id="email" type="email" placeholder="Url referencial del producto">
+      
+          <label >Tipo:</label>
+          <input required="" class="form-control" name="password" id="password" placeholder="Desayuno o almuerzo">
+       
+          <label for="confirm-password">Precio</label>
+          <input required="" class="form-control" name="confirm-password" id="confirm-password" placeholder="Precio del producto" >
+        </div>
+       <input type="submit" class="btn" value="Editar">
+      </form>
+    </div>
+  </div>
+  
   <!--<form [formGroup]="editarFor">-->
-    <form>
+    <!--<form>
     <div class="form-group">
     <label for="controlInput1">Nombre:</label>
     <input type="text" name="form-control" placeholder="Nombre del producto" id="" formControlName="nombre">
@@ -18,6 +41,6 @@
       <label for="controlInput4">Precio:</label>
       <input type="text" name="form-control" placeholder="Precio del producto" id="" formControlName="precio">
      </div>
-  </form>
-</div>
+  </form>-->
+
 <router-outlet></router-outlet>

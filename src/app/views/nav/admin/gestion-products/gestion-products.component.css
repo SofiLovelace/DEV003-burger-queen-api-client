@@ -11,8 +11,12 @@
   margin-left: 12%;
 }
 
+
+
 .container-products{
-margin-left: 10%;
+margin-left: 8%;
+width: 85%;
+height: 50%;
 }
 
 .tittle-table{
@@ -26,3 +30,10 @@ margin-left: 10%;
   font-family: "Roboto Mono", monospace;
 
 }
+
+.btn-dark{
+  font-family: "Roboto Mono", monospace ;
+  margin: 0% 5% 5% 72%;
+  width: 200px;
+}
+

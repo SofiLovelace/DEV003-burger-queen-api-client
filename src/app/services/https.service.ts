@@ -14,6 +14,10 @@ export class HttpsService {
 
   constructor(private http: HttpClient) {}
 
+  cargarProducto(){
+    
+  }
+
   public get(category: string): any {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -53,16 +57,17 @@ export class HttpsService {
   }
 
 
-  public getOne(id: any): any {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        Authorization: 'Bearer ' + sessionStorage.getItem('userToken'),
-      }),
-    };
-    return this.http.get<ProductoI>(
-      this.urlApiWebSofi + '/' + id,
-      httpOptions
-    );
-  }
+  //public getOne(id: any): any {
+  //  const httpOptions = {
+  //    headers: new HttpHeaders({
+  //      Authorization: 'Bearer ' + sessionStorage.getItem('userToken'),
+  //    }),
+  //  };
+  //  return this.http.get<ProductoI>(
+  //    this.urlApiWebSofi + '/' + id,
+  //    httpOptions
+  //  );
+
+  //}
 
 }

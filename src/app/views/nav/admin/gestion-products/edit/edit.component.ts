@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductoI } from 'src/app/models/views/product.interface';
+import { IResponseProduct } from 'src/app/models/views/waiter.interface';
 import { HttpsService } from 'src/app/services/https.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+//import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 
 @Component({
@@ -15,9 +17,11 @@ export class EditComponent {
   //editarForm: FormGroup;
 
   constructor (
-    private activerouter:ActivatedRoute , private router:Router,
-    private HttpsService: HttpsService
+    private activatedrouter:ActivatedRoute , private router:Router,
+    private HttpsService: HttpsService,
     ) { 
+
+     // formularios para validar informacion
       //this.editarForm = this.group({
       //  name: ['', [Validators.required]],
       //  type: ['type', [Validators.required]],
@@ -25,18 +29,24 @@ export class EditComponent {
       //  image: ['', [Validators.required]]
       //});
     }
-
-    public datosProducto: ProductoI[] = [] 
-
+    public dataProduct: ProductoI[] = []
 
 
     
   ngOnInit():void{
-   let productid = this.activerouter.snapshot.paramMap.get('id');
+  let productid = this.activatedrouter.snapshot.paramMap.get('id');
    let token = this.getToken();
-   this.HttpsService.getOne(productid).suscribe((data: any) =>{  console.log(data)})
-   }
-   
+   console.log(productid) 
+  // this.HttpsService.get('orders').subscribe({  // Nos subscribimos al observable
+  //  next: (data: IResponseProduct[])=> { // codigo correcto
+  
+  //    },
+  //  error: (err: object) => {
+  //    console.log('error',err) // gestion de errores
+  //    },
+  //  complete:()=> console.log('complete')  // codigo que se ejecuta al finalizar la subscripción
+  //})    
+}
    
    
 
@@ -45,5 +55,7 @@ export class EditComponent {
   getToken(){
     return sessionStorage.getItem('userToken')
   }
+
+ 
 
 }

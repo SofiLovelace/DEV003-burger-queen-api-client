@@ -2,7 +2,7 @@
 <h2 class="tittle">Productos</h2>
 <Section class="container-products">
 <button
-class="btn"
+type="button" class="btn btn-dark"
 (click)="nuevoProducto()"
 >
 Nuevo producto
@@ -19,13 +19,15 @@ Nuevo producto
   </thead>
   <tbody>
     <tr [id]="'product' + data.id"
-    *ngFor="let data of dataProducts" (click)="editarProducto(data.id)">
+    *ngFor="let data of dataProducts">
       <th scope="row"> {{ data.id }}</th>
       <td class= "product-table" > <img [src]="data.image" [alt]="data.name"  width="40"
         height="50" /></td>
       <td class= "product-table" > {{ data.name }}</td>
       <td class= "product-table" > {{ data.type }}</td>
       <td class= "product-table" >{{ data.price | currency }}</td>
+      <td class= "product-table" ><button  (click)="editarProducto(data.id)"   type="button" class="btn btn-success"> Editar </button></td>
+      <td class= "product-table" ><button (click)="ShowSuccess()" type="button" class="btn btn-danger"> Eliminar </button></td>
     </tr>
   </tbody>
 </table>
