@@ -20,6 +20,8 @@ import { OrdainComponent } from './views/nav/waiter/ordain/ordain.component';
 import { ModalDeliveringComponent } from './views/nav/waiter/orders-ready/modal-delivering/modal-delivering.component';
 import { GestionUsersComponent } from './views/nav/admin/gestion-users/gestion-users.component';
 import { GestionProductsComponent } from './views/nav/admin/gestion-products/gestion-products.component';
+import { NewComponent } from './views/nav/admin/gestion-products/new/new.component';
+import { EditComponent } from './views/nav/admin/gestion-products/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { GestionProductsComponent } from './views/nav/admin/gestion-products/ges
     ModalDeliveringComponent,
     GestionUsersComponent,
     GestionProductsComponent,
+    NewComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,

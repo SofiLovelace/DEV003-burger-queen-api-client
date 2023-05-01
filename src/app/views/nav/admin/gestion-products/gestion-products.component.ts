@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpsService } from 'src/app/services/https.service';
 import { IResponseProduct } from 'src/app/models/views/waiter.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gestion-products',
@@ -13,7 +14,7 @@ export class GestionProductsComponent {
   public dataProducts: IResponseProduct[] = [] // generamos un array que modificaremos, en función de esto se generaran los elementos html
   
   constructor (
-    private HttpsService: HttpsService,
+    private HttpsService: HttpsService, private router:Router
     ) { }
 
     
@@ -29,6 +30,7 @@ export class GestionProductsComponent {
       complete:()=> console.log('complete')  // codigo que se ejecuta al finalizar la subscripción
     })    
   }
+
 
   //public addProduct(productData:IResponseProduct){
   // const toCart:IProductToCar = {
@@ -47,6 +49,14 @@ export class GestionProductsComponent {
 
   ngOnInit():void {
       this.toProducts() 
+  }
+
+  editarProducto(id:any){
+    this.router.navigate(['/nav/admin/edit' , id])
+  }
+ 
+  nuevoProducto(){
+    this.router.navigate(['/nav/admin/new'])
   }
 
 }
