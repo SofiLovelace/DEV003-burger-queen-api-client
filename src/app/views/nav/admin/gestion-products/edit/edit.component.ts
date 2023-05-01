@@ -14,6 +14,12 @@ import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.serv
 })
 export class EditComponent {
 
+  constructor (
+    private router:Router,
+    private HttpsService: HttpsService,
+    private ServiceAdd: ServiceAddToCarService,
+    ) { }
+
   public dataProducts:any | IResponseProduct 
 
   get name(){
@@ -32,6 +38,7 @@ export class EditComponent {
     return this.productForm.get('price') as FormControl;
   }
 
+
   productForm = new FormGroup({
     name : new FormControl('', [Validators.required]),
     //solicitar el required para url
@@ -40,20 +47,15 @@ export class EditComponent {
     price: new FormControl('', [Validators.required]),
   })
 
-  constructor (
-    private router:Router,
-    private HttpsService: HttpsService,
-    private ServiceAdd: ServiceAddToCarService,
-    ) { }
+ 
  
 
 
 getProduct(){
   this.ServiceAdd.activatorAddToCart.subscribe({
     next: (data: IResponseProduct) => {
-    this.dataProducts = data
-    console.log(data)
-    },
+    this.dataProducts = data;
+  },
     error:(err:object) => {
       console.log('error', err)
     },
@@ -62,12 +64,16 @@ getProduct(){
 }
 
     
-ngOnInit():void{
-    
-}  
+  
   
   getToken(){
     return sessionStorage.getItem('userToken')
   }
+
+
+  ngOnInit():void{
+    this.getProduct()
+      
+  }  
 
 }

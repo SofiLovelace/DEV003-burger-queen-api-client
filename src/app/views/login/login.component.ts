@@ -13,6 +13,9 @@ import {
   styleUrls: ['./login.component.css'],
 })
 export class loginComponent {
+
+  constructor(private AuthService: AuthService, private router: Router) { }
+
   /** Establecemos geters para poderlos ocupar en html y tener un codigo mas limpio **/
   get email() {
     return this.credential.get('email') as FormControl;
@@ -32,8 +35,6 @@ export class loginComponent {
 
   errorHttp = '';
 
-  constructor(private AuthService: AuthService, private router: Router) {}
-
   public login() {
     console.log(this.credential.value);
     this.AuthService.auth('/login', this.credential.value) //esto restorna un observable
@@ -50,11 +51,11 @@ export class loginComponent {
           console.log('error', err); // gestion de errores
           err.error === 'Cannot find user'
             ? (this.errorHttp =
-                'Usuario no autorizado, contacta al administrador')
+              'Usuario no autorizado, contacta al administrador')
             : err.error === 'Incorrect password'
-            ? (this.errorHttp =
+              ? (this.errorHttp =
                 'Contraseña incorrecta, verifica tus credenciales')
-            : (this.errorHttp =
+              : (this.errorHttp =
                 'Error desconocido, vuelve a intentar o contacta al administrador');
           console.error(err);
         },
