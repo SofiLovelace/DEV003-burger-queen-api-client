@@ -9,15 +9,15 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-url:string = 'http://localhost:8080';
+//url:string = 'http://localhost:8080';
 
-  constructor(private http: HttpClient) {}
+//  constructor(private http: HttpClient) {}
 
-//getSingleProduct(id:any):Observable<ProductoI>{
-//let direction = this.url + id;
-//return this.http.get<ProductoI>(direction);
+//getSingleProduct(id:number):Observable<ProductoI>{
+//return this.http.get<ProductoI>(this.url+'/'+id);
+// }
 
-//  }
+
 
   
 }

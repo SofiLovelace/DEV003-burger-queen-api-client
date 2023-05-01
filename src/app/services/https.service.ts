@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IResponseProduct } from '../models/views/waiter.interface';
+import { ProductoI } from '../models/views/product.interface';
+
 
 @Injectable({
   providedIn: 'root',
@@ -49,4 +51,18 @@ export class HttpsService {
       httpOptions
     );
   }
+
+
+  public getOne(id: any): any {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + sessionStorage.getItem('userToken'),
+      }),
+    };
+    return this.http.get<ProductoI>(
+      this.urlApiWebSofi + '/' + id,
+      httpOptions
+    );
+  }
+
 }
