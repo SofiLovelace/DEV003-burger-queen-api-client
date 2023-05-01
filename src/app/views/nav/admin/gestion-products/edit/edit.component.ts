@@ -20,14 +20,14 @@ export class EditComponent {
 
 
     
-  //ngOnInit():void{
-  // let productid = this.activerouter.snapshot.paramMap.get('id');
+  ngOnInit():void{
+  let productid = this.activerouter.snapshot.paramMap.get('id');
   // let token = this.getToken();
-  //this.api.getSingleProduct(productid).subscribe( data  =>{ 
-  //  console.log(data) 
+  // this.api.getSingleProduct(productid).subscribe( id  =>{ 
+  //  console.log(id) 
   //})
 
-  //}
+  }
 
   getToken(){
     return sessionStorage.getItem('userToken')

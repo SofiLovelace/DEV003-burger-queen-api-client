@@ -19,17 +19,8 @@ url:string = 'http://localhost:8080';
 
 //  }
 
-  public getSingleProduct(id: any): any {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        Authorization: 'Bearer ' + sessionStorage.getItem('userToken'),
-      }),
-    };
-    return this.http.get<ProductoI>(
-      this.url + '/' + id,
-      httpOptions
-    );
+  
 }
  
   
-}
+
