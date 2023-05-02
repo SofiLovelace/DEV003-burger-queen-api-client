@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { loginComponent } from './views/login/login.component';
@@ -20,6 +21,9 @@ import { OrdainComponent } from './views/nav/waiter/ordain/ordain.component';
 import { ModalDeliveringComponent } from './views/nav/waiter/orders-ready/modal-delivering/modal-delivering.component';
 import { GestionUsersComponent } from './views/nav/admin/gestion-users/gestion-users.component';
 import { GestionProductsComponent } from './views/nav/admin/gestion-products/gestion-products.component';
+import { NewComponent } from './views/nav/admin/gestion-products/new/new.component';
+import { EditComponent } from './views/nav/admin/gestion-products/edit/edit.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -40,13 +44,17 @@ import { GestionProductsComponent } from './views/nav/admin/gestion-products/ges
     ModalDeliveringComponent,
     GestionUsersComponent,
     GestionProductsComponent,
+    NewComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot({}),
   ],
   providers: [Title],
   bootstrap: [AppComponent],

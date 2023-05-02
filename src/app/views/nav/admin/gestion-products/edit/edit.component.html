@@ -1,0 +1,46 @@
+  <div class="card">
+    <div class="card-header">
+      <div class="text-header">Editar producto</div>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="productForm">
+        <div class="form-group">
+          <label for="username">Nombre:</label>
+          <input  formControlName="name" class="form-control" id="username" type="text" placeholder="Nombre del producto">
+       
+          <label for="url">Imagen:</label>
+          <input  formControlName="image" class="form-control" id="email" type="url" placeholder="Url referencial del producto">
+      
+          <label >Tipo:</label>
+          <input  formControlName="type"  class="form-control"  id="password" placeholder="Desayuno o almuerzo">
+       
+          <label for="confirm-password">Precio:</label>
+          <input formControlName="price"  class="form-control" id="confirm-password" placeholder="Precio del producto" >
+        </div>
+       <input type="submit" class="btn" value="Editar producto">
+      </form>
+    </div>
+  </div>
+  
+  <!--<form [formGroup]="editarFor">-->
+    <!--<form>
+    <div class="form-group">
+    <label for="controlInput1">Nombre:</label>
+    <input type="text" name="form-control" placeholder="Nombre del producto" id="" formControlName="nombre">
+     </div>
+     <div class="form-group">
+      <label for="controlInput2">Imagen:</label>
+    <input type="text" name="form-control" placeholder="Url imagen del producto" id="" formControlName="imagen">
+     </div>
+     <div class="form-group">
+      
+    <label for="controlInput3">Tipo:</label>
+    <input type="text" name="form-control" placeholder="Desayuno o Almuerzo" id="" formControlName="tipo">
+     </div>
+     <div class="form-group">
+      <label for="controlInput4">Precio:</label>
+      <input type="text" name="form-control" placeholder="Precio del producto" id="" formControlName="precio">
+     </div>
+  </form>-->
+
+<router-outlet></router-outlet>

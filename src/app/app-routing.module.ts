@@ -10,6 +10,9 @@ import { OrdainComponent } from './views/nav/waiter/ordain/ordain.component';
 import { OrdersReadyComponent } from './views/nav/waiter/orders-ready/orders-ready.component';
 import { GestionProductsComponent } from './views/nav/admin/gestion-products/gestion-products.component';
 import { GestionUsersComponent } from './views/nav/admin/gestion-users/gestion-users.component';
+import { NewComponent } from './views/nav/admin/gestion-products/new/new.component';
+import { EditComponent } from './views/nav/admin/gestion-products/edit/edit.component';
+
 
 const routes: Routes = [
   { path: 'login', component: loginComponent },
@@ -31,7 +34,9 @@ const routes: Routes = [
         component: AdminComponent,
         children: [
           { path: 'users', component: GestionUsersComponent },
-          { path: 'products', component: GestionProductsComponent },
+          { path: 'products', component: GestionProductsComponent},
+          { path: 'newProduct', component: NewComponent },
+          { path: 'editProduct', component: EditComponent },
         ],
       },
     ],
