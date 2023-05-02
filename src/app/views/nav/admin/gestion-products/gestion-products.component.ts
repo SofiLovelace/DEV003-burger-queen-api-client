@@ -13,6 +13,7 @@ import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.serv
   styleUrls: ['./gestion-products.component.css']
 })
 export class GestionProductsComponent {
+  [x: string]: any;
 
 
   public dataProducts: IResponseProduct[] = []
@@ -47,18 +48,40 @@ export class GestionProductsComponent {
     },1)
   }
   //se crea alerta para confirmar la eliminacion del producto, deberia suscribirse y eliminar el producto en la data//
-  ShowSuccess() {
-    this.toastr.success('Puedes crear un nuevo producto en el boton: NUEVO PRODUCTO', 'Se elimino el producto con exito!', {
-      easing: 'ease-in',
-      easeTime: 1000
-    })
-  }
+ 
 
   // recrea en la etiqueta//
   nuevoProducto() {
     this.router.navigate(['/nav/admin/new'])
   }
 
+
+  ShowSuccess() {
+    this.toastr.success('Producto eliminado con exito', '', {
+      easing: 'ease-in',
+      easeTime: 1000
+    })
+  }
+   
+  deleteProduct(id:number)  {
+    this.HttpsService.delete(`products/${id}`).subscribe({
+      next: (data: IResponseProduct[]) => { 
+        console.log(data)
+      },
+      error: (err: object) => {
+        console.log('error', err) 
+      },
+      complete: () => {
+        this.toProducts()
+        console.log('producto eliminado')
+        this.ShowSuccess()
+        console.log('complete')
+      }
+    })
+  }
+
+
+  
 
   ngOnInit(): void {
     this.toProducts()

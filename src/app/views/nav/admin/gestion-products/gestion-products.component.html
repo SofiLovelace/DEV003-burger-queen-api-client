@@ -2,7 +2,7 @@
 <h2 class="tittle">Productos</h2>
 <Section class="container-products">
 <button
-type="button" class="btn btn-dark"
+type="button" class="btn btn-dark" [routerLink]="'/nav/admin/newProduct'" 
 (click)="nuevoProducto()"
 >
 Nuevo producto
@@ -27,7 +27,7 @@ Nuevo producto
       <td class= "product-table" > {{ data.type }}</td>
       <td class= "product-table" >{{ data.price | currency }}</td>
       <td class= "product-table" ><button  [routerLink]="'/nav/admin/editProduct'"   type="button" class="btn btn-success" (click)="sendProduct(data)"> Editar </button></td>
-      <td class= "product-table" ><button (click)="ShowSuccess()" type="button" class="btn btn-danger"> Eliminar </button></td>
+      <td class= "product-table" ><button (click)="deleteProduct(data.id)  "type="button" class="btn btn-danger"> Eliminar </button></td>
     </tr>
   </tbody>
 </table>
