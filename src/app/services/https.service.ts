@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IResponseProduct } from '../models/views/waiter.interface';
-import { ProductoI } from '../models/views/product.interface';
-
+import { Observable, Observer } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -13,10 +12,6 @@ export class HttpsService {
   // public urlApiWebSofi = 'https://burguerqueen-service.onrender.com'
 
   constructor(private http: HttpClient) {}
-
-  cargarProducto(){
-    
-  }
 
   public get(category: string): any {
     const httpOptions = {

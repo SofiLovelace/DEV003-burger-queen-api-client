@@ -23,7 +23,9 @@ import { GestionUsersComponent } from './views/nav/admin/gestion-users/gestion-u
 import { GestionProductsComponent } from './views/nav/admin/gestion-products/gestion-products.component';
 import { NewComponent } from './views/nav/admin/gestion-products/new/new.component';
 import { EditComponent } from './views/nav/admin/gestion-products/edit/edit.component';
-import { ToastrModule } from 'ngx-toastr'
+import { ToastrModule } from 'ngx-toastr';
+import { EditUserComponent } from './views/nav/admin/gestion-users/edit-user/edit-user.component';
+import { NewUserComponent } from './views/nav/admin/gestion-users/new-user/new-user.component';
 
 
 @NgModule({
@@ -47,6 +49,8 @@ import { ToastrModule } from 'ngx-toastr'
     GestionProductsComponent,
     NewComponent,
     EditComponent,
+    EditUserComponent,
+    NewUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,9 +59,7 @@ import { ToastrModule } from 'ngx-toastr'
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot({
-      
-    })
+    ToastrModule.forRoot({}),
   ],
   providers: [Title],
   bootstrap: [AppComponent],

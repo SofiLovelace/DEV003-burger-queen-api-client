@@ -3,5 +3,6 @@
   "editor.tabSize": 2,
   "editor.renderWhitespace": "none",
   "editor.wordWrap": "on",
-  "interactiveSession.editor.wordWrap": "on"
+  "interactiveSession.editor.wordWrap": "on",
+  "CodeGPT.temperature": 0.6
 }
