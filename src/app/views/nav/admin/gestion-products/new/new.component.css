@@ -63,10 +63,16 @@
   color: #333;
 }
 
+.select{
+  font-family: "Roboto Mono", monospace;
+  font-size: 15px;
+}
+
+
 @media only screen and (max-width: 915px) {
  
   .card {
-    margin-left: 6%;
+    margin-left: 3%;
     
   }
 }
