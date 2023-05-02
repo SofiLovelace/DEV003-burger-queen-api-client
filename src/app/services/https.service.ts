@@ -50,4 +50,19 @@ export class HttpsService {
       httpOptions
     );
   }
+
+
+  public delete(category: string): any {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + sessionStorage.getItem('userToken'),
+      }),
+    };
+    return this.http.delete<IResponseProduct>(
+      this.urlApiWebSofi + '/' + category,
+      httpOptions
+    );
+  }
+
+
 }

@@ -12,7 +12,6 @@ import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.serv
 })
 export class GestionProductsComponent {
   public dataProducts: IResponseProduct[] = [];
-
   constructor(
     private HttpsService: HttpsService,
     private router: Router,
@@ -41,6 +40,7 @@ export class GestionProductsComponent {
     }, 1);
   }
   //se crea alerta para confirmar la eliminacion del producto, deberia suscribirse y eliminar el producto en la data//
+
   ShowSuccess() {
     this.toastr.success(
       'Puedes crear un nuevo producto en el boton: NUEVO PRODUCTO',
@@ -50,11 +50,6 @@ export class GestionProductsComponent {
         easeTime: 1000,
       }
     );
-  }
-
-  // recrea en la etiqueta//
-  nuevoProducto() {
-    this.router.navigate(['/nav/admin/new']);
   }
 
   ngOnInit(): void {

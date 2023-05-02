@@ -73,8 +73,6 @@ export class EditComponent {
   editProduct() {
     const id = this.dataProducts.id;
     const data = this.productForm.value;
-    console.log('aqui soy un id', id);
-    console.log(data);
     const productEdit = {
       name: data.name,
       image: data.image,

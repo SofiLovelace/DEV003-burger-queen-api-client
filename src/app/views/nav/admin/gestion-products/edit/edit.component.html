@@ -43,4 +43,51 @@
     </form>
   </div>
 </div>
+<div class="card">
+  <div class="card-header">
+    <div class="text-header">Editar producto</div>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="productForm" (ngSubmit)="editProduct()">
+      <div class="form-group">
+        <label for="username">Nombre:</label>
+        <input
+          formControlName="name"
+          class="form-control"
+          id="username"
+          type="text"
+          placeholder="Nombre del producto"
+        />
+
+        <label for="url">Imagen:</label>
+        <input
+          formControlName="image"
+          class="form-control"
+          id="email"
+          type="url"
+          placeholder="Url referencial del producto"
+        />
+
+        <label>Tipo:</label>
+        <input
+          formControlName="type"
+          class="form-control"
+          id="password"
+          placeholder="Desayuno o almuerzo"
+        />
+
+        <label for="confirm-password">Precio:</label>
+        <input
+          formControlName="price"
+          class="form-control"
+          id="confirm-password"
+          placeholder="Precio del producto"
+        />
+      </div>
+      <button type="submit" class="btn" [disabled]="productForm.invalid">
+        Editar producto
+      </button>
+    </form>
+  </div>
+</div>
 <router-outlet></router-outlet>
