@@ -70,10 +70,7 @@ export class GestionProductsComponent {
         console.log('complete')
       }
     })
-  }
-
-
-  
+  } 
 
   ngOnInit(): void {
     this.toProducts()

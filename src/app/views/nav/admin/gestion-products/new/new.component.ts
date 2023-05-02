@@ -46,6 +46,14 @@ export class NewComponent {
 
   })
 
+  ShowNewSuccess() {
+    this.toastr.success('Producto agregado con exito!', '', {
+      easing: 'ease-in',
+      easeTime: 1000
+    })
+  }
+
+
   newProduct() {
     const data = this.productForm.value
     const productNew = {
@@ -64,9 +72,10 @@ export class NewComponent {
       },
       complete: () => {
         console.log('complete')
+        this.ShowNewSuccess()
         setTimeout(() => {
           this.router.navigate(['/nav/admin/products'])
-        }, 3000);
+        }, 2000);
       }
     })
 
