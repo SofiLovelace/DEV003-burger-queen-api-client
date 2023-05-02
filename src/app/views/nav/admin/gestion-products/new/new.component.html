@@ -11,8 +11,11 @@
         <label for="url">Imagen:</label>
         <input  formControlName="image" class="form-control" id="email" type="url" placeholder="Url referencial del producto">
     
-        <label >Tipo:</label>
-        <input  formControlName="type"  class="form-control"  id="password" placeholder="Desayuno o almuerzo">
+        <label>Tipo<h4>(Seleciona: desayuno o almuerzo)</h4>: </label>
+        <select formControlName="type" class="form-control" id="password">
+          <option value="Desayuno">Desayuno</option>
+          <option value="Almuerzo">Almuerzo</option>
+        </select>
      
         <label for="confirm-password">Precio:</label>
         <input formControlName="price"  class="form-control" id="confirm-password" placeholder="Precio del producto" >
