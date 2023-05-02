@@ -24,6 +24,8 @@ import { GestionProductsComponent } from './views/nav/admin/gestion-products/ges
 import { NewComponent } from './views/nav/admin/gestion-products/new/new.component';
 import { EditComponent } from './views/nav/admin/gestion-products/edit/edit.component';
 import { ToastrModule } from 'ngx-toastr';
+import { EditUserComponent } from './views/nav/admin/gestion-users/edit-user/edit-user.component';
+import { NewUserComponent } from './views/nav/admin/gestion-users/new-user/new-user.component';
 
 
 @NgModule({
@@ -47,6 +49,8 @@ import { ToastrModule } from 'ngx-toastr';
     GestionProductsComponent,
     NewComponent,
     EditComponent,
+    EditUserComponent,
+    NewUserComponent,
   ],
   imports: [
     BrowserModule,

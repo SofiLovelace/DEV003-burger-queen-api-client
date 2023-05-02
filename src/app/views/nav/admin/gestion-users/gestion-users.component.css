@@ -22,3 +22,9 @@
 .product-table {
   font-family: "Roboto Mono", monospace;
 }
+
+.btn-dark {
+  font-family: "Roboto Mono", monospace;
+  margin: 0% 5% 5% 72%;
+  width: 200px;
+}

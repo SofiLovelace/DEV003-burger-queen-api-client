@@ -8,9 +8,25 @@ import { HttpsService } from 'src/app/services/https.service';
   styleUrls: ['./gestion-users.component.css'],
 })
 export class GestionUsersComponent {
+  constructor(private HttpsService: HttpsService) {}
+
   public users: IUsers[] = [];
 
-  constructor(private httpsService: HttpsService) {}
+  public getUsers(): void {
+    this.HttpsService.get('users').subscribe({
+      // Nos subscribimos al observable
+      next: (data: IUsers[]) => {
+        // codigo correcto
+        this.users = data;
+      },
+      error: (err: object) => {
+        console.log('error', err); // gestion de errores
+      },
+      complete: () => console.log('complete'), // codigo que se ejecuta al finalizar la subscripción
+    });
+  }
 
-  public getUsers() {}
+  ngOnInit(): void {
+    this.getUsers();
+  }
 }
