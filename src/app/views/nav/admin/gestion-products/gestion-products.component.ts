@@ -13,12 +13,10 @@ import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.serv
   styleUrls: ['./gestion-products.component.css']
 })
 export class GestionProductsComponent {
-  [x: string]: any;
-
+  
 
   public dataProducts: IResponseProduct[] = []
-
-
+  
   constructor(
     private HttpsService: HttpsService,
     private router: Router,
@@ -49,12 +47,6 @@ export class GestionProductsComponent {
   }
   //se crea alerta para confirmar la eliminacion del producto, deberia suscribirse y eliminar el producto en la data//
  
-
-  // recrea en la etiqueta//
-  nuevoProducto() {
-    this.router.navigate(['/nav/admin/new'])
-  }
-
 
   ShowSuccess() {
     this.toastr.success('Producto eliminado con exito', '', {

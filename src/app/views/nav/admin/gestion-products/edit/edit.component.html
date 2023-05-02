@@ -17,7 +17,7 @@
           <label for="confirm-password">Precio:</label>
           <input formControlName="price"  class="form-control" id="confirm-password" placeholder="Precio del producto" >
         </div>
-       <button type="submit" class="btn"> Editar producto </button>
+       <button type="submit" class="btn" [disabled]="productForm.invalid"> Editar producto </button>
       </form>
     </div>
   </div>

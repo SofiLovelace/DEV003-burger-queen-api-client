@@ -3,21 +3,21 @@
     <div class="text-header">Nuevo producto</div>
   </div>
   <div class="card-body">
-    <form action="#">
+    <form [formGroup]="productForm" (ngSubmit)="newProduct()">
       <div class="form-group">
         <label for="username">Nombre:</label>
-        <input required="" class="form-control" name="username" id="username" type="text" placeholder="Nombre del producto">
+        <input  formControlName="name" class="form-control" id="username" type="text" placeholder="Nombre del producto">
      
-        <label for="url">Imagen</label>
-        <input required="" class="form-control" name="email" id="email" type="email" placeholder="Url referencial del producto">
+        <label for="url">Imagen:</label>
+        <input  formControlName="image" class="form-control" id="email" type="url" placeholder="Url referencial del producto">
     
         <label >Tipo:</label>
-        <input required="" class="form-control" name="password" id="password" placeholder="Desayuno o almuerzo">
+        <input  formControlName="type"  class="form-control"  id="password" placeholder="Desayuno o almuerzo">
      
-        <label for="confirm-password">Precio</label>
-        <input required="" class="form-control" name="confirm-password" id="confirm-password" placeholder="Precio del producto" >
+        <label for="confirm-password">Precio:</label>
+        <input formControlName="price"  class="form-control" id="confirm-password" placeholder="Precio del producto" >
       </div>
-     <input type="submit" class="btn" value="Agregar nuevo producto">
+      <button type="submit" class="btn"> Guardar producto </button>
     </form>
   </div>
 </div>
