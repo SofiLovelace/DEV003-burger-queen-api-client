@@ -52,6 +52,23 @@ export class GestionProductsComponent {
     );
   }
 
+  deleteProduct(id: number) {
+    this.HttpsService.delete(`products/${id}`).subscribe({
+      next: (data: IResponseProduct[]) => {
+        console.log(data);
+      },
+      error: (err: object) => {
+        console.log('error', err);
+      },
+      complete: () => {
+        this.toProducts();
+        console.log('producto eliminado');
+        this.ShowSuccess();
+        console.log('complete');
+      },
+    });
+  }
+
   ngOnInit(): void {
     this.toProducts();
   }
