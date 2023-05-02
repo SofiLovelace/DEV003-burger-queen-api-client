@@ -25,6 +25,7 @@ import { NewComponent } from './views/nav/admin/gestion-products/new/new.compone
 import { EditComponent } from './views/nav/admin/gestion-products/edit/edit.component';
 import { ToastrModule } from 'ngx-toastr';
 
+
 @NgModule({
   declarations: [
     AppComponent,
