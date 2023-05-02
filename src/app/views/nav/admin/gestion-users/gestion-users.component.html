@@ -1,0 +1,13 @@
+<h2 class="tittle">Productos</h2>
+<section class="container-users">
+  <table class="table">
+    <tbody [id]="'product' + data.id" *ngFor="let data of users">
+      <tr>
+        <th scope="row">{{ data.id }}</th>
+        <td class="product-table">{{ data.role }}</td>
+        <td class="product-table">{{ data.email }}</td>
+        <td class="product-table">{{ data.password }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
