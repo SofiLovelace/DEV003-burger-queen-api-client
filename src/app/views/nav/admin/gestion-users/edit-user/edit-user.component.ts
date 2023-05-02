@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EditUserComponent {
   public changePassword: boolean = false;
+  public userForm: any;
 
   constructor(
     private router: Router,
@@ -22,12 +23,25 @@ export class EditUserComponent {
 
   public changedPassword(): void {
     this.changePassword = !this.changePassword;
+    if (this.changePassword) {
+      this.userForm = this.userFormPass;
+    } else {
+      this.userForm = this.userFormNoPass;
+    }
   }
 
-  public userForm = new FormGroup({
+  public userFormNoPass = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     role: new FormControl('', [Validators.required]),
   });
 
-  ngOnInit() {}
+  public userFormPass = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    role: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
+  });
+
+  ngOnInit() {
+    this.userForm = this.userFormNoPass;
+  }
 }
