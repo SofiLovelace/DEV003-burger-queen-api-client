@@ -19,7 +19,7 @@ position: absolute;
 
   .titulo {
     color: rgb(0, 0, 0);
-    font-size: 380%;
+    font-size: 400%;
     font-family: "Fredoka", sans-serif;
     padding-left: 10%;
     padding-top: 5%;
@@ -43,7 +43,7 @@ position: absolute;
 
   input {
     color: rgb(0, 0, 0) !important;
-    width: 320px;
+    width: 420px;
     height: 50px;
     cursor: text;
   }

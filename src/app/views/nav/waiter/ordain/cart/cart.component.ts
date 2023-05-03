@@ -44,6 +44,10 @@ export class CartComponent {
     return add;
   }
 
+
+
+
+  
   public deleteProduct(): void {
     this.productsCart = this.productsCart.filter((product) => product.qty > 0);
   }

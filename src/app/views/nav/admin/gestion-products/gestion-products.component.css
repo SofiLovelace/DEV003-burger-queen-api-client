@@ -28,7 +28,8 @@ height: 50%;
 
 .product-table{
   font-family: "Roboto Mono", monospace;
-
+  font-size: large;
+  font-weight: bold;
 }
 
 .btn-dark{
@@ -37,3 +38,13 @@ height: 50%;
   width: 200px;
 }
 
+
+@media only screen and (max-width: 800px) {
+  .container-products{
+    margin-left: 5%;    
+  
+  } 
+.btn-dark{
+  margin-left: 50%;
+}
+}

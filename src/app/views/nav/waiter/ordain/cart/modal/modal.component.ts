@@ -5,6 +5,7 @@ import {
   IProductToCar,
   IDataCheck,
 } from 'src/app/models/views/waiter.interface';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-modal',
@@ -17,16 +18,29 @@ export class ModalComponent {
 
   constructor(
     private cartComponent: CartComponent,
-    public switchS: SwitchService
+    public switchS: SwitchService,
+    private toastr: ToastrService
   ) {}
 
   public closeModal(): void {
     this.switchS.$switchModal.emit(false);
   }
 
+  ShowSuccess() {
+    this.toastr.success(
+      '',
+      'Orden enviada a cocina',
+      {
+        easing: 'ease-in',
+        easeTime: 1000,
+      }
+    );
+  }
+
   public confirmOrder(): void {
     this.cartComponent.sendOrder();
     this.closeModal();
+    this.ShowSuccess()
   }
 
   ngOnInit(): void {

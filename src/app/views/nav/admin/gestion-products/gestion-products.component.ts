@@ -67,6 +67,7 @@ export class GestionProductsComponent {
       },
     });
   }
+  
 
   ngOnInit(): void {
     this.toProducts();

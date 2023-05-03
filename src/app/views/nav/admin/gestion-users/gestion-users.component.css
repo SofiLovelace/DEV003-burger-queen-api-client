@@ -10,7 +10,7 @@
 }
 
 .container-users {
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 .tittle-table {
@@ -21,10 +21,26 @@
 
 .product-table {
   font-family: "Roboto Mono", monospace;
+  font-size: large;
+  font-weight: bold;
 }
 
 .btn-dark {
   font-family: "Roboto Mono", monospace;
   margin: 0% 5% 5% 72%;
   width: 200px;
+}
+
+
+@media only screen and (max-width: 800px) {
+
+
+  .container-users{
+    margin-left: 5%;    
+  
+  } 
+
+.btn-dark{
+margin-left: 20% !important;
+}
 }

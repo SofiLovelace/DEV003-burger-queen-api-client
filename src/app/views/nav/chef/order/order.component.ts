@@ -2,6 +2,8 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { IResponseOrder } from 'src/app/models/views/chef.interface';
 import { HttpsService } from 'src/app/services/https.service';
 import { SwitchService } from 'src/app/services/switch.service';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-order',
@@ -20,7 +22,8 @@ export class OrderComponent {
   constructor(
     private HttpsService: HttpsService,
     public switchS: SwitchService,
-    private renderer2: Renderer2
+    private renderer2: Renderer2,
+    private toastr: ToastrService
   ) {}
 
   public filterOrder(status: 'delivering' | 'pending') {
@@ -66,6 +69,18 @@ export class OrderComponent {
     this.finishOrder(data);
   }
 
+
+  ShowSuccess() {
+    this.toastr.success(
+      'se envia al mesero.',
+      'Orden completada!',
+      {
+        easing: 'ease-in',
+        easeTime: 500,
+      }
+    );
+  }
+
   public completeOrder(id: number) {
     // funcion que marca el pedido como ccompletado
     const bodyHttp = {
@@ -81,6 +96,7 @@ export class OrderComponent {
       },
       complete: () => {
         this.getOrders();
+        this.ShowSuccess()
         console.log('complete'); // codigo correcto
       },
     });
