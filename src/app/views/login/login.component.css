@@ -6,17 +6,24 @@ input {
 
 @media only screen and (max-width: 1580px)  {
 
+  .col-lg-5{
+height: 20%;
 
-  .welcome{
-    display: none;
   }
+
+  .alert{
+z-index: 1;
+position: absolute;
+  }
+
 
   .titulo {
     color: rgb(0, 0, 0);
-    font-size: 580%;
+    font-size: 380%;
     font-family: "Fredoka", sans-serif;
     padding-left: 10%;
     padding-top: 5%;
+
   }
 
   .bg-image {
@@ -32,9 +39,11 @@ input {
     height: min-content;
   }
 
+  
+
   input {
     color: rgb(0, 0, 0) !important;
-    width: 420px;
+    width: 320px;
     height: 50px;
     cursor: text;
   }
@@ -43,10 +52,12 @@ input {
     background-color: white !important;
   }
 
+
+
   .form-label {
     color: rgb(0, 0, 0) !important;
     font-family: "Fredoka", sans-serif !important;
-    font-size: 180%;
+    font-size: 140%;
   }
 
   .btn {
@@ -73,14 +84,19 @@ input {
     margin: 0;
   }
 
+  
+  input {
+    color: rgb(0, 0, 0) !important;
+    width: 520px;
+    height: 50px;
+    cursor: text;
+  }
+
   .form-label {
     color: rgb(0, 0, 0) !important;
     font-family: "roboto", sans-serif;
   }
 
-  .welcome{
-    display: none;
-  }
 
   #exampleInputEmail1 {
     background-color: transparent !important;

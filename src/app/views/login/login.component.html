@@ -1,6 +1,5 @@
 <div class="bg-image">
   <div class="col-lg-5">
-    <h2 class="welcome"> W E L C O M E</h2>
     <h1 class="titulo">BURGER QUEEN</h1>
     <div class="card-body">
       <form [formGroup]="credential" (ngSubmit)="login()" class="p-5 form">
@@ -16,7 +15,7 @@
           />
           <br />
           <div
-            class="alert alert-danger mt-1"
+            class="alert alert-danger"
             [hidden]="email.valid || email.untouched"
           >
             <Span *ngIf="email.errors?.['required']"
@@ -27,7 +26,7 @@
             >
           </div>
         </div>
-        <div class="mb-3">
+        <div class="m">
           <label for="exampleInputPassword1" class="form-label"
             >CONTRASEÑA &nbsp;</label
           >
@@ -39,13 +38,13 @@
           />
           <br />
           <div
-            class="alert alert-danger mt-1"
+            class="alert alert-danger"
             [hidden]="password.valid || password.untouched"
           >
             Ingresa una contraseña minimo 8 caracteres
           </div>
           <div
-            class="alert alert-danger mt-1"
+            class="alert alert-danger"
             [hidden]="errorHttp.length === 0"
           >
             {{ errorHttp }}
@@ -57,6 +56,5 @@
         </button>
       </form>
     </div>
-    <div class="col-lg-7"></div>
   </div>
 </div>
