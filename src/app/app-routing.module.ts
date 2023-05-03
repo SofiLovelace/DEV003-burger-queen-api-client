@@ -48,6 +48,7 @@ const routes: Routes = [
           { path: 'editProduct', component: EditComponent },
           { path: 'newUser', component: NewUserComponent },
           { path: 'editUser', component: EditUserComponent },
+          { path: '', redirectTo: '/nav/admin/users', pathMatch: 'full' },
         ],
       },
     ],
