@@ -14,6 +14,7 @@ import { NewComponent } from './views/nav/admin/gestion-products/new/new.compone
 import { EditComponent } from './views/nav/admin/gestion-products/edit/edit.component';
 import { EditUserComponent } from './views/nav/admin/gestion-users/edit-user/edit-user.component';
 import { NewUserComponent } from './views/nav/admin/gestion-users/new-user/new-user.component';
+import { GuardianGuard } from './guardian.guard';
 
 const routes: Routes = [
   { path: 'login', component: loginComponent },
@@ -24,16 +25,22 @@ const routes: Routes = [
       {
         path: 'waiter',
         component: WaiterComponent,
+        canActivate: [GuardianGuard],
         children: [
           { path: 'ordain', component: OrdainComponent },
           { path: 'orders-ready', component: OrdersReadyComponent },
           { path: '', redirectTo: '/nav/waiter/ordain', pathMatch: 'full' },
         ],
       },
-      { path: 'chef', component: ChefComponent },
+      {
+        path: 'chef',
+        component: ChefComponent,
+        canActivate: [GuardianGuard],
+      },
       {
         path: 'admin',
         component: AdminComponent,
+        canActivate: [GuardianGuard],
         children: [
           { path: 'users', component: GestionUsersComponent },
           { path: 'products', component: GestionProductsComponent },
