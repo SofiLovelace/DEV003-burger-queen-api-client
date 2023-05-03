@@ -4,7 +4,13 @@ input {
   border-bottom: 2px solid black;
 }
 
-@media (max-width: 1580px) {
+@media only screen and (max-width: 1580px)  {
+
+
+  .welcome{
+    display: none;
+  }
+
   .titulo {
     color: rgb(0, 0, 0);
     font-size: 580%;
@@ -62,7 +68,7 @@ input {
 }
 
 /*tablet*/
-@media (max-width: 960px) {
+@media only screen and (max-width: 965px)  {
   * {
     margin: 0;
   }
@@ -72,8 +78,16 @@ input {
     font-family: "roboto", sans-serif;
   }
 
+  .welcome{
+    display: none;
+  }
+
   #exampleInputEmail1 {
     background-color: transparent !important;
+  }
+  #exampleInputPassword1{
+    background-color: transparent !important;
+
   }
 
   .card-body {
@@ -118,4 +132,52 @@ input {
     color: white;
     border-color: rgb(0, 0, 0);
   }
+
+
+  @media only screen and (max-width: 755px) {
+
+  .card-body {
+    background:  rgb(248, 248, 85);
+    border-radius: 20px;
+    margin: 20px;
+    margin-top: 19%;
+    margin-left: 5%;
+    width: 620px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 4px 6px rgba(29, 29, 29, 0.467);
+  }
+
+  .welcome{
+    margin-top: 50%;
+    width: 2rem;
+    color: rgb(0, 0, 0) !important;
+    font-family: "roboto", sans-serif;
+ 
+  }
+
+  .titulo {
+    margin-top: 50%;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 1000%;
+    text-shadow: 2px 4px 6px rgba(255, 255, 255, 0.7);
+  }
+
+  .bg-image {
+    background-image: url(./img/fondoBdesk.png);
+    background-color: rgb(248, 248, 85);
+    background-size: cover;
+    width: 100vw;
+    height: 110vh;
+    opacity: 2;
+  }
+
+
+  
+
+  }
+
+
+
 }
