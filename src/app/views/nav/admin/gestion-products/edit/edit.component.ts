@@ -45,7 +45,7 @@ export class EditComponent {
     price: new FormControl('', [Validators.required]),
   });
 
-  getProduct() {
+  private getProduct() {
     this.ServiceAdd.activatorAddToCart.subscribe({
       next: (data: IResponseProduct) => {
         this.dataProducts = data;
@@ -63,14 +63,14 @@ export class EditComponent {
     });
   }
 
-  ShowProductSuccess() {
+  private ShowProductSuccess() {
     this.toastr.success('Producto editado con exito', '', {
       easing: 'ease-in',
       easeTime: 1000,
     });
   }
 
-  editProduct() {
+  public editProduct() {
     const id = this.dataProducts.id;
     const data = this.productForm.value;
     const productEdit = {

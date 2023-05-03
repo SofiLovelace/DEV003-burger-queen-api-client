@@ -51,7 +51,6 @@ export class HttpsService {
     );
   }
 
-
   public delete(category: string): any {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -63,6 +62,4 @@ export class HttpsService {
       httpOptions
     );
   }
-
-
 }

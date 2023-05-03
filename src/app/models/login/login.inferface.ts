@@ -1,15 +1,16 @@
 //import { EmailValidator } from "@angular/forms"
 
 interface IUser {
-    email: string
-    role: 'admin' | 'waiter'
-    id: number
+  email: string;
+  role: 'admin' | 'waiter' | 'chef';
+  id: number;
 }
 
-export interface IResponseAuth{
-    accessToken: string
-    user: IUser
+export interface IResponseAuth {
+  accessToken: string;
+  user: IUser;
 }
 
-export interface IErrorAuth{
-    error: string}
+export interface IErrorAuth {
+  error: string;
+}

@@ -21,10 +21,5 @@ export class NavComponent {
     if (!sessionStorage.getItem('userRole')) {
       this.router.navigate(['/login']);
     }
-    /*   this.user = sessionStorage.getItem('userRole')
-    this.getOrders()
-    setInterval(() => {
-      this.getOrders()
-    }, 10000) */
   }
 }

@@ -4,6 +4,7 @@ import { HttpsService } from 'src/app/services/https.service';
 import { Router } from '@angular/router';
 import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.service';
 import { ToastrService } from 'ngx-toastr';
+import { IUsers } from 'src/app/models/views/admin.interface';
 
 @Component({
   selector: 'app-edit-user',
@@ -11,8 +12,13 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./edit-user.component.css'],
 })
 export class EditUserComponent {
-  public changePassword: boolean = false;
-  public userForm: any;
+  public userForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    role: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required, Validators.min(6)]),
+  });
+
+  public dataUser: any | IUsers;
 
   constructor(
     private router: Router,
@@ -21,27 +27,41 @@ export class EditUserComponent {
     private toastr: ToastrService
   ) {}
 
-  public changedPassword(): void {
-    this.changePassword = !this.changePassword;
-    if (this.changePassword) {
-      this.userForm = this.userFormPass;
-    } else {
-      this.userForm = this.userFormNoPass;
-    }
+  public updateUser(id: number): void {
+    this.HttpsService.patch(`users/${id}`, this.userForm.value).subscribe({
+      next: (data: any) => {
+        console.log('data editada', data);
+      },
+      error: (err: any) => {
+        console.log('error', err);
+      },
+      complete: () => {
+        setTimeout(() => {
+          this.router.navigate(['/nav/admin/users']);
+        }, 1000);
+        console.log('complete');
+      },
+    });
   }
 
-  public userFormNoPass = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    role: new FormControl('', [Validators.required]),
-  });
+  public getDataUser(): void {
+    this.ServiceAdd.activatorAddToCart.subscribe({
+      next: (data: IUsers) => {
+        this.dataUser = data;
+        this.userForm.setValue({
+          email: data.email,
+          role: data.role,
+          password: '',
+        });
+      },
+      error: (err: object) => {
+        console.log('error', err);
+      },
+      complete: () => console.log('complete'),
+    });
+  }
 
-  public userFormPass = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    role: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
-  });
-
-  ngOnInit() {
-    this.userForm = this.userFormNoPass;
+  ngOnInit(): void {
+    this.getDataUser();
   }
 }

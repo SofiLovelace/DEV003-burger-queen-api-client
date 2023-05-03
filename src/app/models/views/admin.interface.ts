@@ -1,7 +1,7 @@
 import { EmailValidator } from '@angular/forms';
 
 export interface IUsers {
-  email: EmailValidator;
+  email: string;
   password: string;
   role: 'admin' | 'chef' | 'waiter';
   id: number;

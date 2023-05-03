@@ -61,13 +61,12 @@ export class GestionProductsComponent {
         console.log('error', err);
       },
       complete: () => {
-        this.toProducts()
-        console.log('producto eliminado')
-        this.ShowSuccess()
-        console.log('complete')
-      }
-    })
-  } 
+        this.toProducts();
+        console.log('producto eliminado');
+        this.ShowSuccess();
+      },
+    });
+  }
 
   ngOnInit(): void {
     this.toProducts();

@@ -1,6 +1,12 @@
 <h2 class="tittle">Usuarios</h2>
 <section class="container-users">
-  <button type="button" class="btn btn-dark">Nuevo producto</button>
+  <button
+    type="button"
+    class="btn btn-dark"
+    [routerLink]="'/nav/admin/newUser'"
+  >
+    Nuevo usuario
+  </button>
   <table class="table">
     <thead>
       <tr>
@@ -17,6 +23,7 @@
         <td>
           <button
             [routerLink]="'/nav/admin/editUser'"
+            (click)="sendUserToEdit(data)"
             type="button"
             class="btn btn-success"
           >
@@ -24,7 +31,13 @@
           </button>
         </td>
         <td class="product-table">
-          <button type="button" class="btn btn-danger">Eliminar</button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="deleteUser(data.id)"
+          >
+            Eliminar
+          </button>
         </td>
       </tr>
     </tbody>

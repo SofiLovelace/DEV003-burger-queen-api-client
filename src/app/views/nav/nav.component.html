@@ -6,10 +6,14 @@
       QUEEN
     </div>
     <div class="list-group list-group-flush ml-1 container-icons">
-      <section class="h4 mt-2 list-group-item active user">
+      <section
+        *ngIf="user === 'admin'"
+        class="h4 mt-2 list-group-item active user"
+      >
         <i routerLink="/nav/admin" class="fas fa-user-circle h1 me-2"></i>
         <h3 class="itemNav">Administrador</h3>
       </section>
+
       <section
         *ngIf="user === 'admin' || user === 'waiter'"
         class="h4 mt-3 list-group-item active orders"
@@ -17,6 +21,7 @@
         <i routerLink="/nav/waiter/ordain" class="fas fa-hamburger h1"></i>
         <h3 class="itemNav">Mesero</h3>
       </section>
+
       <section
         *ngIf="user === 'admin' || user === 'chef'"
         class="h4 mt-3 list-group-item active orders"

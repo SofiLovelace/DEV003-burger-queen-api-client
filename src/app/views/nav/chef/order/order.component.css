@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Roboto+Mono:wght@100;300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Roboto+Mono:wght@100;300&display=swap");
 
 .buttons-nav {
   display: flex;
@@ -15,19 +15,13 @@
   background: #000000;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-weight: bolder;
   display: inline;
 }
 
-.button-complete{
+.button-complete {
   background-color: gray;
-}
-
-.btns-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
 
 .btn {
@@ -38,7 +32,7 @@
   background: #000000;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-weight: bolder;
   display: inline;
   margin: 5%;
@@ -70,7 +64,7 @@
 }
 
 .product {
-  font-family: 'Fredoka', sans-serif;
+  font-family: "Fredoka", sans-serif;
   margin-left: 22px;
 }
 
@@ -86,7 +80,7 @@
   border-radius: 20px;
   margin-left: 9px;
   padding: 2%;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-weight: bolder;
 }
 
@@ -102,31 +96,29 @@
   padding-left: 5%;
   height: 48px;
   width: 136px;
-  font-family: 'Fredoka', sans-serif;
+  font-family: "Fredoka", sans-serif;
 }
 
 .text-titlePrice {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   padding-left: 5%;
-
 }
 
 .text-titleTime {
   padding-left: 5%;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   grid-row: 3/4;
 }
 
-
 .text-title {
-  font-family: 'Fredoka', sans-serif;
+  font-family: "Fredoka", sans-serif;
   font-weight: bolder;
   font-size: small;
 }
 
 .clientName {
   padding-left: 5%;
-  font-family: 'Fredoka', sans-serif;
+  font-family: "Fredoka", sans-serif;
   font-weight: bolder;
   border-top-style: dashed;
   width: 100%;

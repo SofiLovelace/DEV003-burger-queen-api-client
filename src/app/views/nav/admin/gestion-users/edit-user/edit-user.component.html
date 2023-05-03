@@ -3,8 +3,7 @@
     <div class="text-header">Editar datos de usuario</div>
   </div>
   <div class="card-body">
-    <form [formGroup]="userForm">
-      <!-- (ngSubmit)="editUser()" -->
+    <form [formGroup]="userForm" (ngSubmit)="updateUser(dataUser.id)">
       <div class="form-group">
         <label>Correo:</label>
         <input
@@ -12,34 +11,38 @@
           class="form-control"
           id="username"
           type="email"
-          placeholder="Nombre del producto"
+          placeholder="email@email.com"
         />
 
-        <label>Rol:</label>
-        <input
-          formControlName="role"
-          class="form-control"
-          id="email"
-          type="text"
-          placeholder="Admin, chef o waiter"
-        />
-        <button type="button" class="btn" (click)="changedPassword()">
-          Cambiar contraseña
-        </button>
-
-        <ng-container *ngIf="changePassword">
-          <label>Nueva contraseña:</label>
-          <input
-            type="password"
-            formControlName="password"
-            class="form-control"
-            id="password"
-            placeholder="****************"
-          />
+        <ng-container *ngIf="dataUser">
+          <label>
+            Rol:
+            <h4 class="select">(Seleciona el rol)</h4>
+          </label>
+          <select formControlName="role" class="form-control" id="password">
+            <option [selected]="dataUser.role === 'admin'" value="admin">
+              Administrador
+            </option>
+            <option [selected]="dataUser.role === 'waiter'" value="waiter">
+              Mesero
+            </option>
+            <option [selected]="dataUser.role === 'chef'" value="chef">
+              Cocinero
+            </option>
+          </select>
         </ng-container>
+
+        <label>Nueva contraseña:</label>
+        <input
+          type="password"
+          formControlName="password"
+          class="form-control"
+          id="password"
+          placeholder="****************"
+        />
       </div>
       <button type="submit" class="btn" [disabled]="userForm.invalid">
-        Editar producto
+        Enviar datos
       </button>
     </form>
   </div>

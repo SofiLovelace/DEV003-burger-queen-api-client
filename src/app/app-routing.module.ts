@@ -27,6 +27,7 @@ const routes: Routes = [
         children: [
           { path: 'ordain', component: OrdainComponent },
           { path: 'orders-ready', component: OrdersReadyComponent },
+          { path: '', redirectTo: '/nav/waiter/ordain', pathMatch: 'full' },
         ],
       },
       { path: 'chef', component: ChefComponent },
