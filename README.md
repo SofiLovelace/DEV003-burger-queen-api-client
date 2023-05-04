@@ -9,16 +9,19 @@
 ## BQ tiene 4 vistas que responden al requerimiento UX:
   
   ### Login:
-[![1.png](https://postimg.cc/2b2cCgrD)
+[![1.png](https://i.postimg.cc/0jqL0q4b/1.png)](https://postimg.cc/2b2cCgrD)
 ##### Vista horizontal.
 
-[![2.png](https://postimg.cc/3WkzFChx)
+[![2.png](https://i.postimg.cc/sfmyyw07/2.png)](https://postimg.cc/3WkzFChx)
 ##### Vista vertical
 
   ### Administrador:
 El administrador podra crear, eliminar y editar los usuario que en este caso son los colaboradores del local, al igual que los productos podra agregar nuevos productos editar o en su defecto eliminarlos, tendra acceso a la vista del mesero y cocina.
-[![6.png](https://postimg.cc/7f34SM1T) 
+##### Usuarios
+[![5.png](https://i.postimg.cc/rswpcb1Z/5.png)](https://postimg.cc/KkCbD0st)
+##### Productos
 [![5.png](https://postimg.cc/KkCbD0st)
+[![6.png](https://i.postimg.cc/QxPMGfHS/6.png)](https://postimg.cc/7f34SM1T) 
 
  ### Mesero:
 El mesero podra emitir ordenes, editarlas, eliminarlas y ver en tiempo real cuando el area de cocina las complete, para que asi el mesero pueda entregar sus pedidos en el menor tiempo posible, podra filtar productos como desatuno y almuerzo, tambien podra cargar ordener a un carrito que luego seran enviadas a cocina luego de una confirmacion de orden, tendra acceso solo a la vista de mesero.
