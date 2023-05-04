@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpsService } from 'src/app/services/https.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-nav',
@@ -10,17 +11,34 @@ import { Router } from '@angular/router';
 export class NavComponent {
   public user: string | any;
 
-  constructor(private HttpsService: HttpsService, private router: Router) {}
+  constructor(
+    private HttpsService: HttpsService,
+    private router: Router,
+    private toastr: ToastrService
+  ) {}
 
   public getUser(): string | any {
     return sessionStorage.getItem('userRole');
   }
 
-  public logout(): void {
+  private ShowSuccess(type: '' | 'logout' | 'success') {
+    let message: string = '';
+    type === 'logout'
+      ? (message = 'Sesión cerrada exitosamente')
+      : (message = 'Sesion expirada');
+
+    this.toastr.success('', message, {
+      easing: 'ease-in',
+      easeTime: 1000,
+    });
+  }
+
+  public logout(type: '' | 'logout' | 'success'): void {
     sessionStorage.removeItem('userRole');
     sessionStorage.removeItem('userId');
     sessionStorage.removeItem('userEmail');
     sessionStorage.removeItem('userToken');
+    this.ShowSuccess(type);
     this.router.navigate(['/login']);
   }
 
