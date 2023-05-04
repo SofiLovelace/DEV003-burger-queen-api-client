@@ -1,15 +1,17 @@
 .btns-container {
   margin-top: 50px;
   flex: auto;
+  margin-left: 2%;
   text-align: center;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   position: sticky;
+  margin-left: 5%;
 }
 
 .btn {
-  width: 150px;
+  width: 190px;
   height: 50px;
   color: aliceblue;
   background: #000000;
@@ -20,3 +22,11 @@
   display: inline;
   margin: 0% 5% 5% 5%;
 }
+
+
+@media only screen and (max-width: 915px) {
+  .btns-container{
+    margin-top: 20%;
+  }
+  
+  }

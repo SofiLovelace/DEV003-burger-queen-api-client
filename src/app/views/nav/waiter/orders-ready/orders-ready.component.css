@@ -70,8 +70,9 @@
 }
 
 .product {
-  font-family: "Fredoka", sans-serif;
+  font-family: 'Josefin Sans';
   margin-left: 22px;
+  font-weight: bolder;
 }
 
 .list-order {
@@ -105,14 +106,15 @@
   font-family: "Fredoka", sans-serif;
 }
 
-.text-titlePrice {
-  font-family: "Roboto Mono", monospace;
-  padding-left: 5%;
+.text-titleId {
+  font-family: 'Josefin Sans',monospace;
+  font-size: 1.5rem;
+  margin-right: 2%;
 }
 
 .text-titleTime {
   padding-left: 5%;
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Josefin Sans',monospace;
   grid-row: 3/4;
 }
 

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import {
   IResponseAuth,
   IErrorAuth,
@@ -14,7 +15,11 @@ import {
 })
 export class loginComponent {
 
-  constructor(private AuthService: AuthService, private router: Router) { }
+  constructor(
+    private AuthService: AuthService,
+     private router: Router,
+     private toastr: ToastrService
+     ) { }
 
   /** Establecemos geters para poderlos ocupar en html y tener un codigo mas limpio **/
   get email() {
@@ -34,6 +39,17 @@ export class loginComponent {
   });
 
   errorHttp = '';
+
+  ShowSuccess() {
+    this.toastr.success(
+      '',
+      'Bienvenido a BURGER QUEEN!',
+      {
+        easing: 'ease-in',
+        easeTime: 1000,
+      }
+    );
+  }
 
   public login() {
     console.log(this.credential.value);
@@ -60,10 +76,14 @@ export class loginComponent {
           console.error(err);
         },
         complete: () => {
+          this.ShowSuccess();
+        setTimeout(() => {
           let user = sessionStorage.getItem('userRole');
           if (user) {
             this.router.navigate([`/nav/${user}`]);
           } // navegacion
+        }, 1000);
+       
         },
       });
   }
