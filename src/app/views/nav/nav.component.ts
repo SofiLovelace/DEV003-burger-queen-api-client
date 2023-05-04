@@ -16,6 +16,14 @@ export class NavComponent {
     return sessionStorage.getItem('userRole');
   }
 
+  public logout(): void {
+    sessionStorage.removeItem('userRole');
+    sessionStorage.removeItem('userId');
+    sessionStorage.removeItem('userEmail');
+    sessionStorage.removeItem('userToken');
+    this.router.navigate(['/login']);
+  }
+
   ngOnInit(): void {
     this.user = this.getUser();
     if (!sessionStorage.getItem('userRole')) {
