@@ -1,6 +1,6 @@
   # BURGER QUEEN 🍔
 
-  Es un aplicativo que nace de la necesidad de nuestro cliente de poder gestionar de forma efectiva el servicio dentro de su restaurante de comida rapida, para se siguieron las solicitudes de UX|UI donde creamos patrones y desarrollamos de forma eficaz segun la necesidad de cada usuario, logrando asi un App dinamica y muy intuitiva!
+  Es un aplicativo que nace de la necesidad de nuestro cliente de poder gestionar de forma efectiva el servicio dentro de su restaurante de comida rapida, para se siguieron las solicitudes de UX|UI donde creamos patrones y desarrollamos de forma eficaz segun la necesidad de cada usuario, logrando asi un App con resposividad para tablet ycomputadora, dandole las cuales perfectas para ser un portal dinamico y muy intuitivo!
 
   ***Puedes probar el App dandole click a la hamburguesa:***
   [🍔]( https://dev-003-burger-queen-api-client-dusky.vercel.app/)
@@ -18,6 +18,8 @@
  ***BQ tiene 4 vistas que responden al requerimiento UX:***
   
   ### Login:
+Podras ingresar al App con las credenciales asignadas por el Administrador cada credencial tiene diferentes permisos.
+
 [![1.png](https://i.postimg.cc/0jqL0q4b/1.png)](https://postimg.cc/2b2cCgrD)
 ***Vista horizontal.***
 
@@ -38,13 +40,13 @@ El administrador podra crear, eliminar y editar los usuario que en este caso son
 El mesero podra emitir ordenes, editarlas, eliminarlas y ver en tiempo real cuando el area de cocina las complete, para que asi el mesero pueda entregar sus pedidos en el menor tiempo posible, podra filtar productos como desatuno y almuerzo, tambien podra cargar ordener a un carrito que luego seran enviadas a cocina luego de una confirmacion de orden, tendra acceso solo a la vista de mesero.
 [![4.png](https://i.postimg.cc/RZ7xsdfW/4.png)](https://postimg.cc/FYH61jTv)
 
- ### Cocina:
+### Cocina:  
 El area de cocina cuenta con funciones que permite visualizar recibir y enviar los pedidos completos al area del mesero, cuenta con un contador que le indica el tiempo que corrio desde que tomo la orden hasta que le coloca como colpletada, tambien cuenta con una vista donde podra ver las ordenes pendientes y finalizadas organizadas segun la prioridad, tendra acceso solo a la vista de Cocina
 [![3.png](https://i.postimg.cc/SQPXkSPW/3.png)](https://postimg.cc/3WgrZTYR)
 
 
-#Proyecto creado, desarrollado y disenado por:
+# Proyecto creado, desarrollado y disenado por:
  
-**Sofia Islas:**  [GitHub]( https://github.com/SofiLovelace) & <a href="https://www.linkedin.com/in/sofia-islas-lovelace/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/nicolecondeduque/" height="30" width="40" /></a>
-**Nicole Conde:**   [GitHub](https://github.com/NicoleCondeDuque) & <a href="https://www.linkedin.com/in/nicolecondeduque/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/nicolecondeduque/" height="30" width="40" /></a>
+**Sofia Islas:**  👩🏻‍💻  [GitHub]( https://github.com/SofiLovelace) & <a href="https://www.linkedin.com/in/sofia-islas-lovelace/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/nicolecondeduque/" height="30" width="40" /></a>
+**Nicole Conde:**   👩🏾‍💻  [GitHub](https://github.com/NicoleCondeDuque) & <a href="https://www.linkedin.com/in/nicolecondeduque/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/nicolecondeduque/" height="30" width="40" /></a>
 
