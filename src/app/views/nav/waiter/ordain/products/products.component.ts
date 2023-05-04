@@ -6,6 +6,7 @@ import {
 } from 'src/app/models/views/waiter.interface';
 import { IResponseOrder } from 'src/app/models/views/chef.interface';
 import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.service';
+import { NavComponent } from '../../../nav.component';
 
 @Component({
   selector: 'app-products',
@@ -23,7 +24,8 @@ export class ProductsComponent {
   constructor(
     private HttpsService: HttpsService,
     private ServiceAdd: ServiceAddToCarService,
-    private renderer2: Renderer2
+    private renderer2: Renderer2,
+    private navComponent: NavComponent
   ) {}
 
   public filterProducts(type: 'Desayuno' | 'Almuerzo' | void): void {
@@ -41,8 +43,11 @@ export class ProductsComponent {
               (product: IResponseProduct) => product.type === 'Almuerzo'
             ));
       },
-      error: (err: object) => {
+      error: (err: any) => {
         console.log('error', err); // gestion de errores
+        if (err.status === 401) {
+          this.navComponent.logout('success');
+        }
       },
       complete: () => console.log('complete'), // codigo que se ejecuta al finalizar la subscripción
     });
@@ -74,8 +79,11 @@ export class ProductsComponent {
           ? (this.iconOrderColor = 'black')
           : (this.iconOrderColor = 'gray');
       },
-      error: (err: object) => {
+      error: (err: any) => {
         console.log('error', err); // gestion de errores
+        if (err.status === 401) {
+          this.navComponent.logout('success');
+        }
       },
       complete: () => console.log('complete'), // codigo que se ejecuta al finalizar la subscripción
     });

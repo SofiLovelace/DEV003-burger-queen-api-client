@@ -4,6 +4,7 @@ import { IResponseProduct } from 'src/app/models/views/waiter.interface';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.service';
+import { NavComponent } from '../../nav.component';
 
 @Component({
   selector: 'app-gestion-products',
@@ -16,7 +17,8 @@ export class GestionProductsComponent {
     private HttpsService: HttpsService,
     private router: Router,
     private toastr: ToastrService,
-    private ServiceAdd: ServiceAddToCarService
+    private ServiceAdd: ServiceAddToCarService,
+    private navComponent: NavComponent
   ) {}
 
   //Metodo que me permite traer todo los productos en lista//
@@ -27,8 +29,11 @@ export class GestionProductsComponent {
         // codigo correcto
         this.dataProducts = data;
       },
-      error: (err: object) => {
+      error: (err: any) => {
         console.log('error', err); // gestion de errores
+        if (err.status === 401) {
+          this.navComponent.logout('success');
+        }
       },
       complete: () => console.log('complete'), // codigo que se ejecuta al finalizar la subscripción
     });
@@ -57,8 +62,11 @@ export class GestionProductsComponent {
       next: (data: IResponseProduct[]) => {
         console.log(data);
       },
-      error: (err: object) => {
+      error: (err: any) => {
         console.log('error', err);
+        if (err.status === 401) {
+          this.navComponent.logout('success');
+        }
       },
       complete: () => {
         this.toProducts();
@@ -67,7 +75,6 @@ export class GestionProductsComponent {
       },
     });
   }
-  
 
   ngOnInit(): void {
     this.toProducts();

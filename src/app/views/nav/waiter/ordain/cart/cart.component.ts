@@ -4,6 +4,7 @@ import { IProductToCar } from 'src/app/models/views/waiter.interface';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpsService } from 'src/app/services/https.service';
 import { SwitchService } from 'src/app/services/switch.service';
+import { NavComponent } from '../../../nav.component';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +15,8 @@ export class CartComponent {
   constructor(
     private ServiceAdd: ServiceAddToCarService,
     private HttpsService: HttpsService,
-    public switchS: SwitchService
+    public switchS: SwitchService,
+    private navComponent: NavComponent
   ) {}
 
   public productsCart: IProductToCar[] = [];
@@ -44,10 +46,6 @@ export class CartComponent {
     return add;
   }
 
-
-
-
-  
   public deleteProduct(): void {
     this.productsCart = this.productsCart.filter((product) => product.qty > 0);
   }
@@ -84,6 +82,9 @@ export class CartComponent {
       },
       error: (err: any) => {
         console.log('error', err); // gestion de errores
+        if (err.status === 401) {
+          this.navComponent.logout('success');
+        }
       },
       complete: () => {
         console.log('complete'); // codigo correcto

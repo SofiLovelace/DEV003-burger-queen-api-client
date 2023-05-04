@@ -3,7 +3,7 @@ import { IResponseOrder } from 'src/app/models/views/chef.interface';
 import { HttpsService } from 'src/app/services/https.service';
 import { SwitchService } from 'src/app/services/switch.service';
 import { ToastrService } from 'ngx-toastr';
-
+import { NavComponent } from '../../nav.component';
 
 @Component({
   selector: 'app-order',
@@ -23,7 +23,8 @@ export class OrderComponent {
     private HttpsService: HttpsService,
     public switchS: SwitchService,
     private renderer2: Renderer2,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private navComponent: NavComponent
   ) {}
 
   public filterOrder(status: 'delivering' | 'pending') {
@@ -43,6 +44,9 @@ export class OrderComponent {
       },
       error: (err: any) => {
         console.log('error', err); // gestion de errores
+        if (err.status === 401) {
+          this.navComponent.logout('success');
+        }
       },
       complete: () => {
         console.log('complete'); // codigo correcto
@@ -69,16 +73,11 @@ export class OrderComponent {
     this.finishOrder(data);
   }
 
-
   ShowSuccess() {
-    this.toastr.success(
-      'se envia al mesero.',
-      'Orden completada!',
-      {
-        easing: 'ease-in',
-        easeTime: 500,
-      }
-    );
+    this.toastr.success('se envia al mesero.', 'Orden completada!', {
+      easing: 'ease-in',
+      easeTime: 500,
+    });
   }
 
   public completeOrder(id: number) {
@@ -93,10 +92,13 @@ export class OrderComponent {
       },
       error: (err: any) => {
         console.log('error', err); // gestion de errores
+        if (err.status === 401) {
+          this.navComponent.logout('success');
+        }
       },
       complete: () => {
         this.getOrders();
-        this.ShowSuccess()
+        this.ShowSuccess();
         console.log('complete'); // codigo correcto
       },
     });

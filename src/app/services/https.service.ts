@@ -7,10 +7,10 @@ import { Observable, Observer } from 'rxjs';
   providedIn: 'root',
 })
 export class HttpsService {
-  public urlApiWebSofi = 'http://localhost:8080';
+  // public urlApiWebSofi = 'http://localhost:8080';
   // public urlApiWebNico = 'https://burgermock-api.onrender.com'
 
-  // public urlApiWebSofi = 'https://burguerqueen-service.onrender.com'
+  public urlApiWebSofi = 'https://burguerqueen-service.onrender.com';
 
   constructor(private http: HttpClient) {}
 

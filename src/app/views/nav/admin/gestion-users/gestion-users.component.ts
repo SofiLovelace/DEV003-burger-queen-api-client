@@ -3,6 +3,7 @@ import { IUsers } from 'src/app/models/views/admin.interface';
 import { HttpsService } from 'src/app/services/https.service';
 import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.service';
 import { ToastrService } from 'ngx-toastr';
+import { NavComponent } from '../../nav.component';
 
 @Component({
   selector: 'app-gestion-users',
@@ -13,7 +14,8 @@ export class GestionUsersComponent {
   constructor(
     private HttpsService: HttpsService,
     private ServiceAdd: ServiceAddToCarService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private navComponent: NavComponent
   ) {}
 
   public users: IUsers[] = [];
@@ -25,8 +27,11 @@ export class GestionUsersComponent {
         // codigo correcto
         this.users = data;
       },
-      error: (err: object) => {
+      error: (err: any) => {
         console.log('error', err); // gestion de errores
+        if (err.status === 401) {
+          this.navComponent.logout('success');
+        }
       },
       complete: () => console.log('complete'), // codigo que se ejecuta al finalizar la subscripción
     });
@@ -56,6 +61,9 @@ export class GestionUsersComponent {
       },
       error: (err: any) => {
         console.log('error no se elimino', err);
+        if (err.status === 401) {
+          this.navComponent.logout('success');
+        }
       },
       complete: () => {
         this.getUsers();

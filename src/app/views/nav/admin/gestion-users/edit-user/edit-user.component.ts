@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.service';
 import { ToastrService } from 'ngx-toastr';
 import { IUsers } from 'src/app/models/views/admin.interface';
+import { NavComponent } from '../../../nav.component';
 
 @Component({
   selector: 'app-edit-user',
@@ -24,7 +25,8 @@ export class EditUserComponent {
     private router: Router,
     private HttpsService: HttpsService,
     private ServiceAdd: ServiceAddToCarService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private navComponent: NavComponent
   ) {}
 
   public updateUser(id: number): void {
@@ -34,6 +36,9 @@ export class EditUserComponent {
       },
       error: (err: any) => {
         console.log('error', err);
+        if (err.status === 401) {
+          this.navComponent.logout('success');
+        }
       },
       complete: () => {
         setTimeout(() => {
@@ -54,8 +59,11 @@ export class EditUserComponent {
           password: '',
         });
       },
-      error: (err: object) => {
+      error: (err: any) => {
         console.log('error', err);
+        if (err.status === 401) {
+          this.navComponent.logout('success');
+        }
       },
       complete: () => console.log('complete'),
     });

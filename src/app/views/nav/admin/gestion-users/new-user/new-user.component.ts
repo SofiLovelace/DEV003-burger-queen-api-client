@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpsService } from 'src/app/services/https.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { IUsers } from 'src/app/models/views/admin.interface';
+import { NavComponent } from '../../../nav.component';
 
 @Component({
   selector: 'app-new-user',
@@ -20,7 +20,8 @@ export class NewUserComponent {
   constructor(
     private router: Router,
     private HttpsService: HttpsService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private navComponent: NavComponent
   ) {}
 
   public addUser(): void {
@@ -29,6 +30,9 @@ export class NewUserComponent {
         console.log('nuevo usuario', data);
       },
       error: (err: any) => {
+        if (err.status === 401) {
+          this.navComponent.logout('success');
+        }
         console.log('error', err);
       },
       complete: () => {

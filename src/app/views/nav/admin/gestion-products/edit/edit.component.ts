@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { IResponseProduct } from 'src/app/models/views/waiter.interface';
 import { HttpsService } from 'src/app/services/https.service';
 import { ServiceAddToCarService } from 'src/app/services/service-add-to-car.service';
+import { NavComponent } from '../../../nav.component';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -16,7 +17,8 @@ export class EditComponent {
     private router: Router,
     private HttpsService: HttpsService,
     private ServiceAdd: ServiceAddToCarService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private navComponent: NavComponent
   ) {}
 
   public dataProducts: any | IResponseProduct;
@@ -56,8 +58,11 @@ export class EditComponent {
           price: this.dataProducts.price,
         });
       },
-      error: (err: object) => {
+      error: (err: any) => {
         console.log('error', err);
+        if (err.status === 401) {
+          this.navComponent.logout('success');
+        }
       },
       complete: () => console.log('complete'),
     });
@@ -86,6 +91,9 @@ export class EditComponent {
       },
       error: (err: any) => {
         console.log('error', err);
+        if (err.status === 401) {
+          this.navComponent.logout('success');
+        }
       },
       complete: () => {
         this.ShowProductSuccess();

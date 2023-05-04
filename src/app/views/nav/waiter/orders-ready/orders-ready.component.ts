@@ -2,6 +2,7 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { HttpsService } from 'src/app/services/https.service';
 import { IResponseOrder } from 'src/app/models/views/chef.interface';
 import { SwitchService } from 'src/app/services/switch.service';
+import { NavComponent } from '../../nav.component';
 
 @Component({
   selector: 'app-orders-ready',
@@ -20,7 +21,8 @@ export class OrdersReadyComponent {
   constructor(
     private HttpsService: HttpsService,
     public switchS: SwitchService,
-    private renderer2: Renderer2
+    private renderer2: Renderer2,
+    private navComponent: NavComponent
   ) {}
 
   public filterOrder(status: 'delivering' | 'delivered') {
@@ -35,8 +37,11 @@ export class OrdersReadyComponent {
         this.allOrders = data.filter((order) => order.status !== 'pending');
         this.filterOrder('delivering');
       },
-      error: (err: object) => {
+      error: (err: any) => {
         console.log('error', err); // gestion de errores
+        if (err.status === 401) {
+          this.navComponent.logout('success');
+        }
       },
       complete: () => console.log('complete'), // codigo que se ejecuta al finalizar la subscripción
     });
@@ -73,6 +78,9 @@ export class OrdersReadyComponent {
       },
       error: (err: any) => {
         console.log('error', err); // gestion de errores
+        if (err.status === 401) {
+          this.navComponent.logout('success');
+        }
       },
       complete: () => {
         this.getOrders();
