@@ -61,7 +61,7 @@
     display: grid;
     grid-template-columns: 30% 70%;
     overflow: hidden;
-    position: fixed; 
+    position: fixed;
     top: 0;
     z-index: 1;
   }
@@ -76,12 +76,8 @@
 
   .container-icons {
     display: flex;
-    flex-flow: row-reverse wrap;
+    flex-flow: row wrap;
     margin-top: 2%;
-    margin-right: 100px;
-  }
-  .list-group-item {
-    padding: 20px 25px;
   }
 
   .user {
