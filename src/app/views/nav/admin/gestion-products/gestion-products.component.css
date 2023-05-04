@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Roboto+Mono:wght@100;300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Josefin+Sans&family=Roboto+Mono:wght@100;300&display=swap');
 
 .tittle{
   font-family: "Fredoka", sans-serif;
@@ -27,7 +27,7 @@ height: 50%;
 }
 
 .product-table{
-  font-family: "Roboto Mono", monospace;
+  font-family:'Josefin Sans', sans-serif;
   font-size: large;
   font-weight: bold;
 }

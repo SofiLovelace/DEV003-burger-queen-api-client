@@ -18,7 +18,7 @@
   <section class="card" *ngFor="let data of ordersView">
     <div class="card-info">
       <h2 class="fw-bolder title-card">PEDIDO:</h2>
-      <span class="text-titlePrice">{{ data.id }}</span>
+      <span class="text-titleId">{{ data.id }}</span>
       <h2 class="clientName">{{ data.client }}</h2>
       <ng-container *ngIf="data.status === 'delivering'">
         <p class="text-titleTime">

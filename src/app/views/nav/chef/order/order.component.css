@@ -69,7 +69,9 @@
 }
 
 .list-order {
+  font-family: 'Josefin Sans';
   min-height: fit-content;
+  font-weight: bolder;
 }
 
 .btnAgregar {
@@ -99,14 +101,16 @@
   font-family: "Fredoka", sans-serif;
 }
 
-.text-titlePrice {
-  font-family: "Roboto Mono", monospace;
-  padding-left: 5%;
+.text-titleId {
+  font-family: 'Josefin Sans';
+  padding-left: 3%;
+  font-size: 1.5rem;
+
 }
 
 .text-titleTime {
   padding-left: 5%;
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Josefin Sans', sans-serif;
   grid-row: 3/4;
 }
 
