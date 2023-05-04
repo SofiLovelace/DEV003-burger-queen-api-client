@@ -1,27 +1,30 @@
-# BurgerQueen
+  # BURGER QUEEN
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+  Es un aplicativo que nace de la necesidad de nuestro cliente de poder gestionar de forma efectiva el servicio dentro de su restaurante de comida rapida, para se siguieron las solicitudes de UX|UI donde creamos patrones y desarrollamos de forma eficaz segun la necesidad de cada usuario, logrando asi un App dinamica y muy intuitiva!
 
-## Development server
+  ### Historia de usuarios:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+[Click aqui para ver el documento!](https://www.canva.com/design/DAFdS76Gd50/vqcRzFwpRma5uqOMISpskA/view?utm_content=DAFdS76Gd50&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
-## Code scaffolding
+## BQ tiene 4 vistas que responden al requerimiento UX:
+  
+  ### Login:
+![1.png](https://postimg.cc/2b2cCgrD)
+##### Vista horizontal.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![2.png](https://postimg.cc/3WkzFChx)
+##### Vista vertical
 
-## Build
+  ### Administrador:
+El administrador podra crear, eliminar y editar los usuario que en este caso son los colaboradores del local, al igual que los productos podra agregar nuevos productos editar o en su defecto eliminarlos, tendra acceso a la vista del mesero y cocina.
+![6.png](https://postimg.cc/7f34SM1T) 
+![5.png](https://postimg.cc/KkCbD0st)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ ### Mesero:
+El mesero podra emitir ordenes, editarlas, eliminarlas y ver en tiempo real cuando el area de cocina las complete, para que asi el mesero pueda entregar sus pedidos en el menor tiempo posible, podra filtar productos como desatuno y almuerzo, tambien podra cargar ordener a un carrito que luego seran enviadas a cocina luego de una confirmacion de orden, tendra acceso solo a la vista de mesero.
+![4.png](https://postimg.cc/FYH61jTv)
 
-## Running unit tests
+ ### Corina:
+El area de cocina cuenta con funciones que permite visualizar recibir y enviar los pedidos completos al area del mesero, cuenta con un contador que le indica el tiempo que corrio desde que tomo la orden hasta que le coloca como colpletada, tambien cuenta con una vista donde podra ver las ordenes pendientes y finalizadas organizadas segun la prioridad, tendra acceso solo a la vista de Cocina
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
